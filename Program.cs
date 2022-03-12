@@ -8,7 +8,6 @@ await Bootstrapper
         .DeployToGitHubPages(
             "yapoml",
             "yapoml.github.io",
-            Config.FromSetting<string>("GITHUB_TOKEN"),
-            "gh-pages"
+            Config.FromSetting<string>("GITHUB_TOKEN")
     )
         .RunAsync();
