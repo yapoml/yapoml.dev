@@ -3,8 +3,9 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
-# Statiq cache folder
+# Statiq folders
 cache/
+output/
 
 # User-specific files
 *.rsuser
