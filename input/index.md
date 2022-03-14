@@ -1,5 +1,5 @@
 Title: Docs
 ---
-# Hello World!
+# Documentation
 
-Hello from my first Statiq page.
+Coming soon.
