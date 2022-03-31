@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yapoml - Docs</title>
+    <title>Yapoml - Selenium</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="site.css" />
 </head>
@@ -31,8 +31,19 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
-            <h1 id="documentation">Documentation</h1>
-<p>Coming soon.</p>
+            <p>Generates page object classes for Selenium WebDriver with ease.</p>
+<h1 id="installation">Installation</h1>
+<p>Install <a href="https://www.nuget.org/packages/Yapoml.Selenium">Yapoml.Selenium</a> nuget package and create your <code>*.po.yaml</code> files.</p>
+<h1 id="usage">Usage</h1>
+<p>Given that you have the following <code>LoginPage.po.yaml</code> file</p>
+<pre><code class="language-yaml">UsernameInput:
+  by: id username
+</code></pre>
+<p>Then you are able to immediately interact with web elements</p>
+<pre><code class="language-csharp">using Yapoml.Selenium;
+
+webDriver.Ya().LoginPage.UsernameInput.SendKeys(&quot;user01&quot;);
+</code></pre>
 
         </main>
     </div>
