@@ -1,7 +1,7 @@
 Title: Playwright
 ---
 
-Generates page object classes for Microsoft Playwright with ease.
+Generates page object classes for [Microsoft Playwright](https://playwright.dev) with ease.
 
 Given that you have the following `LoginPage.po.yaml` file
 

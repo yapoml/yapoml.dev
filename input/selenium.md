@@ -1,7 +1,7 @@
 Title: Selenium
 ---
 
-Generates page object classes for Selenium WebDriver with ease.
+Generates page object classes for [Selenium WebDriver](https://selenium.dev) with ease.
 
 # Installation
 Install [Yapoml.Selenium](https://www.nuget.org/packages/Yapoml.Selenium) nuget package and create your `*.po.yaml` files.
