@@ -116,13 +116,15 @@ var rootPage =  driver.Ya().AnyRootPage;
 <pre><code class="language-yaml">MyComponent:
   by:
     xpath: .//div
-</code></pre>
-<pre><code class="language-yaml">MyComponent:
+
+# or shorter
+MyComponent:
   by: xpath .//div
+
+# or shorter
+MyComponent: xpath .//div
 </code></pre>
-<pre><code class="language-yaml">MyComponent: xpath .//div
-</code></pre>
-<p>Component may have netsted components</p>
+<p>Component may have nested components</p>
 <pre><code class="language-yaml">MyComponent:
   by: xpath .//div
 
