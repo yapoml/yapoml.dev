@@ -84,16 +84,16 @@ Component is identified by search method (following are different representation
 MyComponent:
   by:
     xpath: .//div
-```
-```yaml
+
+# or shorter
 MyComponent:
   by: xpath .//div
-```
-```yaml
+
+# or shorter
 MyComponent: xpath .//div
 ```
 
-Component may have netsted components
+Component may have nested components
 ```yaml
 MyComponent:
   by: xpath .//div
