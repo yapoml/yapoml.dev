@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Yapoml - Playwright</title>
+    <title>Yapoml - Framework</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="site.css" />
     <link rel="stylesheet" href="css/prism.css" />
@@ -58,17 +58,76 @@
 
     <div class="container">
         <main role="main" class="pb-3">
-            <p>Generates page object classes for <a href="https://playwright.dev/">Microsoft Playwright</a> with ease.</p>
-<p>Given that you have the following <code>LoginPage.po.yaml</code> file</p>
-<pre><code class="language-yaml">UsernameInput: &quot;#username&quot;
-</code></pre>
-<p>Then you are able to immediately interact with web elements</p>
-<pre><code class="language-csharp">using Yapoml.Playwright;
+            <h1 id="introduction">Introduction</h1>
+<p>Main goal of yapoml framework is to provide ability to generate page object models for most popular testing tools. The idea to accomplish that is specifing friendly language to describe elements on the page and all necessary classes are auto-generated and are ready for usage.</p>
+<h2 id="problem">Problem</h2>
+<p>Typical page object class for Selenium WebDriver is</p>
+<pre><code class="language-csharp">class LoginPage
+{
+    IWebDriver _driver;
 
-page.Ya().LoginPage.UsernameInput.Type(&quot;user01&quot;);
+    public MyPage(IWebDriver driver)
+    {
+        _driver = driver;
+    }
+
+    public IWebElement UsernameInput =&gt; return _driver.FindElement(By.Id(&quot;some_id&quot;));
+}
 </code></pre>
-<h1 id="installation">Installation</h1>
-<p>Install <a href="https://www.nuget.org/packages/Yapoml.Playwright">Yapoml.Playwright</a> nuget package and create your <code>*.po.yaml</code> files.</p>
+<p>As we see we write a lot of code to define that <code>LoginPage</code> has <code>UsernameInput</code> which can be found by <code>some_id</code> id.</p>
+<h2 id="solution">Solution</h2>
+<p>This problem is resolved by yapoml. Instead of creation your class just add <code>LoginPage.po.yaml</code> file:</p>
+<pre><code class="language-yaml">UsernameInput: id some_id
+</code></pre>
+<p>And <code>yapoml</code> does the rest. Now you can access to web elements</p>
+<pre><code class="language-csharp">driver.Ya().LoginPage.UsernameInput.SendKeys(&quot;user01&quot;);
+</code></pre>
+<p>Or even define more complex relative elements</p>
+<pre><code class="language-yaml">LoginForm:
+  by: id login
+
+  UsernameInput: id some_id
+</code></pre>
+<pre><code class="language-csharp">driver.Ya().LoginPage.LoginForm.UsernameInput.SendKeys(&quot;user01&quot;);
+</code></pre>
+<h2 id="supported-automation-tools">Supported automation tools</h2>
+<ul>
+<li><a href="/selenium">Selenium WebDriver</a></li>
+<li><a href="/playwright">Microsoft Playwright</a></li>
+</ul>
+<h1 id="yaml-definition">Yaml Definition</h1>
+<h2 id="page-object">Page Object</h2>
+<p>Page objects are defined in <code>*.po.yaml</code> files.</p>
+<pre><code class="language-treeview">Project/
+|-- Pages/
+|   `-- Administration/
+|       |-- UsersPage.po.yaml
+|       `-- RolesPage.po.yaml
+|-- AnyRootPage.po.yaml
+`-- Project.csproj
+</code></pre>
+<pre><code class="language-csharp">var usersPage = driver.Ya().Pages.Administration.UsersPage;
+var rootPage =  driver.Ya().AnyRootPage;
+</code></pre>
+<p>Page object consists of components:</p>
+<pre><code class="language-yaml">MyComponent: xpath .//div
+</code></pre>
+<p>Component is identified by search method (following are different representation of the same component)</p>
+<pre><code class="language-yaml">MyComponent:
+  by:
+    xpath: .//div
+</code></pre>
+<pre><code class="language-yaml">MyComponent:
+  by: xpath .//div
+</code></pre>
+<pre><code class="language-yaml">MyComponent: xpath .//div
+</code></pre>
+<p>Component may have netsted components</p>
+<pre><code class="language-yaml">MyComponent:
+  by: xpath .//div
+
+  MyOtherComponent: xpath .//button
+</code></pre>
 
         </main>
     </div>
