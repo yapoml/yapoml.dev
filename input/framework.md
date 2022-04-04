@@ -48,14 +48,11 @@ driver.Ya().LoginPage.LoginForm.UsernameInput.SendKeys("user01");
 ```
 
 
-## Supported automation tools
-- [Selenium WebDriver](/selenium)
-- [Microsoft Playwright](/playwright)
+# Syntax
 
+Yapoml supports yaml format to define your pages and components (TBD).
 
-# Yaml Definition
-
-## Page Object
+## Page
 
 Page objects are defined in `*.po.yaml` files.
 
@@ -79,6 +76,8 @@ Page object consists of components:
 MyComponent: xpath .//div
 ```
 
+## Component
+
 Component is identified by search method (following are different representation of the same component)
 ```yaml
 MyComponent:
@@ -100,3 +99,16 @@ MyComponent:
 
   MyOtherComponent: xpath .//button
 ```
+
+# Extensions
+
+## Logging
+### Serilog
+Install [Yapoml.Extensions.Logging.Serilog](https://www.nuget.org/packages/Yapoml.Extensions.Logging.Playwright) to transfer all log messages produced by Yapoml to serilog logger.
+
+```csharp
+driver.Ya(opts => opts.UseSerilog());
+```
+
+### etc
+Any log framework can be easily implemented, just ask.
