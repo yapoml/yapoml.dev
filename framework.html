@@ -102,13 +102,9 @@
 </code></pre>
 <pre><code class="language-csharp">driver.Ya().LoginPage.LoginForm.UsernameInput.SendKeys(&quot;user01&quot;);
 </code></pre>
-<h2 id="supported-automation-tools">Supported automation tools</h2>
-<ul>
-<li><a href="/selenium">Selenium WebDriver</a></li>
-<li><a href="/playwright">Microsoft Playwright</a></li>
-</ul>
-<h1 id="yaml-definition">Yaml Definition</h1>
-<h2 id="page-object">Page Object</h2>
+<h1 id="syntax">Syntax</h1>
+<p>Yapoml supports yaml format to define your pages and components (TBD).</p>
+<h2 id="page">Page</h2>
 <p>Page objects are defined in <code>*.po.yaml</code> files.</p>
 <pre><code class="language-treeview">Project/
 |-- Pages/
@@ -124,6 +120,7 @@ var rootPage =  driver.Ya().AnyRootPage;
 <p>Page object consists of components:</p>
 <pre><code class="language-yaml">MyComponent: xpath .//div
 </code></pre>
+<h2 id="component">Component</h2>
 <p>Component is identified by search method (following are different representation of the same component)</p>
 <pre><code class="language-yaml">MyComponent:
   by:
@@ -142,6 +139,14 @@ MyComponent: xpath .//div
 
   MyOtherComponent: xpath .//button
 </code></pre>
+<h1 id="extensions">Extensions</h1>
+<h2 id="logging">Logging</h2>
+<h3 id="serilog">Serilog</h3>
+<p>Install <a href="https://www.nuget.org/packages/Yapoml.Extensions.Logging.Playwright">Yapoml.Extensions.Logging.Serilog</a> to transfer all log messages produced by Yapoml to serilog logger.</p>
+<pre><code class="language-csharp">driver.Ya(opts =&gt; opts.UseSerilog());
+</code></pre>
+<h3 id="etc">etc</h3>
+<p>Any log framework can be easily implemented, just ask.</p>
 </div>
         </main>
     </div>
