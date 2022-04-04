@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yapoml - Docs</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="site.css" />
+    
+    
     <link rel="stylesheet" href="css/prism.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+    <link rel="stylesheet" href="site.css" />
 
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/components/prism-core.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.27.0/plugins/autoloader/prism-autoloader.min.js" data-no-mirror></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -57,10 +62,17 @@
     </header>
 
     <div class="container">
-        <main role="main" class="pb-3">
-            <h1 id="documentation">Documentation</h1>
-<p>Coming soon.</p>
+        <main role="main" class="row">
+            <div class="col-xs-6 col-md-3 order-md-2 py-1" >
+                <button style="width:100%" class="btn btn-light btn-sm btn-block d-md-none mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#toc" aria-expanded="false" aria-controls="toc">
+                    On this page
+                </button>
 
+                <nav id="toc" class="toc sticky-md-top text-muted collapse d-md-block"></nav>
+            </div>
+            <div class="col-xs-12 col-md-9 py-1 content"><h1 id="documentation">Documentation</h1>
+<p>Coming soon.</p>
+</div>
         </main>
     </div>
 
@@ -77,5 +89,20 @@
 
 
     
+
+    <script type="text/javascript">
+        tocbot.init({
+        // Where to render the table of contents.
+        tocSelector: '#toc',
+        // Where to grab the headings to build the table of contents.
+        contentSelector: '.content',
+        // Which headings to grab inside of the contentSelector element.
+        headingSelector: 'h1, h2, h3',
+        // For headings inside relative or absolute positioned containers within content.
+        hasInnerContainers: false,
+        collapseDepth: 3,
+        extraLinkClasses: 'text-decoration-none'
+        });
+    </script>
 </body>
 </html>
