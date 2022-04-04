@@ -68,20 +68,30 @@
                     On this page
                 </button>
 
-                <nav id="toc" class="toc sticky-md-top text-muted collapse d-md-block"></nav>
+                <nav id="toc" class="toc sticky-md-top text-muted collapse d-md-block pt-md-2"></nav>
             </div>
             <div class="col-xs-12 col-md-9 py-1 content"><p>Generates page object classes for <a href="https://selenium.dev/">Selenium WebDriver</a> with ease.</p>
 <h1 id="installation">Installation</h1>
 <p>Install <a href="https://www.nuget.org/packages/Yapoml.Selenium">Yapoml.Selenium</a> nuget package and create your <code>*.po.yaml</code> files.</p>
 <h1 id="usage">Usage</h1>
 <p>Given that you have the following <code>LoginPage.po.yaml</code> file</p>
-<pre><code class="language-yaml">UsernameInput:
-  by: id username
+<pre><code class="language-yaml">UsernameInput: id username
 </code></pre>
 <p>Then you are able to immediately interact with web elements</p>
 <pre><code class="language-csharp">using Yapoml.Selenium;
 
 webDriver.Ya().LoginPage.UsernameInput.SendKeys(&quot;user01&quot;);
+</code></pre>
+<blockquote>
+<p>Note: you might add <code>using</code> statement manually, Visual Studio cannot resolve it automatically.</p>
+</blockquote>
+<h1 id="extensions">Extensions</h1>
+<p>There are built-in extensions which are shipped via <a href="https://www.nuget.org/packages/Yapoml.Selenium.Extensions">Yapoml.Selenium.Extensions</a> nuget package.</p>
+<h2 id="lighter">Lighter</h2>
+<p>Highlight the element on the page each time when you find it.</p>
+<pre><code class="language-csharp">using Yapoml.Selenium;
+
+webDriver.Ya(opts =&gt; opts.UseLighter())
 </code></pre>
 </div>
         </main>
