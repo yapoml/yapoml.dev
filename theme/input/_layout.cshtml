@@ -95,8 +95,18 @@
     <script src="js/prism.js"></script>
     <script src="js/site.js"></script>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3DWDWDXYGT"></script>
+
 
     @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-3DWDWDXYGT');
+    </script>
 
     <script type="text/javascript">
         tocbot.init({
