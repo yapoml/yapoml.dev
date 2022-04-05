@@ -1,4 +1,5 @@
 Title: Docs
+IsArticle: no
 ---
 
 # Documentation

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@{
+    bool isArticle = Document.GetBool("IsArticle");
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -63,14 +67,20 @@
 
     <div class="container">
         <main role="main" class="row">
-            <div class="col-xs-6 col-md-3 order-md-2 py-1" >
-                <button style="width:100%" class="btn btn-light btn-sm btn-block d-md-none mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#toc" aria-expanded="false" aria-controls="toc">
-                    On this page
-                </button>
+            @{
+                if (isArticle)
+                {
+                    <div class="col-xs-6 col-md-3 order-md-2 py-1" >
+                    <button style="width:100%" class="btn btn-light btn-sm btn-block d-md-none mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#toc" aria-expanded="false" aria-controls="toc">
+                        On this page
+                    </button>
 
-                <nav id="toc" class="toc sticky-md-top text-muted collapse d-md-block pt-md-2"></nav>
+                    <nav id="toc" class="toc sticky-md-top text-muted collapse d-md-block pt-md-2"></nav>
             </div>
-            <div class="col-xs-12 col-md-9 py-1 content">@RenderBody()</div>
+                }
+            }
+            
+            <div class="@(isArticle ? "col-xs-12 col-md-9" : "") py-1 content">@RenderBody()</div>
         </main>
     </div>
 
