@@ -9,6 +9,6 @@ IsArticle: no
     </div>
 </div>
 
-<div class="row py-5">
-    <img class="img-fluid px-0 shadow-lg" src="img/Promo.gif" />
+<div class="row py-5 justify-content-center">
+    <img class="img-fluid col-md-10 px-0 shadow" src="img/Promo.gif" />
 </div>
