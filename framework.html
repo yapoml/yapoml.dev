@@ -150,6 +150,24 @@ MyComponent: xpath .//div
 
   MyOtherComponent: xpath .//button
 </code></pre>
+<h2 id="navigation">Navigation</h2>
+<p>If a page has definited <code>url</code> property then this page has generated <code>Open()</code> method.</p>
+<pre><code class="language-yaml"># HomePage.po.yaml
+
+url: some/relative/path
+</code></pre>
+<pre><code class="language-csharp">driver.Ya().HomePage.Open();
+</code></pre>
+<p><code>url</code> might have segments and query parameters</p>
+<pre><code class="language-yaml">url:
+  path: /users/{userId}
+  query:  # or params
+    - p1
+    - p2
+</code></pre>
+<pre><code class="language-csharp">driver.Ya().HomePage.Open(&quot;123&quot;, p2 = &quot;any value&quot;) // navigates to /users/123?p2=any%20value
+</code></pre>
+<p>Segments are required. If you need skip some particular segment from the url path, you can put <code>null</code>. Query parameters are always optional.</p>
 <h1 id="extensions">Extensions</h1>
 <h2 id="logging">Logging</h2>
 <h3 id="serilog">Serilog</h3>
