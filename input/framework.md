@@ -100,6 +100,34 @@ MyComponent:
   MyOtherComponent: xpath .//button
 ```
 
+## Navigation
+
+If a page has definited `url` property then this page has generated `Open()` method.
+
+```yaml
+# HomePage.po.yaml
+
+url: some/relative/path
+```
+
+```csharp
+driver.Ya().HomePage.Open();
+```
+
+`url` might have segments and query parameters
+```yaml
+url:
+  path: /users/{userId}
+  query:  # or params
+    - p1
+    - p2
+```
+```csharp
+driver.Ya().HomePage.Open("123", p2 = "any value") // navigates to /users/123?p2=any%20value
+```
+
+Segments are required. If you need skip some particular segment from the url path, you can put `null`. Query parameters are always optional.
+
 # Extensions
 
 ## Logging
