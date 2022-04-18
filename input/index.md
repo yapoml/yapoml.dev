@@ -1,4 +1,4 @@
-Title: Docs
+Title: Yet another page object generation
 IsArticle: no
 ---
 
