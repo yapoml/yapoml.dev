@@ -10,5 +10,5 @@ IsArticle: no
 </div>
 
 <div class="row py-3 justify-content-center">
-    <img class="img-fluid col-md-10" src="img/Promo.gif" />
+    <video src="img/Promo.mp4" controls autoplay></video>
 </div>
