@@ -3,7 +3,7 @@ IsArticle: no
 ---
 
 <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-4 fw-bold">Yapoml</h1>
+    <h1 class="display-5 fw-bold">Yapoml</h1>
     <p class="display-6">
         Yet another page object generation in .NET for automated testing
     </p>
