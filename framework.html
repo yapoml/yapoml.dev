@@ -150,6 +150,18 @@ MyComponent: xpath .//div
 
   MyOtherComponent: xpath .//button
 </code></pre>
+<h3 id="parametrized-components">Parametrized components</h3>
+<p>Locator may have parameters.</p>
+<pre><code class="language-yaml">MyButton: ./button[text()='{text}']
+</code></pre>
+<p><code>{text}</code> is treated as a parameter, and then you use it</p>
+<pre><code class="language-csharp">myPage.MyButton(text: &quot;Sign in&quot;) // finds ./button[text()='Sign in']
+</code></pre>
+<p>Or even find multiple components</p>
+<pre><code class="language-yaml">GetMyButtons: ./button[text()='{text}']
+</code></pre>
+<pre><code class="language-csharp">myPage.GetMyButtons(text: &quot;Sign in&quot;) // finds many ./button[text()='Sign in']
+</code></pre>
 <h2 id="navigation">Navigation</h2>
 <p>If a page has definited <code>url</code> property then this page has generated <code>Open()</code> method.</p>
 <pre><code class="language-yaml"># HomePage.po.yaml
@@ -165,7 +177,7 @@ url: some/relative/path
     - p1
     - p2
 </code></pre>
-<pre><code class="language-csharp">driver.Ya().HomePage.Open(&quot;123&quot;, p2 = &quot;any value&quot;) // navigates to /users/123?p2=any%20value
+<pre><code class="language-csharp">driver.Ya().HomePage.Open(&quot;123&quot;, p2: &quot;any value&quot;) // navigates to /users/123?p2=any%20value
 </code></pre>
 <p>Segments are required. If you need skip some particular segment from the url path, you can put <code>null</code>. Query parameters are always optional.</p>
 <h1 id="extensions">Extensions</h1>
