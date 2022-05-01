@@ -107,7 +107,7 @@
 </code></pre>
 <p>Or even define more complex relative elements</p>
 <pre><code class="language-yaml">LoginForm:
-  by: id login
+  by: .//form
 
   UsernameInput: id some_id
 </code></pre>
@@ -129,7 +129,7 @@
 var rootPage =  driver.Ya().AnyRootPage;
 </code></pre>
 <p>Page object consists of components:</p>
-<pre><code class="language-yaml">MyComponent: xpath .//div
+<pre><code class="language-yaml">MyComponent: .//div
 </code></pre>
 <h2 id="component">Component</h2>
 <p>Component is identified by search method (following are different representation of the same component)</p>
@@ -143,12 +143,15 @@ MyComponent:
 
 # or shorter
 MyComponent: xpath .//div
+
+# or shorter
+MyComponent: .//div
 </code></pre>
 <p>Component may have nested components</p>
 <pre><code class="language-yaml">MyComponent:
   by: xpath .//div
 
-  MyOtherComponent: xpath .//button
+  MyOtherComponent: .//button
 </code></pre>
 <h3 id="parametrized-components">Parametrized components</h3>
 <p>Locator may have parameters.</p>
