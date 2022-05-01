@@ -38,7 +38,7 @@ driver.Ya().LoginPage.UsernameInput.SendKeys("user01");
 Or even define more complex relative elements
 ```yaml
 LoginForm:
-  by: id login
+  by: .//form
 
   UsernameInput: id some_id
 ```
@@ -73,7 +73,7 @@ var rootPage =  driver.Ya().AnyRootPage;
 
 Page object consists of components:
 ```yaml
-MyComponent: xpath .//div
+MyComponent: .//div
 ```
 
 ## Component
@@ -90,6 +90,9 @@ MyComponent:
 
 # or shorter
 MyComponent: xpath .//div
+
+# or shorter
+MyComponent: .//div
 ```
 
 Component may have nested components
@@ -97,7 +100,7 @@ Component may have nested components
 MyComponent:
   by: xpath .//div
 
-  MyOtherComponent: xpath .//button
+  MyOtherComponent: .//button
 ```
 
 ### Parametrized components
