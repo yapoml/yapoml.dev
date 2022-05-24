@@ -103,7 +103,7 @@ MyComponent:
   MyOtherComponent: .//button
 ```
 
-### Parametrized components
+### Parametrized
 Locator may have parameters.
 ```yaml
 MyButton: ./button[text()='{text}']
@@ -120,6 +120,23 @@ GetMyButtons: ./button[text()='{text}']
 ```
 ```csharp
 myPage.GetMyButtons(text: "Sign in") // finds many ./button[text()='Sign in']
+```
+
+### Reusable
+It's possible to define a component once in `*.pc.yaml` file and reuse it by reference.
+
+```yaml
+# MyComponent.pc.yaml
+by: ./div
+
+MyButton: ./button
+```
+
+```yaml
+# MyPage.po.yaml
+
+MyOtherComponent:
+  ref: MyComponent
 ```
 
 ## Navigation
