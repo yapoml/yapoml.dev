@@ -153,7 +153,7 @@ MyComponent: .//div
 
   MyOtherComponent: .//button
 </code></pre>
-<h3 id="parametrized-components">Parametrized components</h3>
+<h3 id="parametrized">Parametrized</h3>
 <p>Locator may have parameters.</p>
 <pre><code class="language-yaml">MyButton: ./button[text()='{text}']
 </code></pre>
@@ -164,6 +164,18 @@ MyComponent: .//div
 <pre><code class="language-yaml">GetMyButtons: ./button[text()='{text}']
 </code></pre>
 <pre><code class="language-csharp">myPage.GetMyButtons(text: &quot;Sign in&quot;) // finds many ./button[text()='Sign in']
+</code></pre>
+<h3 id="reusable">Reusable</h3>
+<p>It's possible to define a component once in <code>*.pc.yaml</code> file and reuse it by reference.</p>
+<pre><code class="language-yaml"># MyComponent.pc.yaml
+by: ./div
+
+MyButton: ./button
+</code></pre>
+<pre><code class="language-yaml"># MyPage.po.yaml
+
+MyOtherComponent:
+  ref: MyComponent
 </code></pre>
 <h2 id="navigation">Navigation</h2>
 <p>If a page has definited <code>url</code> property then this page has generated <code>Open()</code> method.</p>
