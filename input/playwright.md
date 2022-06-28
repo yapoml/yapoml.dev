@@ -1,4 +1,5 @@
 Title: Playwright
+Description: Generates page object classes for Microsoft Playwright with ease
 ---
 
 Generates page object classes for [Microsoft Playwright](https://playwright.dev) with ease.

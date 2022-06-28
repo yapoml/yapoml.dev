@@ -1,4 +1,5 @@
 Title: Framework
+Description: Define your page objects with ease and start to automate immediatelly
 ---
 
 # Introduction

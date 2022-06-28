@@ -1,4 +1,5 @@
 Title: Yet another page object generation
+Description: Yet another page object generation in .NET for automated testing
 IsArticle: no
 ---
 

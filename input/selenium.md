@@ -1,4 +1,5 @@
 Title: Selenium
+Description: Generates page object classes for Selenium WebDriver with ease
 ---
 
 Generates page object classes for [Selenium WebDriver](https://selenium.dev) with ease.
