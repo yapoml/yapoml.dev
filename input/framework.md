@@ -13,7 +13,7 @@ class LoginPage
 {
     IWebDriver _driver;
 
-    public MyPage(IWebDriver driver)
+    public LoginPage(IWebDriver driver)
     {
         _driver = driver;
     }
