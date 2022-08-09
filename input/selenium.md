@@ -17,9 +17,38 @@ UsernameInput: id username
 Then you are able to immediately interact with web elements
 
 ```csharp
-using Yapoml.Selenium;
-
 webDriver.Ya().LoginPage.UsernameInput.SendKeys("user01");
 ```
 
-> Note: you might add `using` statement manually, Visual Studio cannot resolve it automatically.
+# Awaiting components
+
+By default yapoml doesn't await until components appear on a page. If you would like to wait components, there are several ways to do it.
+
+## Implicitly
+
+```csharp
+webDriver.Ya(opts => opts.UseAwaitableComponents())
+    .LoginPage.UsernameInput.SendKeys("user01");
+```
+
+```csharp
+webDriver.Ya(opts => opts.UseAwaitableComponents().WithTimeout(TimeSpan.FromSeconds(10)))
+    .LoginPage.UsernameInput.SendKeys("user01");
+```
+
+## Explicitly
+
+```csharp
+webDriver.Ya()
+    .LoginPage.WaitUsernameInputDisplayed().SendKeys("user01");
+```
+
+```csharp
+webDriver.Ya(opts => opts.WithTimeout(TimeSpan.FromSeconds(10)))
+    .LoginPage.WaitUsernameInputDisplayed().SendKeys("user01");
+```
+
+```csharp
+webDriver.Ya().
+    LoginPage.WaitUsernameInputDisplayed(timeout: TimeSpan.FromSeconds(10)).SendKeys("user01");
+```
