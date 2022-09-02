@@ -96,13 +96,13 @@
         _driver = driver;
     }
 
-    public IWebElement UsernameInput =&gt; return _driver.FindElement(By.Id(&quot;some_id&quot;));
+    public IWebElement UsernameInput =&gt; return _driver.FindElement(By.Css(&quot;.username&quot;));
 }
 </code></pre>
-<p>As we see we write a lot of code to define that <code>LoginPage</code> has <code>UsernameInput</code> which can be found by <code>some_id</code> id.</p>
+<p>As we see we write a lot of code to define that <code>LoginPage</code> has <code>UsernameInput</code> which can be found by <code>.username</code> css locator.</p>
 <h2 id="solution">Solution</h2>
 <p>This problem is resolved by yapoml. Instead of creation your class just add <code>LoginPage.po.yaml</code> file:</p>
-<pre><code class="language-yaml">UsernameInput: id some_id
+<pre><code class="language-yaml">UsernameInput: .username
 </code></pre>
 <p>And <code>yapoml</code> does the rest. Now you can access to web elements</p>
 <pre><code class="language-csharp">driver.Ya().LoginPage.UsernameInput.SendKeys(&quot;user01&quot;);
