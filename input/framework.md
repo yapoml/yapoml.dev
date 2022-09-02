@@ -18,17 +18,17 @@ class LoginPage
         _driver = driver;
     }
 
-    public IWebElement UsernameInput => return _driver.FindElement(By.Id("some_id"));
+    public IWebElement UsernameInput => return _driver.FindElement(By.Css(".username"));
 }
 ```
 
-As we see we write a lot of code to define that `LoginPage` has `UsernameInput` which can be found by `some_id` id.
+As we see we write a lot of code to define that `LoginPage` has `UsernameInput` which can be found by `.username` css locator.
 
 
 ## Solution
 This problem is resolved by yapoml. Instead of creation your class just add `LoginPage.po.yaml` file:
 ```yaml
-UsernameInput: id some_id
+UsernameInput: .username
 ```
 
 And `yapoml` does the rest. Now you can access to web elements
