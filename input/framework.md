@@ -124,7 +124,8 @@ myPage.GetMyButtons(text: "Sign in") // finds many ./button[text()='Sign in']
 ```
 
 ### Reusable
-It's possible to define a component once in `*.pc.yaml` file and reuse it by reference.
+#### By reference
+It's possible to define a component once in `*.pc.yaml` file and reuse it.
 
 ```yaml
 # MyComponent.pc.yaml
@@ -138,6 +139,24 @@ MyButton: ./button
 
 MyOtherComponent:
   ref: MyComponent
+```
+
+#### As base
+
+`MyOtherComponent` is inherited from `MyComponent`.
+
+```yaml
+# MyComponent.pc.yaml
+by: ./div
+
+MyButton: ./button
+```
+
+```yaml
+# MyPage.po.yaml
+
+MyOtherComponent:
+  base: MyComponent
 ```
 
 ## Navigation
