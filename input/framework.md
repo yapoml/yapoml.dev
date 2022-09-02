@@ -41,7 +41,7 @@ Or even define more complex relative elements
 LoginForm:
   by: .//form
 
-  UsernameInput: id some_id
+  UsernameInput: .username
 ```
 
 ```csharp
