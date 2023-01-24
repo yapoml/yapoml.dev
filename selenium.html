@@ -97,20 +97,28 @@
 <p>By default yapoml doesn't await until components appear on a page. If you would like to wait components, there are several ways to do it.</p>
 <h2 id="implicitly">Implicitly</h2>
 <pre><code class="language-csharp">webDriver.Ya(opts =&gt; opts.UseAwaitableComponents())
-    .LoginPage.UsernameInput.SendKeys(&quot;user01&quot;);
+    .LoginPage.UsernameInput
+        .SendKeys(&quot;user01&quot;);
 </code></pre>
 <pre><code class="language-csharp">webDriver.Ya(opts =&gt; opts.UseAwaitableComponents().WithTimeout(TimeSpan.FromSeconds(10)))
-    .LoginPage.UsernameInput.SendKeys(&quot;user01&quot;);
+    .LoginPage.UsernameInput
+        .SendKeys(&quot;user01&quot;);
 </code></pre>
 <h2 id="explicitly">Explicitly</h2>
 <pre><code class="language-csharp">webDriver.Ya()
-    .LoginPage.WaitUsernameInputDisplayed().SendKeys(&quot;user01&quot;);
+    .LoginPage.UsernameInput
+        .When(it =&gt; it.IsDisplayed())
+        .SendKeys(&quot;user01&quot;);
 </code></pre>
 <pre><code class="language-csharp">webDriver.Ya(opts =&gt; opts.WithTimeout(TimeSpan.FromSeconds(10)))
-    .LoginPage.WaitUsernameInputDisplayed().SendKeys(&quot;user01&quot;);
+    .LoginPage.UsernameInput
+        .When(it =&gt; it.IsDisplayed())
+        .SendKeys(&quot;user01&quot;);
 </code></pre>
 <pre><code class="language-csharp">webDriver.Ya().
-    LoginPage.WaitUsernameInputDisplayed(timeout: TimeSpan.FromSeconds(10)).SendKeys(&quot;user01&quot;);
+    LoginPage.UsernameInput
+        .When(it =&gt; it.IsDisplayed(timeout: TimeSpan.FromSeconds(10)))
+        .SendKeys(&quot;user01&quot;);
 </code></pre>
 </div>
         </main>
