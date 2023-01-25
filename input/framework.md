@@ -4,29 +4,9 @@ Description: Define your page objects with ease and start to automate immediatel
 
 # Introduction
 
-Main goal of yapoml framework is to provide ability to generate page object models for most popular testing tools. The idea to accomplish that is specifing friendly language to describe elements on the page and all necessary classes are auto-generated and are ready for usage.
+Main goal of yapoml framework is to provide ability to generate page object models for most popular testing tools. The idea to accomplish that is specifing friendly language to describe elements on the page and all necessary classes are auto-generated and are ready to use.
 
-## Problem
-Typical page object class for Selenium WebDriver is
-```csharp
-class LoginPage
-{
-    IWebDriver _driver;
-
-    public LoginPage(IWebDriver driver)
-    {
-        _driver = driver;
-    }
-
-    public IWebElement UsernameInput => return _driver.FindElement(By.Css(".username"));
-}
-```
-
-As we see we write a lot of code to define that `LoginPage` has `UsernameInput` which can be found by `.username` css locator.
-
-
-## Solution
-This problem is resolved by yapoml. Instead of creation your class just add `Login.page.yaml` file:
+Just add `Login.page.yaml` file:
 ```yaml
 UsernameInput: .username
 ```
@@ -51,7 +31,7 @@ driver.Ya().LoginPage.LoginForm.UsernameInput.SendKeys("user01");
 
 # Syntax
 
-Yapoml supports yaml format to define your pages and components (TBD).
+Yapoml supports yaml format to define your pages and components.
 
 ## Page
 
@@ -95,8 +75,8 @@ MyComponent: xpath .//div
 # or shorter
 MyComponent: .//div
 ```
-
-Component may have nested components
+### Nested
+Component may have relative components
 ```yaml
 MyComponent:
   by: xpath .//div
