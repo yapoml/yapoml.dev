@@ -84,24 +84,8 @@
             </div>
             
             <div class="col-xs-12 col-md-9 py-1 content"><h1 id="introduction">Introduction</h1>
-<p>Main goal of yapoml framework is to provide ability to generate page object models for most popular testing tools. The idea to accomplish that is specifing friendly language to describe elements on the page and all necessary classes are auto-generated and are ready for usage.</p>
-<h2 id="problem">Problem</h2>
-<p>Typical page object class for Selenium WebDriver is</p>
-<pre><code class="language-csharp">class LoginPage
-{
-    IWebDriver _driver;
-
-    public LoginPage(IWebDriver driver)
-    {
-        _driver = driver;
-    }
-
-    public IWebElement UsernameInput =&gt; return _driver.FindElement(By.Css(&quot;.username&quot;));
-}
-</code></pre>
-<p>As we see we write a lot of code to define that <code>LoginPage</code> has <code>UsernameInput</code> which can be found by <code>.username</code> css locator.</p>
-<h2 id="solution">Solution</h2>
-<p>This problem is resolved by yapoml. Instead of creation your class just add <code>Login.page.yaml</code> file:</p>
+<p>Main goal of yapoml framework is to provide ability to generate page object models for most popular testing tools. The idea to accomplish that is specifing friendly language to describe elements on the page and all necessary classes are auto-generated and are ready to use.</p>
+<p>Just add <code>Login.page.yaml</code> file:</p>
 <pre><code class="language-yaml">UsernameInput: .username
 </code></pre>
 <p>And <code>yapoml</code> does the rest. Now you can access to web elements</p>
@@ -116,7 +100,7 @@
 <pre><code class="language-csharp">driver.Ya().LoginPage.LoginForm.UsernameInput.SendKeys(&quot;user01&quot;);
 </code></pre>
 <h1 id="syntax">Syntax</h1>
-<p>Yapoml supports yaml format to define your pages and components (TBD).</p>
+<p>Yapoml supports yaml format to define your pages and components.</p>
 <h2 id="page">Page</h2>
 <p>Page objects are defined in <code>*.page.yaml</code> files.</p>
 <pre><code class="language-treeview">Project/
@@ -149,7 +133,8 @@ MyComponent: xpath .//div
 # or shorter
 MyComponent: .//div
 </code></pre>
-<p>Component may have nested components</p>
+<h3 id="nested">Nested</h3>
+<p>Component may have relative components</p>
 <pre><code class="language-yaml">MyComponent:
   by: xpath .//div
 
