@@ -101,7 +101,7 @@
 </code></pre>
 <p>As we see we write a lot of code to define that <code>LoginPage</code> has <code>UsernameInput</code> which can be found by <code>.username</code> css locator.</p>
 <h2 id="solution">Solution</h2>
-<p>This problem is resolved by yapoml. Instead of creation your class just add <code>LoginPage.po.yaml</code> file:</p>
+<p>This problem is resolved by yapoml. Instead of creation your class just add <code>Login.page.yaml</code> file:</p>
 <pre><code class="language-yaml">UsernameInput: .username
 </code></pre>
 <p>And <code>yapoml</code> does the rest. Now you can access to web elements</p>
@@ -118,13 +118,13 @@
 <h1 id="syntax">Syntax</h1>
 <p>Yapoml supports yaml format to define your pages and components (TBD).</p>
 <h2 id="page">Page</h2>
-<p>Page objects are defined in <code>*.po.yaml</code> files.</p>
+<p>Page objects are defined in <code>*.page.yaml</code> files.</p>
 <pre><code class="language-treeview">Project/
 |-- Pages/
 |   `-- Administration/
-|       |-- UsersPage.po.yaml
-|       `-- RolesPage.po.yaml
-|-- AnyRootPage.po.yaml
+|       |-- Users.page.yaml
+|       `-- Roles.page.yaml
+|-- AnyRoot.page.yaml
 `-- Project.csproj
 </code></pre>
 <pre><code class="language-csharp">var usersPage = driver.Ya().Pages.Administration.UsersPage;
