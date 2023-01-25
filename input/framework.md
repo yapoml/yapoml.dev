@@ -26,7 +26,7 @@ As we see we write a lot of code to define that `LoginPage` has `UsernameInput` 
 
 
 ## Solution
-This problem is resolved by yapoml. Instead of creation your class just add `LoginPage.po.yaml` file:
+This problem is resolved by yapoml. Instead of creation your class just add `Login.page.yaml` file:
 ```yaml
 UsernameInput: .username
 ```
@@ -55,15 +55,15 @@ Yapoml supports yaml format to define your pages and components (TBD).
 
 ## Page
 
-Page objects are defined in `*.po.yaml` files.
+Page objects are defined in `*.page.yaml` files.
 
 ```treeview
 Project/
 |-- Pages/
 |   `-- Administration/
-|       |-- UsersPage.po.yaml
-|       `-- RolesPage.po.yaml
-|-- AnyRootPage.po.yaml
+|       |-- Users.page.yaml
+|       `-- Roles.page.yaml
+|-- AnyRoot.page.yaml
 `-- Project.csproj
 ```
 
