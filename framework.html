@@ -153,7 +153,6 @@ MyComponent: .//div
 <pre><code class="language-csharp">myPage.GetMyButtons(text: &quot;Sign in&quot;) // finds many ./button[text()='Sign in']
 </code></pre>
 <h3 id="reusable">Reusable</h3>
-<h4 id="by-reference">By reference</h4>
 <p>It's possible to define a component once in <code>*.pc.yaml</code> file and reuse it.</p>
 <pre><code class="language-yaml"># MyComponent.pc.yaml
 by: ./div
@@ -163,19 +162,7 @@ MyButton: ./button
 <pre><code class="language-yaml"># MyPage.po.yaml
 
 MyOtherComponent:
-  ref: MyComponent
-</code></pre>
-<h4 id="as-base">As base</h4>
-<p><code>MyOtherComponent</code> is inherited from <code>MyComponent</code>.</p>
-<pre><code class="language-yaml"># MyComponent.pc.yaml
-by: ./div
-
-MyButton: ./button
-</code></pre>
-<pre><code class="language-yaml"># MyPage.po.yaml
-
-MyOtherComponent:
-  base: MyComponent
+  ref: MyComponent # or 'base: MyComponent'
 </code></pre>
 <h2 id="navigation">Navigation</h2>
 <p>If a page has definited <code>url</code> property then this page has generated <code>Open()</code> method.</p>
