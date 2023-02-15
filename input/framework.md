@@ -104,20 +104,20 @@ myPage.GetMyButtons(text: "Sign in") // finds many ./button[text()='Sign in']
 ```
 
 ### Reusable
-It's possible to define a component once in `*.pc.yaml` file and reuse it.
+It's possible to define a component once in `*.component.yaml` file and reuse it.
 
 ```yaml
-# MyComponent.pc.yaml
+# My.component.yaml
 by: ./div
 
 MyButton: ./button
 ```
 
 ```yaml
-# MyPage.po.yaml
+# My.page.yaml
 
 MyOtherComponent:
-  ref: MyComponent # or 'base: MyComponent'
+  ref: My # or 'base: My'
 ```
 
 
@@ -126,7 +126,7 @@ MyOtherComponent:
 If a page has definited `url` property then this page has generated `Open()` method.
 
 ```yaml
-# HomePage.po.yaml
+# Home.page.yaml
 
 url: some/relative/path
 ```
