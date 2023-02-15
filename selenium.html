@@ -120,6 +120,10 @@
         .When(it =&gt; it.IsDisplayed(timeout: TimeSpan.FromSeconds(10)))
         .SendKeys(&quot;user01&quot;);
 </code></pre>
+<pre><code class="language-csharp">webDriver.Ya().
+    LoginPage.UsernameInput
+        .SendKeys(&quot;user01&quot;, when =&gt; when.IsDisplayed());
+</code></pre>
 </div>
         </main>
     </div>
