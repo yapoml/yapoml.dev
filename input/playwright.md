@@ -4,6 +4,9 @@ Description: Generates page object classes for Microsoft Playwright with ease
 
 Generates page object classes for [Microsoft Playwright](https://playwright.dev) with ease.
 
+> **Warning**
+> It is still under construction, Selenium support is a focus.
+
 Given that you have the following `LoginPage.po.yaml` file
 
 ```yaml
