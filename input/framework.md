@@ -135,6 +135,11 @@ url: some/relative/path
 driver.Ya().HomePage.Open();
 ```
 
+It requires base url to be specified if url path is relative.
+```csharp
+driver.Ya(opts => opts.WithBaseUrl("https://example.com")).HomePage.Open();
+```
+
 `url` might have segments and query parameters
 ```yaml
 url:
@@ -152,8 +157,17 @@ Segments are required. If you need skip some particular segment from the url pat
 # Extensions
 
 ## Logging
+
+Use your own logger to handle all internal log messages.
+
+```csharp
+driver.Ya(opts => opts.WithLogger(new CustomLogger()));
+```
+
+Or use most famous log frameworks.
+
 ### Serilog
-Install [Yapoml.Extensions.Logging.Serilog](https://www.nuget.org/packages/Yapoml.Extensions.Logging.Playwright) to transfer all log messages produced by Yapoml to serilog logger.
+Install [Yapoml.Extensions.Logging.Serilog](https://www.nuget.org/packages/Yapoml.Extensions.Logging.Serilog) to transfer all log messages produced by Yapoml to serilog logger.
 
 ```csharp
 driver.Ya(opts => opts.UseSerilog());
