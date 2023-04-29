@@ -78,7 +78,7 @@ const config = {
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            href: 'https://github.com/yapoml/yapoml',
+            href: 'https://github.com/yapoml',
             "aria-label": "Open GitHub Repository",
             "title": "GitHub",
             position: 'right',
