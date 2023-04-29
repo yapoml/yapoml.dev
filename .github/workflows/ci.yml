@@ -7,9 +7,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@main
-      with:
-        submodules: recursive
-    - run: npm run deploy
-      env:
-        GIT_USER: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@master
+      - uses: redkubes/docusaurus-deploy-action@v1
+        with:
+          source-folder: website
+          git-user: docusaurus
+          git-password: ${{ secrets.GITHUB_TOKEN }}
+          deployment-branch: gh-pages
