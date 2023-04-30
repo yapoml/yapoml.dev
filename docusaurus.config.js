@@ -51,6 +51,9 @@ const config = {
           editUrl:
             'https://github.com/yapoml/yapoml.github.io/tree/main/',
         },
+        gtag: {
+          trackingID: 'G-3DWDWDXYGT'
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
