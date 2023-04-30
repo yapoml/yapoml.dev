@@ -6,24 +6,24 @@ description: Define your page objects with ease and start to automate immediatel
 
 Main goal of yapoml framework is to provide ability to generate page object models for most popular testing tools. The idea to accomplish that is specifing friendly language to describe elements on the page and all necessary classes are auto-generated and are ready to use.
 
-Just add `Login.page.yaml` file:
-```yaml
-UsernameInput: .username
+Define your web elements in `*.page.yaml` files:
+```yaml title="Login.page.yaml"
+username: .username
 ```
 
-And `yapoml` does the rest. Now you can access to web elements
-```csharp
-driver.Ya().LoginPage.UsernameInput.SendKeys("user01");
+And `yapoml` does the rest. Now you can use web elements immediately.
+```csharp 
+driver.Ya().LoginPage.Username.Type("user01");
 ```
 
 Or even define more complex relative elements
-```yaml
-LoginForm:
+```yaml title="Login.page.yaml"
+login form:
   by: .//form
 
-  UsernameInput: .username
+  username: .username
 ```
 
 ```csharp
-driver.Ya().LoginPage.LoginForm.UsernameInput.SendKeys("user01");
+driver.Ya().LoginPage.LoginForm.Username.Type("user01");
 ```
