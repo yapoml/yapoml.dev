@@ -111,7 +111,7 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/yapoml',
+                href: 'https://discord.gg/FBWVpMjnJx',
               },
               {
                 label: 'GitHub Discussions',
