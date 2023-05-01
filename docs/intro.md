@@ -4,7 +4,7 @@ description: Define your page objects with ease and start to automate immediatel
 sidebar_position: 0
 ---
 
-Main goal of yapoml framework is to provide ability to generate page object models for most popular testing tools. The idea to accomplish that is specifing friendly language to describe elements on the page and all necessary classes are auto-generated and are ready to use.
+Yapoml framework provides an ability to generate page object models for most popular testing tools on fly. It generates all necessary classes ready to use while you are typing in your IDE. 
 
 Define your web elements in `*.page.yaml` files:
 ```yaml title="Login.page.yaml"
