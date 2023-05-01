@@ -99,6 +99,11 @@ const config = {
                 label: 'Getting Started',
                 to: '/docs/intro',
               },
+            ],
+          },
+          {
+            title: 'Frameworks',
+            items: [
               {
                 label: 'Selenium',
                 to: '/docs/category/selenium',
@@ -107,7 +112,7 @@ const config = {
                 label: 'Playwright',
                 to: '/docs/category/playwright',
               },
-            ],
+            ]
           },
           {
             title: 'Community',
