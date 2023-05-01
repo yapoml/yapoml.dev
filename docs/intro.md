@@ -22,8 +22,13 @@ login form:
   by: .//form
 
   username: .username
+  password: .password
+  sign in: .//button
 ```
 
-```csharp
-driver.Ya().LoginPage.LoginForm.Username.Type("user01");
+```csharp title="Program.cs"
+driver.Ya().LoginPage.LoginForm
+  .Username.Type("user01")
+  .And.Password.Type("pass01")
+  .And.SignIn.Click();
 ```
