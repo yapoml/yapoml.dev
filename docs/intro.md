@@ -18,7 +18,7 @@ driver.Ya().LoginPage.Username.Type("user01");
 
 Or even define more complex relative elements
 ```yaml title="Login.page.yaml"
-login form:
+form:
   by: .//form
 
   username: .username
@@ -27,7 +27,7 @@ login form:
 ```
 
 ```csharp title="Program.cs"
-driver.Ya().LoginPage.LoginForm
+driver.Ya().LoginPage.Form
   .Username.Type("user01")
   .And.Password.Type("pass01")
   .And.SignIn.Click();
