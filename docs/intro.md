@@ -30,6 +30,6 @@ form:
 ```csharp title="Program.cs"
 driver.Ya().LoginPage.Form
   .Username.Type("user01")
-  .And.Password.Type("pass01")
-  .And.SignIn.Click();
+  .Password.Type("pass01")
+  .SignIn.Click();
 ```
