@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'yapoml', // Usually your GitHub org/user name.
+  projectName: 'yapoml', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -44,13 +44,13 @@ const config = {
           editUrl:
             'https://github.com/yapoml/yapoml.github.io/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/yapoml/yapoml.github.io/tree/main/',
-        },
+        //blog: {
+        //  showReadingTime: true,
+        //  // Please change this to your repo.
+        //  // Remove this to remove the "edit this page" links.
+        //  editUrl:
+        //    'https://github.com/yapoml/yapoml.github.io/tree/main/',
+        //},
         gtag: {
           trackingID: 'G-3DWDWDXYGT'
         },
