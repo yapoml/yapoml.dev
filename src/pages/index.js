@@ -33,7 +33,9 @@ function HomepageHeader() {
 }
 
 function HomePromo() {
-  const { colorMode } = useColorMode();
+  // https://github.com/facebook/docusaurus/issues/7986
+  const colorMode = document.documentElement.getAttribute('data-theme');
+  console.info(colorMode);
   
   return (
     <section>
