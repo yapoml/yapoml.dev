@@ -39,8 +39,7 @@ function HomePromo() {
     <section>
       <div className="container">
         <div className={styles.videoContainer}>
-          <video controls autoPlay loop muted className={styles.promo + ' shadow--md'}>
-              <source src={colorMode == 'dark' ? useBaseUrl("/img/promo_dark.mp4") : useBaseUrl("/img/promo_light.mp4")} type="video/mp4" />
+          <video controls autoPlay loop muted src={colorMode == 'dark' ? useBaseUrl("/img/promo_dark.mp4") : useBaseUrl("/img/promo_light.mp4")} className={styles.promo + ' shadow--md'}>
               Sorry, your browser doesn't support embedded videos.
           </video>
         </div>
