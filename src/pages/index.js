@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
+import {useColorMode} from '@docusaurus/theme-common';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 import styles from './index.module.css';
@@ -31,12 +32,20 @@ function HomepageHeader() {
 }
 
 function HomePromo() {
+  const { colorMode } = useColorMode();
+  
   return (
     <section>
-      <video autoPlay loop muted className={styles.promo}>
-          <source src="img/promo.mp4" type="video/mp4" />
-          Sorry, your browser doesn't support embedded videos.
-      </video>
+      <div className="container">
+        <div className={styles.videoContainer}>
+          <video controls autoPlay loop muted className={styles.promo + ' shadow--md'}>
+              <source src={colorMode == 'dark' ? "img/promo_dark.mp4" : "img/promo_light.mp4"} type="video/mp4" />
+              Sorry, your browser doesn't support embedded videos.
+          </video>
+        </div>
+        
+      </div>
+      
     </section>
   );
 }

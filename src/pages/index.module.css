@@ -22,6 +22,17 @@
   justify-content: center;
 }
 
+.videoContainer {
+  padding: 4rem;
+}
+
+@media screen and (max-width: 996px) {
+  .videoContainer {
+    padding: 2rem;
+  }
+}
+
 .promo {
   width: 100%;
+  border-radius: 7px;
 }
