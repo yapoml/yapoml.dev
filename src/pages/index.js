@@ -59,7 +59,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomePromo />
-        
+        <HomepageFeatures />
       </main>
     </Layout>
   );
