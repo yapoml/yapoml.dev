@@ -17,13 +17,13 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Yapoml lets you focus on your <code>page.yaml</code>,
+        Yapoml lets you focus on your application definition,
         and everything else is already available for you in a tick.
       </>
     ),
   },
   {
-    title: 'Express your Mind Fluently',
+    title: 'Express Fluently',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
