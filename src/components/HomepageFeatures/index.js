@@ -27,8 +27,8 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Start journey from <code>Ya()</code> and IDE suggests the best contextual option
-        using power of intellisense. Customize the journey with domain specific experience. 
+        Start your journey from <code>.Ya()</code> method extension and IDE suggests the best options
+        using power of intellisense. Customize this journey with domain specific experience.
       </>
     ),
   },
