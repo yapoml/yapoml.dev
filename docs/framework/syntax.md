@@ -1,7 +1,7 @@
 ---
 title: Syntax
-sidebar_position: 0
 description: Define your page objects with ease and start to automate immediatelly
+sidebar_position: 0
 ---
 
 # Syntax
