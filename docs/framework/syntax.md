@@ -12,14 +12,14 @@ Yapoml supports yaml format to define your pages and components.
 
 Page objects are defined in `*.page.yaml` files.
 
-```treeview
+```
 Project/
-|-- Pages/
-|   `-- Administration/
-|       |-- Users.page.yaml
-|       `-- Roles.page.yaml
-|-- AnyRoot.page.yaml
-`-- Project.csproj
+├── Pages/
+|   └── Administration/
+|       ├── Users.page.yaml
+|       └── Roles.page.yaml
+├── AnyRoot.page.yaml
+└── Project.csproj
 ```
 
 ```csharp
