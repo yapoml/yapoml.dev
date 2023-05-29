@@ -1,5 +1,6 @@
 ---
 title: Expected Conditions
+description: Awaitable conditions enabling further flow execution
 sidebar_position: 1
 ---
 
