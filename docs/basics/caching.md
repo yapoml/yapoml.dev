@@ -1,6 +1,6 @@
 ---
 title: Caching
-description: Framework doesn't find components if it is already found
+description: Yapoml doesn't find components if it is already found
 sidebar_position: 3
 ---
 
