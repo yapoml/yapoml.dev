@@ -21,7 +21,7 @@ ya.LoginPage.UsernameInput
 
 Above examples wait until `UsernameInput` component is enabled, and then type `john` text.
 
-## Chainable
+## Chain multiple conditions
 Conditions are chainable, even with near components.
 
 ```csharp
@@ -36,7 +36,9 @@ Conditions are also can be considered as awaitable assertions.
 ```csharp
 page.SearchButton.Expect(its => its.Styles["cursor"].Is("default"));
 ```
+
 If a condition wasn't meet, exception is raised.
+
 ```
 System.TimeoutException : Style 'cursor = pointer' of the search button component is not 'default' yet.
 
@@ -44,7 +46,7 @@ System.TimeoutException : Style 'cursor = pointer' of the search button componen
 ```
 
 :::note Timeout
-Any condition may accept optional `timeout` parameter. Default is 30 seconds.
+Any condition accepts optional `timeout` parameter. Default is `30` seconds.
 
 ```csharp
 page.Expect(it => it.IsLoaded(timeout: TimeSpan.FromSeconds(50)));
