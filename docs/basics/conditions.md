@@ -21,13 +21,42 @@ ya.LoginPage.UsernameInput
 
 Above examples wait until `UsernameInput` component is enabled, and then type `john` text.
 
-:::note
-Conditions are chainable. `.IsDisplayed().IsEnabled()` is also right way how to expect multiple conditions.
+## Chainable
+Conditions are chainable, even with near components.
 
-Or expect some conditions for inner components: `form.Expect(it => it.IsDisplayed().UsernameInput.IsEnabled())`.
+```csharp
+form.Expect(it => it.IsDisplayed().IsEnabled().UsernameInput.IsEnabled()).Submit();
+```
+
+It waits until the form is displayed and enabled, and username input is enabled.
+
+## Awaitable assertions
+Conditions are also can be considered as awaitable assertions.
+
+```csharp
+page.SearchButton.Expect(its => its.Styles["cursor"].Is("default"));
+```
+If a condition wasn't meet, exception is raised.
+```
+System.TimeoutException : Style 'cursor = pointer' of the search button component is not 'default' yet.
+
+  Timeout is 30 seconds and polling each 0.5 seconds.
+```
+
+:::note Timeout
+Any condition may accept optional `timeout` parameter. Default is 30 seconds.
+
+```csharp
+page.Expect(it => it.IsLoaded(timeout: TimeSpan.FromSeconds(50)));
+```
+
+Or configure it globally.
+
+```csharp
+driver.Ya(options => options.WithTimeout(TimeSpan.FromSeconds(50)))
+```
 :::
 
-Conditions are also can be considered as awaitable assertions.
 
 ## Page level conditions
 
