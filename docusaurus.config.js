@@ -7,6 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Yapoml',
+  titleDelimiter: '·',
   tagline: 'Yet another page object generation in .NET',
   favicon: 'img/favicon.ico',
 
