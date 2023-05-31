@@ -45,6 +45,7 @@ const config = {
           editUrl:
             'https://github.com/yapoml/yapoml.github.io/tree/main/',
         },
+        blog: false,
         //blog: {
         //  showReadingTime: true,
         //  // Please change this to your repo.
