@@ -121,7 +121,7 @@ Conditions for checking text content of the component.
 signInButton.Expect(its => its.Text.Is("Sign In"));
 
 // ignoring case
-signInButton.Expect(its => its.Text.Is("Sign In", StringComparison.OrdinalIgnoreCase));
+signInButton.Expect(its => its.Text.Is("sign in", StringComparison.OrdinalIgnoreCase));
 ```
 
 #### List of textual conditions
