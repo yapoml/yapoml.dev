@@ -41,8 +41,7 @@ If a condition wasn't meet, exception is raised.
 
 ```
 System.TimeoutException : Style 'cursor = pointer' of the search button component is not 'default' yet.
-
-  Timeout is 30 seconds and polling each 0.5 seconds.
+  ----> System.TimeoutException : Condition was not satisfied within 30 seconds when polled every 0.5 seconds.
 ```
 
 :::note Timeout
@@ -60,7 +59,7 @@ driver.Ya(options => options.WithTimeout(TimeSpan.FromSeconds(50)))
 :::
 
 
-## Page level conditions
+## Page conditions
 
 ### IsLoaded
 Evaluates document's state to be `complete` which means the page is fully loaded. It doesn't guarantee that some components on the page are present, they might be rendered dynamically. 
@@ -87,7 +86,7 @@ page.Expect(its => its.Title.StartsWith("Administration"));
 ```
 
 
-## Component level conditions
+## Component conditions
 
 ### IsDisplayed
 Waits until a certain component is present and displayed. This method avoids the problem of having to parse an element's style attribute. You can use it for verifying the presence of a component. The opposite version is **IsNotDisplayed**.
@@ -162,3 +161,20 @@ Or use well-known styles
 ```csharp
 signInButton.Expect(its => its.Styles.Color.Contains("255"));
 ```
+
+
+## Components collection conditions
+
+### Count
+
+Condition for collection of components to verify its count of components.
+
+**Usage**
+
+```csharp
+ya.SearchResultsPage.Results.Expect(its => its.Count.Is(20));
+```
+
+#### List of numeric conditions
+
+- **Is** - strict comparison of numeric value.
