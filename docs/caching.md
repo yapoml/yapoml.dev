@@ -1,7 +1,7 @@
 ---
 title: Caching
 description: Yapoml doesn't find components if it is already found
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 ```csharp

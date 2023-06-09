@@ -1,7 +1,7 @@
 ---
 title: Conditions
 description: Awaitable conditions enabling further flow execution
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 There are two ways how to expect some conditions on the page before making any further actions.
