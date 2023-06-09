@@ -176,6 +176,9 @@ ya.SearchResultsPage.Results.Expect(its => its.Count.Is(20));
 #### List of numeric conditions
 
 - **Is** - strict comparison of numeric value.
+- **IsNot**
+- **IsGreaterThan**
+- **IsLessThan**
 
 ### All
 Condition to be satisfied by all components in the list.
