@@ -166,11 +166,9 @@ signInButton.Expect(its => its.Styles.Color.Contains("255"));
 ## Components collection conditions
 
 ### Count
-
 Condition for collection of components to verify its count of components.
 
 **Usage**
-
 ```csharp
 ya.SearchResultsPage.Results.Expect(its => its.Count.Is(20));
 ```
@@ -178,3 +176,11 @@ ya.SearchResultsPage.Results.Expect(its => its.Count.Is(20));
 #### List of numeric conditions
 
 - **Is** - strict comparison of numeric value.
+
+## All
+Condition to be satisfied by all components in the list.
+
+**Usage**
+```csharp
+ya.SearchResultsPage.Results.Expect(that => that.All(r => r.Attributes.Href.IsNot(string.Empty)));
+```
