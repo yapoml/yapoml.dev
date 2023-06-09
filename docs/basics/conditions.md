@@ -177,7 +177,7 @@ ya.SearchResultsPage.Results.Expect(its => its.Count.Is(20));
 
 - **Is** - strict comparison of numeric value.
 
-## All
+### All
 Condition to be satisfied by all components in the list.
 
 **Usage**
