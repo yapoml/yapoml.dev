@@ -182,10 +182,10 @@ ya.SearchResultsPage.Results.Expect(its => its.Count.Is(20));
 - **IsGreaterThan**
 - **IsLessThan**
 
-### All
-Condition to be satisfied by all components in the list.
+### Each
+Condition to be satisfied by each component in the list.
 
 **Usage**
 ```csharp
-ya.SearchResultsPage.Results.Expect(that => that.All(r => r.Attributes.Href.IsNot(string.Empty)));
+ya.SearchResultsPage.Results.Expect(that => that.Each(r => r.Attributes.Href.IsNot(string.Empty)));
 ```
