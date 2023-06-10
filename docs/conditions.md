@@ -127,6 +127,8 @@ signInButton.Expect(its => its.Text.Is("sign in", StringComparison.OrdinalIgnore
 
 - **Is** - strict comparison of string value. Has optional `StringComparison` parameter.
 - **IsNot**
+- **IsEmpty**
+- **IsNotEmpty**
 - **Matches**
 - **DoesNotMatch**
 - **StartsWith**
