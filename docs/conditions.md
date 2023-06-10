@@ -100,7 +100,7 @@ signInButton.Click(when => when.IsDisplayed());
 This method protects your program from ridiculous exceptions when a component is not attached to the DOM yet. Usually it happens with dynamic components. When a component is attached to the DOM, it means that it is present in the HTML code of the page. It doesn't mean the component is visible. If you get an error message something like _Element is no longer attached to the DOM_ while running your program, it means that the component you are trying to interact with has been removed from the DOM. The opposite version is **DoesNotExist**.
 
 **Usage**
-```charp
+```csharp
 modal.Expect(it => it.Exists());
 ```
 
