@@ -143,12 +143,12 @@ Certain conditions for a component's attributes what define characteristics and 
 
 **Usage**
 ```csharp
-usernameInput.Expect(its => its.Attributes["value"].Is(string.Empty));
+usernameInput.Expect(its => its.Attributes["value"].IsEmpty());
 ```
 
 Or use well-known attributes
 ```csharp
-usernameInput.Expect(its => its.Attributes.Value.Is(string.Empty));
+usernameInput.Expect(its => its.Attributes.Value.IsEmpty());
 ```
 
 ### Styles
@@ -187,5 +187,5 @@ Condition to be satisfied by each component in the list.
 
 **Usage**
 ```csharp
-ya.SearchResultsPage.Results.Expect(that => that.Each(r => r.Attributes.Href.IsNot(string.Empty)));
+ya.SearchResultsPage.Results.Expect(that => that.Each(r => r.Attributes.Href.IsNotEmpty()));
 ```
