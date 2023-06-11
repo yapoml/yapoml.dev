@@ -197,3 +197,11 @@ Expect at least one component in the list satisfies expected condition.
 ```csharp
 ya.SearchResultsPage.Results.Expect(that => that.Contain(r => r.Attributes.Href.IsNotEmpty()));
 ```
+
+### DoNotContain
+Expect all components in the list don't satisfy condition.
+
+**Usage**
+```csharp
+ya.SearchResultsPage.Results.Expect(that => that.DoNotContain(r => r.IsNotEmpty()));
+```
