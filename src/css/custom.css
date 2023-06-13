@@ -29,6 +29,14 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
+.DocSearch-Button-Keys {
+  display: none !important;
+}
+
+.DocSearch-Footer {
+  display: none !important;
+}
+
 [data-theme='light'] .DocSearch {
   /* --docsearch-primary-color: var(--ifm-color-primary); */
   /* --docsearch-text-color: var(--ifm-font-color-base); */
