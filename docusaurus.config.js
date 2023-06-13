@@ -148,6 +148,11 @@ const config = {
         ],
         // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
+      algolia: {
+        appId: 'BVKM0WY7UJ',
+        apiKey: 'b0603fa2ef1bc888ad02464be8195cc3',
+        indexName: 'yapoml',
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
