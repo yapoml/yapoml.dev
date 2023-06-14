@@ -34,13 +34,17 @@ It waits until the form is displayed and enabled, and username input is enabled.
 Conditions are also can be considered as awaitable assertions.
 
 ```csharp
-page.SearchButton.Expect(its => its.Styles["cursor"].Is("default"));
+homePage.SearchInput
+  .Type("It was great!")
+  .Expect(its => its.Attributes.Value.Is("That is great!"));
 ```
 
 If a condition wasn't meet, exception is raised.
 
 ```
-System.TimeoutException : Style 'cursor = pointer' of the search button component is not 'default' yet.
+System.TimeoutException : Attribute 'value = It was great!' of the search input component is not 'That is great!' yet.
+  ┐That i┌s great!
+  └It wa─┘        
   ----> System.TimeoutException : Condition was not satisfied within 30 seconds when polled every 0.5 seconds.
 ```
 
