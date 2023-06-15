@@ -48,7 +48,7 @@ System.TimeoutException : Attribute 'value = It was great!' of the search input 
   ----> System.TimeoutException : Condition was not satisfied within 30 seconds when polled every 0.5 seconds.
 ```
 
-:::note Timeout
+:::tip Timeout
 Any condition accepts optional `timeout` parameter. Default is `30` seconds.
 
 ```csharp
@@ -66,7 +66,13 @@ driver.Ya(options => options.WithTimeout(TimeSpan.FromSeconds(50)))
 ## Page conditions
 
 ### IsLoaded
-Evaluates document's state to be `complete` which means the page is fully loaded. It doesn't guarantee that some components on the page are present, they might be rendered dynamically. 
+Evaluates document's state to be `complete` which means the page is fully loaded. It doesn't guarantee that some components on the page are present, they might be rendered dynamically.
+
+:::info url
+If `url` is defined for the page, then it also evaluates current url.
+
+TBD: Supported only if `url` has no segments and query parameters.
+:::
 
 **Usage**
 ```csharp
