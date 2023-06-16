@@ -201,19 +201,11 @@ ya.SearchResultsPage.Results.Expect(that => that.Each(r => r.Attributes.Href.IsN
 ```
 
 ### Contain
-Expect at least one component in the list satisfies expected condition.
+Expect at least one component in the list satisfies expected condition. The opposite version is **DoesNotContain**.
 
 **Usage**
 ```csharp
 ya.SearchResultsPage.Results.Expect(that => that.Contain(r => r.Attributes.Href.IsNotEmpty()));
-```
-
-### DoNotContain
-Expect all components in the list don't satisfy condition.
-
-**Usage**
-```csharp
-ya.SearchResultsPage.Results.Expect(that => that.DoNotContain(r => r.IsNotEmpty()));
 ```
 
 ### IsEmpty
