@@ -42,9 +42,10 @@ homePage.SearchInput
 If a condition wasn't meet, exception is raised.
 
 ```
-System.TimeoutException : Attribute 'value = It was great!' of the search input component is not 'That is great!' yet.
-  ┐That i┌s great!
-  └It wa─┘        
+System.TimeoutException : Attribute value of the search input is not 'That is great!',
+  it was ┐That i┌s great!
+         └It wa ┘        
+
   ----> System.TimeoutException : Condition was not satisfied within 30 seconds when polled every 0.5 seconds.
 ```
 
