@@ -61,7 +61,7 @@ Or configure it globally.
 driver.Ya(options => options.WithTimeout(TimeSpan.FromSeconds(50)))
 ```
 
-For instant assertions you can use `TimeSpan.Zero` (looking for better alterative)
+For instant assertions you can use `TimeSpan.Zero` (looking for better alternative)
 ```csharp
 // it doesn't wait until page title equals to 'Yapoml',
 // throws immediately if not
