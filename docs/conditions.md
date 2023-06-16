@@ -215,3 +215,11 @@ Expect all components in the list don't satisfy condition.
 ```csharp
 ya.SearchResultsPage.Results.Expect(that => that.DoNotContain(r => r.IsNotEmpty()));
 ```
+
+### IsEmpty
+Expect the count of components is `0`. The opposite version is **IsNotEmpty**.
+
+**Usage**
+```csharp
+ya.SearchResultsPage.Results.Expect(that => that.IsEmpty());
+```
