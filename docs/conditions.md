@@ -57,9 +57,15 @@ page.Expect(it => it.IsLoaded(timeout: TimeSpan.FromSeconds(50)));
 ```
 
 Or configure it globally.
-
 ```csharp
 driver.Ya(options => options.WithTimeout(TimeSpan.FromSeconds(50)))
+```
+
+For instant assertions you can use `TimeSpan.Zero` (looking for better alterative)
+```csharp
+// it doesn't wait until page title equals to 'Yapoml',
+// throws immediately 
+page.Expect(its => its.Title.Is("Yapoml", TimeSpan.Zero));
 ```
 :::
 
