@@ -64,7 +64,7 @@ driver.Ya(options => options.WithTimeout(TimeSpan.FromSeconds(50)))
 For instant assertions you can use `TimeSpan.Zero` (looking for better alterative)
 ```csharp
 // it doesn't wait until page title equals to 'Yapoml',
-// throws immediately 
+// throws immediately if not
 page.Expect(its => its.Title.Is("Yapoml", TimeSpan.Zero));
 ```
 :::
