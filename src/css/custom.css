@@ -37,6 +37,10 @@
   display: none !important;
 }
 
+.DocSearch-Button-Placeholder {
+  display: none;
+}
+
 [data-theme='light'] .DocSearch {
   /* --docsearch-primary-color: var(--ifm-color-primary); */
   /* --docsearch-text-color: var(--ifm-font-color-base); */
