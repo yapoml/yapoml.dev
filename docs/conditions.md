@@ -86,7 +86,7 @@ TBD: Supported only if `url` has no segments and query parameters.
 page.Expect(it => it.IsLoaded());
 ```
 
-### Url
+### Url…
 Various conditions for current page `Url`. It can be `page.Expect(its => its.Url.Is("something"))`, or `.EndsWith("something")`, [etc](#list-of-textual-conditions).
 
 **Usage**
@@ -94,7 +94,7 @@ Various conditions for current page `Url`. It can be `page.Expect(its => its.Url
 page.Expect(its => its.Url.Contains("/user?name=john"));
 ```
 
-### Title
+### Title…
 Various conditions for current title of the page. There are a lot of verifications due to textual nature of the title, e.g. `.Is("something")` or `Contains("something")`, [etc](#list-of-textual-conditions).
 
 **Usage**
@@ -155,7 +155,7 @@ signInButton.Expect(its => its.Text.Is("sign in", StringComparison.OrdinalIgnore
 - **Contains**
 - **DoesNotContain**
 
-### Attributes
+### Attributes…
 Certain conditions for a component's attributes what define characteristics and properties of a component. In web this is html attribute for the specified tag. Due to textual nature of the attributes, you can use [many ways](#list-of-textual-conditions) to create conditions for attributes.
 
 **Usage**
@@ -168,7 +168,7 @@ Or use well-known attributes
 usernameInput.Expect(its => its.Attributes.Value.IsEmpty());
 ```
 
-### Styles
+### Styles…
 Provides a different conditions to wait some computed style of a component, such as color, font, size, and more.
 
 **Usage**
@@ -184,7 +184,7 @@ signInButton.Expect(its => its.Styles.Color.Contains("255"));
 
 ## Components collection conditions
 
-### Count
+### Count…
 Condition for collection of components to verify its count of components.
 
 **Usage**

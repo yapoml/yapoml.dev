@@ -54,8 +54,8 @@ Segments are required. If you need skip some particular segment from the url pat
 #### IsEnabled
 #### IsFocused
 #### Text
-#### Attributes
-#### Styles
+#### Attributes…
+#### Styles…
 #### IsInView
 
 ### Methods
