@@ -141,7 +141,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/orgs/yapoml/discussions',
+                href: 'https://github.com/orgs/yapoml',
               },
             ],
           },
