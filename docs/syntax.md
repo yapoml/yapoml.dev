@@ -1,6 +1,6 @@
 ---
 title: Syntax
-description: Define your page objects with ease and start to automate immediatelly
+description: Define your page objects with ease and start to automate immediately
 sidebar_position: 1
 ---
 
@@ -91,36 +91,3 @@ MyButton: ./button
 MyOtherComponent:
   ref: My # or 'base: My'
 ```
-
-
-## Navigation
-
-If a page has definited `url` property then this page has generated `Open()` method.
-
-```yaml title="Home.page.yaml"
-url: some/relative/path
-```
-
-```csharp
-driver.Ya().HomePage.Open();
-```
-
-It requires base url to be specified if url path is relative.
-```csharp
-driver.Ya(opts => opts.WithBaseUrl("https://example.com")).HomePage.Open();
-```
-
-`url` might have segments and query parameters
-```yaml
-url:
-  path: /users/{userId}
-  query:  # or params
-    - p1
-    - p2
-```
-```csharp
-driver.Ya().HomePage.Open("123", p2: "any value") // navigates to /users/123?p2=any%20value
-```
-
-Segments are required. If you need skip some particular segment from the url path, you can put `null`. Query parameters are always optional.
-

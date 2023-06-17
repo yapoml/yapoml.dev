@@ -1,7 +1,6 @@
 ---
 title: Logging
 description: Use any log framework for your tests
-sidebar_position: 3
 ---
 
 Use your own logger to handle all internal log messages.
