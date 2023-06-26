@@ -42,7 +42,7 @@ homePage.SearchInput
 If a condition wasn't meet, exception is raised.
 
 ```
-System.TimeoutException : Attribute value of the search input is not 'That is great!',
+Yapoml.ExpectException : Attribute value of the search input is not 'That is great!',
   it was ┐That i┌s great!
          └It wa ┘        
 
