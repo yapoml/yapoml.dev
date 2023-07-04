@@ -204,7 +204,7 @@ Condition to be satisfied by each component in the list.
 
 **Usage**
 ```csharp
-ya.SearchResultsPage.Results.Expect(that => that.Each(r => r.Attributes.Href.StartsWith("https://")));
+ya.SearchResultsPage.Results.Expect(its => its.Each(r => r.Attributes.Href.StartsWith("https://")));
 ```
 
 ### Contain
@@ -212,7 +212,7 @@ Expect at least one component in the list satisfies expected condition. The oppo
 
 **Usage**
 ```csharp
-ya.SearchResultsPage.Results.Expect(that => that.Contain(r => r.Attributes.Href.StartsWith("ftp://")));
+ya.SearchResultsPage.Results.Expect(it => it.Contains(r => r.Attributes.Href.StartsWith("ftp://")));
 ```
 
 ### IsEmpty
@@ -220,5 +220,5 @@ Expect the count of components is `0`. The opposite version is **IsNotEmpty**.
 
 **Usage**
 ```csharp
-ya.SearchResultsPage.Results.Expect(that => that.IsEmpty());
+ya.SearchResultsPage.Results.Expect(it => it.IsEmpty());
 ```
