@@ -207,7 +207,7 @@ Condition to be satisfied by each component in the list.
 ya.SearchResultsPage.Results.Expect(its => its.Each(r => r.Attributes.Href.StartsWith("https://")));
 ```
 
-### Contain
+### Contains
 Expect at least one component in the list satisfies expected condition. The opposite version is **DoesNotContain**.
 
 **Usage**
