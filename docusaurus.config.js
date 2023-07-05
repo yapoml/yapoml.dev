@@ -81,16 +81,15 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            position: 'right',
             label: 'Docs',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
+            label: "GitHub",
             href: 'https://github.com/yapoml',
             "aria-label": "Open GitHub Repository",
             "title": "GitHub",
             position: 'right',
-            className: "header-github-link",
           },
         ],
       },
@@ -141,7 +140,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/orgs/yapoml',
+                href: 'https://github.com/yapoml',
               },
             ],
           },
