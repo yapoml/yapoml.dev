@@ -72,7 +72,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/yapoml-social-card.png',
       navbar: {
-        title: 'Yapoml',
+        title: 'Yet another page object generation',
         logo: {
           alt: 'Yapoml Logo',
           src: 'img/logo.svg',
