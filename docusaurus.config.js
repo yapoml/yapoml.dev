@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Yapoml',
+  title: 'Yet another page object generation',
   titleDelimiter: '·',
   tagline: 'Yet another page object generation in .NET',
   favicon: 'img/logo_dark.svg',
@@ -72,7 +72,7 @@ const config = {
       // Replace with your project's social card
       image: 'img/yapoml-social-card.png',
       navbar: {
-        title: 'Yet another page object generation',
+        title: 'Yapoml',
         logo: {
           alt: 'Yapoml Logo',
           src: 'img/logo.svg',
