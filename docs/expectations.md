@@ -1,6 +1,6 @@
 ---
-title: Conditions
-description: Awaitable conditions enabling further flow execution
+title: Expectations
+description: Awaitable expectations enabling further flow execution
 sidebar_position: 3
 ---
 
@@ -32,8 +32,8 @@ form
 
 It waits until the form is displayed and enabled, and username input is enabled.
 
-## Awaitable assertions
-Conditions are also can be considered as awaitable assertions.
+## Awaitable expectations
+Expectations are also can be considered as awaitable assertions.
 
 ```csharp
 homePage.SearchInput
