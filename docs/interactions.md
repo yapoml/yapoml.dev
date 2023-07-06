@@ -50,12 +50,98 @@ Segments are required. If you need skip some particular segment from the url pat
 ### Properties
 
 #### IsDisplayed
+
+Indicates whether a component is visible on the page or not. Returns a boolean value: `true` if the element is displayed, and `false` if the element is hidden or not present.
+
+Useful for verifying the visibility of components that may change dynamically based on user actions or page conditions. For example, you can use it to check if a dropdown menu is expanded or collapsed, or if a modal dialog is open or closed. It does not check if the component is within the viewport or not. It only checks if the element is rendered on the page, regardless of its position or size. Look at [IsInView](#isinview) property if you need to check whether the component is within the viewport.
+
+**Usage**
+```csharp
+bool visible = driver.Ya().HomePage.SearchButton.IsDisplayed;
+```
+
 #### IsEnabled
-#### IsFocused
+
+Used to indicate whether a component can respond to user interactions or not. It returns a boolean value: `true` if the element is enabled, and `false` if the element is disabled.
+
+For example, you can use it to check if a checkbox is checked or unchecked, or if a text field is editable or read-only.
+
+**Usage**
+```csharp
+bool enabled = driver.Ya().HomePage.SearchButton.IsEnabled;
+```
+
 #### Text
+
+Gets the visible text of a component. It returns a string value that represents the inner text of the element. For example, you can use it to check if a label displays the correct message, or if a paragraph contains the expected text.
+
+**Usage**
+```csharp
+string text = driver.Ya().HomePage.SearchButton.Text;
+```
+
+:::note
+This property may not work as expected for some components that do not have any visible text content. For example, input elements (`<input>`) do not have any inner text, so they will return an empty string for this property. To get the value of an input element, you may need to use the [Attributes.Value](#attributes) property.
+:::
+
 #### Attributes…
+
+Gets the value of an attribute of a component as a string. It can also retrieve component properties, such as an anchor tag’s `href` attribute.
+
+For example, you can use it to check if an input element has a value attribute that matches the expected input, or if an image element has an alt attribute that describes the image.
+
+**Usage**
+```csharp
+string value = driver.Ya().HomePage.SearchInput.Attributes["value"];
+```
+
+:::tip
+Well-known attributes are accessible shortly.
+
+```csharp
+var value = driver.Ya().HomePage.SearchInput.Attributes.Value;
+// or
+var href = driver.Ya().HomePage.Logo.Attributes.Href;
+```
+:::
+
 #### Styles…
+
+Gets the value of a CSS property of a component as a string. It can be used to retrieve the computed style of a component, such as its `color`, `font-size`, or `display`.
+
+For example, you can use it to check if an element has a certain background color, or if an element is visible or hidden by its display property.
+
+**Usage**
+```csharp
+string color = driver.Ya().HomePage.SearchButton.Styles["color"];
+```
+
+:::tip
+Well-known styles are accessible shortly.
+```csharp
+var color = driver.Ya().HomePage.SearchButton.Styles.Color;
+// or
+var opacity = driver.Ya().HomePage.SearchButton.Styles.Opacity;
+```
+:::
+
+#### IsFocused
+
+Indicates whether a component currently has logical focus or not. It returns a boolean value: `true` if the component has focus, and `false` if the component does not have focus.
+
+**Usage**
+```csharp
+bool hasFocus = driver.Ya().HomePage.SearchInput.IsFocused;
+```
+
 #### IsInView
+
+Indicates whether a component currently is partially visible within viewport or not. It returns a boolean value: `true` if the component is in viewport, and `false` if the component is not.
+
+**Usage**
+```csharp
+bool isInViewport = driver.Ya().HomePage.SearchInput.IsInView;
+```
 
 ### Methods
 

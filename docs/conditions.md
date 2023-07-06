@@ -25,7 +25,9 @@ Above examples wait until `UsernameInput` component is enabled, and then type `j
 Conditions are chainable, even with near components.
 
 ```csharp
-form.Expect(it => it.IsDisplayed().IsEnabled().UsernameInput.IsEnabled()).Submit();
+form
+  .Expect(it => it.IsDisplayed().IsEnabled().UsernameInput.IsEnabled())
+  .Submit();
 ```
 
 It waits until the form is displayed and enabled, and username input is enabled.
