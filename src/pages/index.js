@@ -14,7 +14,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
+        <h1 className="hero__title">Yapoml</h1>
         <p className="hero__subtitle">
           Yet another
           <span> page object generation </span>
