@@ -9,7 +9,7 @@ const config = {
   title: 'Yapoml',
   titleDelimiter: '·',
   tagline: 'Yet another page object generation in .NET',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo_dark.svg',
 
   // Set the production url of your site here
   url: 'https://yapoml.dev',
@@ -70,12 +70,13 @@ const config = {
         defaultMode: 'dark',
       },
       // Replace with your project's social card
-      image: 'img/yapoml-social-card.jpg',
+      image: 'img/yapoml-social-card.png',
       navbar: {
         title: 'Yapoml',
         logo: {
           alt: 'Yapoml Logo',
-          src: 'img/logo.png',
+          src: 'img/logo.svg',
+          srcDark: 'img/logo_dark.svg',
         },
         items: [
           {
