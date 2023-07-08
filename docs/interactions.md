@@ -146,6 +146,21 @@ bool isInViewport = driver.Ya().HomePage.SearchInput.IsInView;
 ### Methods
 
 #### Click
+
+Simulates a mouse click on a component. It can be used to interact with buttons, links, checkboxes, radio buttons, and other clickable components on a page.
+
+**Usage**
+```csharp
+driver.Ya().HomePage.SearchButton.Click();
+```
+
+Or with specified `offset`.
+```csharp
+driver.Ya().HomePage.SearchButton.Click(x: 20, y: 30);
+```
+
+The `Click` method performs a left-click by default. To perform other click actions see [ContextClick](#contextclick), [DoubleClick](#doubleclick), [DragAndDrop](#draganddrop), etc.
+
 #### DoubleClick
 #### ContextClick
 #### Type
