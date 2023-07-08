@@ -162,6 +162,14 @@ driver.Ya().HomePage.SearchButton.Click(x: 20, y: 30);
 The `Click` method performs a left-click by default. To perform other click actions see [ContextClick](#contextclick), [DoubleClick](#doubleclick), [DragAndDrop](#draganddrop), etc.
 
 #### DoubleClick
+
+Simulate a mouse double click on a component. It can be used to interact with elements that require a double click to launch specific functions, such as opening a file, selecting a word of text, etc.
+
+**Usage**
+```csharp
+driver.Ya().HomePage.Pane.DoubleClick();
+```
+
 #### ContextClick
 #### Type
 #### Clear
