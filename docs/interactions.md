@@ -163,7 +163,7 @@ The `Click` method performs a left-click by default. To perform other click acti
 
 #### DoubleClick
 
-Simulate a mouse double click on a component. It can be used to interact with elements that require a double click to launch specific functions, such as opening a file, selecting a word of text, etc.
+Simulates a mouse double click on a component. It can be used to interact with elements that require a double click to launch specific functions, such as opening a file, selecting a word of text, etc.
 
 **Usage**
 ```csharp
@@ -171,6 +171,14 @@ driver.Ya().HomePage.Pane.DoubleClick();
 ```
 
 #### ContextClick
+
+Simulates a mouse right click on a component. It can be used to interact with elements that show a context menu when right clicked, such as opening a link in a new tab, copying text.
+
+**Usage**
+```csharp
+driver.Ya().HomePage.Pane.ContextClick();
+```
+
 #### Type
 #### Clear
 #### Hover
