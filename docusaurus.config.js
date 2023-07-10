@@ -9,7 +9,7 @@ const config = {
   title: 'Yet another page object generation',
   titleDelimiter: '·',
   tagline: 'Yet another page object generation in .NET',
-  favicon: 'img/logo_dark.svg',
+  favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
   url: 'https://yapoml.dev',
