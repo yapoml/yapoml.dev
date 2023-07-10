@@ -69,8 +69,8 @@ const config = {
       colorMode: {
         defaultMode: 'dark',
       },
-      // Replace with your project's social card
       image: 'img/yapoml-social-card.png',
+      metadata: [{name: 'keywords', content: 'automation, testing, page object, pom, generation, selenium webdriver, playwright'}],
       navbar: {
         title: 'Yapoml',
         logo: {
