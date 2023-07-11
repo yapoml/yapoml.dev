@@ -180,9 +180,66 @@ driver.Ya().HomePage.Pane.ContextClick();
 ```
 
 #### Type
+
+Sends a sequence of keystrokes to a component. It is useful for entering text, selecting options, or performing keyboard shortcuts. For example, you can use it to type a query in a search box, choose a value from a dropdown menu, or press the enter key.
+
+**Usage**
+```csharp
+driver.Ya().HomePage.SearchInput.Type("yapoml");
+```
+
 #### Clear
+
+Clears the text from a component. It is useful for deleting the existing text before entering new text. For example, you can use it to erase a query in a search box, or clear a password field.
+
+**Usage**
+```csharp
+driver.Ya().HomePage.SearchInput.Clear();
+```
+
 #### Hover
+
+Simulates a mouse hover over a component. It is useful for triggering events that depend on the mouse cursor position, such as displaying tooltips, menus, or pop-ups. For example, you can use it to hover over a link to see its URL, or hover over a button to see its description.
+
+**Usage**
+```csharp
+driver.Ya().HomePage.SearchButton.Hover();
+```
+
 #### Focus
+
+Sets the focus on a component. It is useful for activating the component or preparing it for user input. For example, you can use it to focus on a text field before typing, or focus on a checkbox before clicking.
+
+**Usage**
+```csharp
+driver.Ya().HomePage.SearchButton.Focus();
+```
+
 #### Blur
+
+Removes the focus from a component. It is useful for deactivating the component or triggering events that depend on the focus state, such as validation or formatting. For example, you can use it to blur a text field after typing, or blur a dropdown menu after selecting an option.
+
+**Usage**
+```csharp
+driver.Ya().HomePage.SearchInput.Blur();
+```
+
 #### DragAndDrop
+
+Performs a drag and drop action on a component. It is useful for moving a component from one location to another, such as rearranging items, sorting lists, or uploading files. For example, you can use it to drag an image from a gallery and drop it into a trash bin, or drag a file from a folder and drop it into an upload box.
+
+**Usage**
+```csharp
+var homePage = driver.Ya().HomePage;
+
+homePage.SearchButton.DragAndDrop(homePage.Trash);
+```
+
 #### ScrollIntoView
+
+Scrolls the web page until a component is visible. It is useful for accessing components that are not in the current viewport, such as hidden or lazy-loaded components. For example, you can use it to scroll to the bottom of a page to see the footer, or scroll to a specific section of a page to see its content.
+
+**Usage**
+```csharp
+driver.Ya().HomePage.SearchButton.ScrollIntoView();
+```
