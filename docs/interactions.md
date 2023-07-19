@@ -63,7 +63,7 @@ bool visible = driver.Ya().HomePage.SearchButton.IsDisplayed;
 ```
 
 :::note
-It doesn't expect a component exists in DOM. If a component is not in DOM, then it returns `false` which  is  treated as invisible.
+It doesn't expect a component exists in DOM. It only returns `true` if a component is found in DOM and visible. Otherwise, it returns `false`.
 :::
 
 #### IsEnabled
