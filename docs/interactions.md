@@ -62,6 +62,10 @@ Useful for verifying the visibility of components that may change dynamically ba
 bool visible = driver.Ya().HomePage.SearchButton.IsDisplayed;
 ```
 
+:::note
+It doesn't expect a component exists in DOM. If a component is not in DOM, then it returns `false` which  is  treated as invisible.
+:::
+
 #### IsEnabled
 
 Used to indicate whether a component can respond to user interactions or not. It returns a boolean value: `true` if the element is enabled, and `false` if the element is disabled.
