@@ -22,8 +22,8 @@ Our application has login page, which is defined in `Login.page.yaml` file. Logi
 
 - `driver.Ya()` - main entry point for all consumers, your journey always starts here,
 - `.LoginPage` - accessing to login page object,
-- `.Username` - accessing to username input field
-- `.Type("user01")` - send keyboard events into username input field
+- `.Username` - accessing to username input field,
+- `.Type("user01")` - send keyboard events into username input field requires no explicit waiting
 :::
 
 Or define more complex relative components.

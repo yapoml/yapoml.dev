@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Install nuget package for your test project and start defining pages in your favorite IDE.
+        Reliable approach to interact with UI components in automated testing area. 
       </>
     ),
   },

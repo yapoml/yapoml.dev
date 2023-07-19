@@ -11,6 +11,8 @@ Explore here available methods how you can interact with your pages and componen
 ya.SearchPage.Open().SearchInput.Clear().Type("yapoml");
 ```
 
+All components are automatically awaited to be presented on the page before any interaction, providing a possibility to specify [expectations](expectations.md) explicitly.
+
 ## Page
 
 ### Methods
