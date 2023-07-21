@@ -53,7 +53,7 @@ Segments are required. If you need skip some particular segment from the url pat
 
 #### IsDisplayed
 
-Indicates whether a component is visible on the page or not. Returns a boolean value: `true` if the element is displayed, and `false` if the element is hidden or not present.
+Indicates whether a component is visible on the page or not. Returns `true` if the element is displayed, and `false` if the element is hidden or not present.
 
 Useful for verifying the visibility of components that may change dynamically based on user actions or page conditions. For example, you can use it to check if a dropdown menu is expanded or collapsed, or if a modal dialog is open or closed. It does not check if the component is within the viewport or not. It only checks if the element is rendered on the page, regardless of its position or size. Look at [IsInView](#isinview) property if you need to check whether the component is within the viewport.
 
