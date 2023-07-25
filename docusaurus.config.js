@@ -9,7 +9,7 @@ const config = {
   title: 'Yet another page object generation',
   titleDelimiter: '·',
   tagline: 'Yet another page object generation in .NET',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.svg',
 
   // Set the production url of your site here
   url: 'https://yapoml.dev',
@@ -69,13 +69,13 @@ const config = {
       colorMode: {
         defaultMode: 'dark',
       },
-      image: 'img/yapoml-social-card.png',
+      image: 'img/social_card.png',
       metadata: [{name: 'keywords', content: 'automation, testing, page object, pom, generation, selenium webdriver, playwright'}],
       navbar: {
         title: 'Yapoml',
         logo: {
           alt: 'Yapoml Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo_light.svg',
           srcDark: 'img/logo_dark.svg',
         },
         items: [

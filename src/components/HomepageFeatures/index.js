@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 const FeatureList = [
   {
     title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    //Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
         Reliable approach to interact with UI components in automated testing area. 
@@ -14,7 +14,7 @@ const FeatureList = [
   },
   {
     title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    //Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
         Yapoml lets you focus on your application definition,
@@ -24,7 +24,7 @@ const FeatureList = [
   },
   {
     title: 'Express Fluently',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    //Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
         Start your journey from <code>.Ya()</code> method extension and IDE suggests the best options
