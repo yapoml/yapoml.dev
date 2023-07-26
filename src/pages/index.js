@@ -18,7 +18,7 @@ function HomepageHeader() {
         <p className="hero__subtitle">
           Yet another
           <span> page object generation </span>
-          in .NET
+          in .NET/C#
         </p>
         <div className={styles.buttons}>
           <Link

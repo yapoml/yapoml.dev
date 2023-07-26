@@ -16,7 +16,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">Yapoml for <Link to="https://selenium.dev">Selenium WebDriver</Link></h1>
         <p className="hero__subtitle">
-          Yet another page object generation in .NET built on top of Selenium WebDriver
+          Yet another page object generation in .NET/C# built on top of Selenium WebDriver
         </p>
         <div className={styles.buttons}>
           <Link
