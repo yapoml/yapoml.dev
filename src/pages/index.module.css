@@ -10,29 +10,39 @@
   overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
 .buttons {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sectionHeader {
+  text-align: center;
+  padding-top: 4rem;
 }
 
 .videoContainer {
-  padding: 4rem;
-}
-
-@media screen and (max-width: 996px) {
-  .videoContainer {
-    padding: 2rem;
-  }
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .promo {
   width: 100%;
   border-radius: 7px;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+  
+  .sectionHeader {
+    padding-top: 2rem;
+  }
+
+  .videoContainer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
