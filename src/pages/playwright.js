@@ -14,16 +14,11 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Yapoml</h1>
-        <p className="hero__subtitle">
-          Yet another
-          <span> page object generation </span>
-          in .NET
-        </p>
+        <h1 className="hero__title">Yapoml for <Link to="https://playwright.dev">Microsoft Playwright</Link></h1>
         <div className={styles.buttons}>
           <Link
             className="button button--outline button--primary button--lg margin-vert--lg"
-            to="/docs/intro">
+            to="/playwright/getting-started">
               Get started
           </Link>
         </div>

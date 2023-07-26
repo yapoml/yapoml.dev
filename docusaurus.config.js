@@ -63,6 +63,27 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'selenium',
+        path: 'selenium',
+        routeBasePath: 'selenium',
+        //sidebarPath: require.resolve('./sidebarsSelenium.js'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'playwright',
+        path: 'playwright',
+        routeBasePath: 'playwright',
+        //sidebarPath: require.resolve('./sidebarsPlaywright.js'),
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -85,6 +106,23 @@ const config = {
             label: 'Docs',
           },
           // {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'dropdown',
+            label: "Frameworks",
+            position: 'right',
+            items:[
+              {
+                to: '/selenium',
+                label: 'Selenium',
+                activeBaseRegex: `/selenium`,
+              },
+              {
+                to: '/playwright',
+                label: 'Playwright',
+                activeBaseRegex: `/playwright`,
+              },
+            ]
+          },
           {
             label: "GitHub",
             href: 'https://github.com/yapoml',
@@ -111,11 +149,11 @@ const config = {
             items: [
               {
                 label: 'Selenium',
-                to: '/docs/category/selenium',
+                to: '/selenium',
               },
               {
                 label: 'Playwright',
-                to: '/docs/category/playwright',
+                to: '/playwright',
               },
             ]
           },
