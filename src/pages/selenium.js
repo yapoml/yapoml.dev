@@ -42,7 +42,7 @@ function HomePromo() {
   return (
     <section>
       <div className="container">
-      <h2 className={styles.sectionHeader}>Watch it out</h2>
+      <h2 className={styles.sectionHeader}>Watch it out in action</h2>
         <div>
           <video controls muted src={colorMode == 'dark' ? useBaseUrl("/img/promo_dark.mp4") : useBaseUrl("/img/promo_light.mp4")} className={styles.promo + ' shadow--md'}>
               Sorry, your browser doesn't support embedded videos.
