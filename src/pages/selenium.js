@@ -26,7 +26,7 @@ function HomepageHeader() {
           </Link>
           <Link
             className="button button--outline button--primary button--lg margin--md"
-            to="vscode://vscode.git/clone?url=https%3A%2F%2Fgithub.com%yapoml%2Fyapoml.selenium.sandbox.git">
+            to="vscode://vscode.git/clone?url=https%3A%2F%2Fgithub.com%2Fyapoml%2Fyapoml.selenium.sandbox.git">
               Try it now
           </Link>
           <Link
