@@ -20,12 +20,17 @@ function HomepageHeader() {
         </p>
         <div className={styles.buttons}>
           <Link
-            className="button button--outline button--primary button--lg margin-vert--md"
+            className="button button--primary button--lg margin--md"
             to="/selenium/getting-started">
               Get started
           </Link>
           <Link
-            className="button button--link button--lg margin-vert--md"
+            className="button button--outline button--primary button--lg margin--md"
+            to="vscode://vscode.git/clone?url=https%3A%2F%2Fgithub.com%yapoml%2Fyapoml.selenium.sandbox.git">
+              Try it now
+          </Link>
+          <Link
+            className="button button--link button--lg margin--md"
             to="/docs/intro">
               What is Yapoml?
           </Link>
