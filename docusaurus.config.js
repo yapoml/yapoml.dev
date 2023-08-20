@@ -106,24 +106,9 @@ const config = {
             sidebarId: 'tutorialSidebar',
             label: 'Intro',
           },
+          {label: 'Selenium', to: '/selenium', position: 'right' },
+          {label: 'Playwright', to: '/playwright', position: 'right' },
           // {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            type: 'dropdown',
-            label: "Frameworks",
-            position: 'right',
-            items:[
-              {
-                to: '/selenium',
-                label: 'Selenium',
-                activeBaseRegex: `/selenium`,
-              },
-              {
-                to: '/playwright',
-                label: 'Playwright',
-                activeBaseRegex: `/playwright`,
-              },
-            ]
-          },
           {
             label: "GitHub",
             href: 'https://github.com/yapoml',
