@@ -104,7 +104,7 @@ const config = {
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
-            label: 'Intro',
+            label: 'Docs',
           },
           {label: 'Selenium', to: '/selenium', position: 'right' },
           {label: 'Playwright', to: '/playwright', position: 'right' },
