@@ -63,9 +63,7 @@ function HomePromo() {
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      // title={`${siteConfig.title}`}
-      description="Yet another page object generation in .NET">
+    <Layout title='Selenium' description="Yet another page object generation in .NET/C# for Selenium WebDriver">
       <HomepageHeader />
       <main>
         <HomePromo />
