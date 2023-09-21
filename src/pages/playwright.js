@@ -15,11 +15,24 @@ function HomepageHeader() {
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">Yapoml for <Link to="https://playwright.dev">Microsoft Playwright</Link></h1>
+        <p className="hero__subtitle">
+          Yet another page object generation in .NET/C# built on top of Microsoft Playwright <span class="badge badge--warning">is under development</span>
+        </p>
         <div className={styles.buttons}>
-          <Link
-            className="button button--outline button--primary button--lg margin-vert--lg"
+        <Link
+            className="button button--primary button--lg margin--md"
             to="/playwright/getting-started">
               Get started
+          </Link>
+          <Link
+            className="button disabled button--outline button--primary button--lg margin--md"
+            to="vscode://vscode.git/clone?url=https%3A%2F%2Fgithub.com%2Fyapoml%2Fyapoml.playwright.sandbox.git">
+              Try it now
+          </Link>
+          <Link
+            className="button button--link button--lg margin--md"
+            to="/docs/intro">
+              What is Yapoml?
           </Link>
         </div>
       </div>
@@ -33,14 +46,13 @@ function HomePromo() {
   return (
     <section>
       <div className="container">
+      <h2 className={styles.sectionHeader}>Watch it out in action</h2>
         <div>
           <video controls muted src={colorMode == 'dark' ? useBaseUrl("/img/promo_dark.mp4") : useBaseUrl("/img/promo_light.mp4")} className={styles.promo + ' shadow--md'}>
               Sorry, your browser doesn't support embedded videos.
           </video>
         </div>
-        
       </div>
-      
     </section>
   );
 }
