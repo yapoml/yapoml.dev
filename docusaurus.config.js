@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const editBaseUrl = 'https://github.com/yapoml/yapoml.github.io/tree/main/';
+
 const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
@@ -44,7 +46,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/yapoml/yapoml.github.io/tree/main/',
+            `${editBaseUrl}`,
         },
         blog: false,
         //blog: {
@@ -71,6 +73,7 @@ const config = {
         id: 'selenium',
         path: 'selenium',
         routeBasePath: 'selenium',
+        editUrl: `${editBaseUrl}`,
         //sidebarPath: require.resolve('./sidebarsSelenium.js'),
       },
     ],
@@ -80,6 +83,7 @@ const config = {
         id: 'playwright',
         path: 'playwright',
         routeBasePath: 'playwright',
+        editUrl: `${editBaseUrl}`,
         //sidebarPath: require.resolve('./sidebarsPlaywright.js'),
       },
     ],
