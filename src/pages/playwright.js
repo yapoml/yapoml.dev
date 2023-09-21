@@ -16,7 +16,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">Yapoml for <Link to="https://playwright.dev">Microsoft Playwright</Link></h1>
         <p className="hero__subtitle">
-          Yet another page object generation in .NET/C# built on top of Microsoft Playwright <span class="badge badge--warning">is under development</span>
+          Yet another page object generation in .NET/C# built on top of Microsoft Playwright <span class="badge badge--warning">is in queue</span>
         </p>
         <div className={styles.buttons}>
         <Link
