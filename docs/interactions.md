@@ -218,7 +218,7 @@ Sets the focus on a component. It is useful for activating the component or prep
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.SearchButton.Focus();
+driver.Ya().HomePage.SearchInput.Focus();
 ```
 
 #### Blur
