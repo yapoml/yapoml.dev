@@ -230,4 +230,6 @@ These generic conditions are implicitly applicable for all known subject's types
 - **Is** - Checks if the actual value is equal to the expected value.
 - **IsNot** - Checks if the actual value is not equal to the expected value.
 - **IsGreaterThan** - Checks if the actual value is greater than the expected value.
+- **AtLeast** - Checks if the actual value is equal to or greater than the expected value.
 - **IsLessThan** - Checks if the actual value is less than the expected value.
+- **AtMost** - Checks if the actual value is equal to or less than the expected value.
