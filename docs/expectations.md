@@ -207,6 +207,8 @@ ya.SearchResultsPage.Results.Expect(it => it.IsEmpty());
 
 ## Generic conditions
 
+These generic conditions are implicitly applicable for all known subject's types.
+
 ### Textual conditions
 
 - **Is** - Checks if the actual text is equal to the expected text using the default string comparison.
