@@ -97,7 +97,7 @@ page.Expect(its => its.Url.Contains("/user?name=john"));
 ```
 
 ### Title…
-Various conditions for current title of the page. There are a lot of verifications due to textual nature of the title, e.g. `.Is("something")` or `Contains("something")`, [etc](#ltextual-conditions).
+Various conditions for current title of the page. There are a lot of verifications due to textual nature of the title, e.g. `.Is("something")` or `Contains("something")`, [etc](#textual-conditions).
 
 **Usage**
 ```csharp
