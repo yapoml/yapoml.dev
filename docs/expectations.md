@@ -89,7 +89,7 @@ page.Expect(it => it.IsLoaded());
 ```
 
 ### Url…
-Various conditions for current page `Url`. It can be `page.Expect(its => its.Url.Is("something"))`, or `.EndsWith("something")`, [etc](#list-of-textual-conditions).
+Various conditions for current page `Url`. It can be `page.Expect(its => its.Url.Is("something"))`, or `.EndsWith("something")`, [etc](#textual-conditions).
 
 **Usage**
 ```csharp
@@ -97,7 +97,7 @@ page.Expect(its => its.Url.Contains("/user?name=john"));
 ```
 
 ### Title…
-Various conditions for current title of the page. There are a lot of verifications due to textual nature of the title, e.g. `.Is("something")` or `Contains("something")`, [etc](#list-of-textual-conditions).
+Various conditions for current title of the page. There are a lot of verifications due to textual nature of the title, e.g. `.Is("something")` or `Contains("something")`, [etc](#ltextual-conditions).
 
 **Usage**
 ```csharp
@@ -142,23 +142,9 @@ signInButton.Expect(its => its.Text.Is("Sign In"));
 signInButton.Expect(its => its.Text.Is("sign in", StringComparison.OrdinalIgnoreCase));
 ```
 
-#### List of textual conditions
-
-- **Is** - strict comparison of string value. Has optional `StringComparison` parameter.
-- **IsNot**
-- **IsEmpty**
-- **IsNotEmpty**
-- **Matches**
-- **DoesNotMatch**
-- **StartsWith**
-- **DoesNotStartWith**
-- **EndsWith**
-- **DoesNotEndWith**
-- **Contains**
-- **DoesNotContain**
 
 ### Attributes…
-Certain conditions for a component's attributes what define characteristics and properties of a component. In web this is html attribute for the specified tag. Due to textual nature of the attributes, you can use [many ways](#list-of-textual-conditions) to create conditions for attributes.
+Certain conditions for a component's attributes what define characteristics and properties of a component. In web this is html attribute for the specified tag. Due to textual nature of the attributes, you can use [many ways](#textual-conditions) to create conditions for attributes.
 
 **Usage**
 ```csharp
@@ -187,19 +173,12 @@ signInButton.Expect(its => its.Styles.Color.Contains("255"));
 ## Components collection conditions
 
 ### Count…
-Condition for collection of components to verify its count of components.
+[Condition](#numeric-conditions) for collection of components to verify its count of components.
 
 **Usage**
 ```csharp
 ya.SearchResultsPage.Results.Expect(its => its.Count.Is(20));
 ```
-
-#### List of numeric conditions
-
-- **Is** - strict comparison of numeric value.
-- **IsNot**
-- **IsGreaterThan**
-- **IsLessThan**
 
 ### Each
 Condition to be satisfied by each component in the list.
@@ -224,3 +203,29 @@ Expect the count of components is `0`. The opposite version is **IsNotEmpty**.
 ```csharp
 ya.SearchResultsPage.Results.Expect(it => it.IsEmpty());
 ```
+
+
+## Generic conditions
+
+### Textual conditions
+
+- **Is** - Checks if the actual text is equal to the expected text using the default string comparison.
+- **IsNot** - Checks if the actual text is not equal to the expected text using the default string comparison.
+- **IsEmpty** - Checks if the actual text is empty.
+- **IsNotEmpty** - Checks if the actual text is not empty.
+- **Matches** - Checks if the actual text matches the expected regular expression.
+- **DoesNotMatch** - Checks if the actual text does not match the expected regular expression.
+- **StartsWith** - Checks if the actual text starts with the expected text using the default string comparison.
+- **DoesNotStartWith** - Checks if the actual text does not start with the expected text using the default string comparison.
+- **EndsWith** - Checks if the actual text ends with the expected text using the default string comparison.
+- **DoesNotEndWith** - Checks if the actual text does not end with the expected text using the default string comparison.
+- **Contains** - Checks if the actual text contains the expected text using the default string comparison.
+- **DoesNotContain** - Checks if the actual text does not contain the expected text using the default string comparison.
+- **Length…** - Various continuation [numeric conditions](#numeric-conditions) for its length. E.g. `signInButton.Expect(its => its.Text.Length.IsGreaterThan(5));`
+
+### Numeric conditions
+
+- **Is** - Checks if the actual value is equal to the expected value.
+- **IsNot** - Checks if the actual value is not equal to the expected value.
+- **IsGreaterThan** - Checks if the actual value is greater than the expected value.
+- **IsLessThan** - Checks if the actual value is less than the expected value.
