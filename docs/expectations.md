@@ -12,7 +12,7 @@ ya.LoginPage.UsernameInput
     .Type("john");
 ```
 
-Or slightly reversed expression allowing you think about action first, and then about condition when an action should be performed.
+Or slightly reversed expression allowing you think about action first, and then about condition(s) when an action should be performed.
 
 ```csharp
 ya.LoginPage.UsernameInput
