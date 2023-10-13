@@ -4,11 +4,11 @@ description: Awaitable expectations enabling further flow execution
 sidebar_position: 3
 ---
 
-There are two ways how to expect some conditions on the page before making any further actions.
+There are many ways how to expect some conditions on the page before making any further actions.
 
 ```csharp
 ya.LoginPage.UsernameInput
-    .Expect(it => it.IsEnabled())
+    .Expect().IsEnabled()
     .Type("john");
 ```
 
@@ -21,16 +21,31 @@ ya.LoginPage.UsernameInput
 
 Above examples wait until `UsernameInput` component is enabled, and then type `john` text.
 
+
 ## Chain multiple conditions
 Conditions are chainable, even with near components.
 
+```csharp
+form
+  .Expect().IsDisplayed()
+  .Expect().IsEnabled()
+  .UsernameInput.Expect().IsEnabled();
+form.Submit();
+```
+
+In this case the `form` object is under our focus, so we can think about `form`:
 ```csharp
 form
   .Expect(it => it.IsDisplayed().IsEnabled().UsernameInput.IsEnabled())
   .Submit();
 ```
 
-It waits until the form is displayed and enabled, and username input is enabled.
+Or if you prefer thinking about action first
+```csharp
+form.Submit(when => when.IsDisplayed().IsEnabled().UsernameInput.IsEnabled());
+```
+
+It waits until the form is displayed and enabled, and username input is enabled, and only then submit a form.
 
 ## Awaitable expectations
 Expectations are also can be considered as awaitable assertions.
@@ -38,7 +53,7 @@ Expectations are also can be considered as awaitable assertions.
 ```csharp
 homePage.SearchInput
   .Type("It was great!")
-  .Expect(its => its.Attributes.Value.Is("That is great!"));
+  .Expect().Attributes.Value.Is("That is great!");
 ```
 
 If a condition wasn't meet, exception is raised.
@@ -55,7 +70,7 @@ Yapoml.ExpectException : Attribute value of the search input is not 'That is gre
 Any condition accepts optional `timeout` parameter. Default is `30` seconds.
 
 ```csharp
-page.Expect(it => it.IsLoaded(timeout: TimeSpan.FromSeconds(50)));
+page.Expect().IsLoaded(timeout: TimeSpan.FromSeconds(50));
 ```
 
 Or configure it globally.
@@ -67,7 +82,7 @@ For instant assertions you can use `TimeSpan.Zero` (looking for better alternati
 ```csharp
 // it doesn't wait until page title equals to 'Yapoml',
 // throws immediately if not
-page.Expect(its => its.Title.Is("Yapoml", TimeSpan.Zero));
+page.Expect().Title.Is("Yapoml", TimeSpan.Zero);
 ```
 :::
 
@@ -85,7 +100,7 @@ TBD: Supported only if `url` has no segments and query parameters.
 
 **Usage**
 ```csharp
-page.Expect(it => it.IsLoaded());
+page.Expect().IsLoaded();
 ```
 
 ### Url…
@@ -93,7 +108,7 @@ Various conditions for current page `Url`. It can be `page.Expect(its => its.Url
 
 **Usage**
 ```csharp
-page.Expect(its => its.Url.Contains("/user?name=john"));
+page.Expect().Url.Contains("/user?name=john");
 ```
 
 ### Title…
@@ -101,7 +116,7 @@ Various conditions for current title of the page. There are a lot of verificatio
 
 **Usage**
 ```csharp
-page.Expect(its => its.Title.StartsWith("Administration"));
+page.Expect().Title.StartsWith("Administration");
 ```
 
 
@@ -120,7 +135,7 @@ This method protects your program from ridiculous exceptions when a component is
 
 **Usage**
 ```csharp
-modal.Expect(it => it.Exists());
+modal.Expect().Exists();
 ```
 
 ### IsEnabled
@@ -177,7 +192,7 @@ signInButton.Expect(its => its.Styles.Color.Contains("255"));
 
 **Usage**
 ```csharp
-ya.SearchResultsPage.Results.Expect(its => its.Count.Is(20));
+ya.SearchResultsPage.Results.Expect().Count.Is(20);
 ```
 
 ### Each
@@ -185,7 +200,7 @@ Condition to be satisfied by each component in the list.
 
 **Usage**
 ```csharp
-ya.SearchResultsPage.Results.Expect(its => its.Each(r => r.Attributes.Href.StartsWith("https://")));
+ya.SearchResultsPage.Results.Expect().Each(r => r.Attributes.Href.StartsWith("https://"));
 ```
 
 ### Contains
@@ -201,7 +216,7 @@ Expect the count of components is `0`. The opposite version is **IsNotEmpty**.
 
 **Usage**
 ```csharp
-ya.SearchResultsPage.Results.Expect(it => it.IsEmpty());
+ya.SearchResultsPage.Results.Expect().IsEmpty();
 ```
 
 
