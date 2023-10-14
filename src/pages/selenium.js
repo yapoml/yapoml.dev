@@ -14,7 +14,7 @@ function HomepageHeader() {
   return (
     <header className={clsx('hero', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">Yapoml for <Link to="https://selenium.dev">Selenium WebDriver</Link></h1>
+        <h1 className="hero__title">Yapoml with <Link to="https://selenium.dev">Selenium WebDriver</Link></h1>
         <p className="hero__subtitle">
           Yet another page object generation in .NET/C# built on top of Selenium WebDriver
         </p>
