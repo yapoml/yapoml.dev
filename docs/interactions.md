@@ -125,9 +125,9 @@ string color = driver.Ya().HomePage.SearchButton.Styles["color"];
 :::tip
 Well-known styles are accessible shortly.
 ```csharp
-var color = driver.Ya().HomePage.SearchButton.Styles.Color;
+string color = driver.Ya().HomePage.SearchButton.Styles.Color;
 // or
-var opacity = driver.Ya().HomePage.SearchButton.Styles.Opacity;
+float opacity = driver.Ya().HomePage.SearchButton.Styles.Opacity;
 ```
 :::
 
