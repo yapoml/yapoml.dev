@@ -25,7 +25,7 @@ url: some/relative/path
 ```
 
 ```csharp
-driver.Ya().HomePage.Open();
+ya.HomePage.Open();
 ```
 
 It requires base url to be specified if url path is relative.
@@ -42,7 +42,7 @@ url:
     - p2
 ```
 ```csharp
-driver.Ya().HomePage.Open("123", p2: "any value") // navigates to /users/123?p2=any%20value
+ya.HomePage.Open("123", p2: "any value") // navigates to /users/123?p2=any%20value
 ```
 
 Segments are required. If you need skip some particular segment from the url path, you can put `null`. Query parameters are always optional.
@@ -59,7 +59,7 @@ Useful for verifying the visibility of components that may change dynamically ba
 
 **Usage**
 ```csharp
-bool visible = driver.Ya().HomePage.SearchButton.IsDisplayed;
+bool visible = ya.HomePage.SearchButton.IsDisplayed;
 ```
 
 :::note
@@ -74,7 +74,7 @@ For example, you can use it to check if a checkbox is checked or unchecked, or i
 
 **Usage**
 ```csharp
-bool enabled = driver.Ya().HomePage.SearchButton.IsEnabled;
+bool enabled = ya.HomePage.SearchButton.IsEnabled;
 ```
 
 #### Text
@@ -83,7 +83,7 @@ Gets the visible text of a component. It returns a string value that represents 
 
 **Usage**
 ```csharp
-string text = driver.Ya().HomePage.SearchButton.Text;
+string text = ya.HomePage.SearchButton.Text;
 ```
 
 :::note
@@ -98,16 +98,16 @@ For example, you can use it to check if an input element has a value attribute t
 
 **Usage**
 ```csharp
-string value = driver.Ya().HomePage.SearchInput.Attributes["value"];
+string value = ya.HomePage.SearchInput.Attributes["value"];
 ```
 
 :::tip
 Well-known attributes are accessible shortly.
 
 ```csharp
-var value = driver.Ya().HomePage.SearchInput.Attributes.Value;
+var value = ya.HomePage.SearchInput.Attributes.Value;
 // or
-var href = driver.Ya().HomePage.Logo.Attributes.Href;
+var href = ya.HomePage.Logo.Attributes.Href;
 ```
 :::
 
@@ -119,15 +119,15 @@ For example, you can use it to check if an element has a certain background colo
 
 **Usage**
 ```csharp
-string color = driver.Ya().HomePage.SearchButton.Styles["color"];
+string color = ya.HomePage.SearchButton.Styles["color"];
 ```
 
 :::tip
 Well-known styles are accessible shortly.
 ```csharp
-string color = driver.Ya().HomePage.SearchButton.Styles.Color;
+string color = ya.HomePage.SearchButton.Styles.Color;
 // or
-float opacity = driver.Ya().HomePage.SearchButton.Styles.Opacity;
+float opacity = ya.HomePage.SearchButton.Styles.Opacity;
 ```
 :::
 
@@ -137,7 +137,7 @@ Indicates whether a component currently has logical focus or not. It returns a b
 
 **Usage**
 ```csharp
-bool hasFocus = driver.Ya().HomePage.SearchInput.IsFocused;
+bool hasFocus = ya.HomePage.SearchInput.IsFocused;
 ```
 
 #### IsInView
@@ -146,7 +146,7 @@ Indicates whether a component currently is partially visible within viewport or 
 
 **Usage**
 ```csharp
-bool isInViewport = driver.Ya().HomePage.SearchInput.IsInView;
+bool isInViewport = ya.HomePage.SearchInput.IsInView;
 ```
 
 ### Methods
@@ -157,12 +157,12 @@ Simulates a mouse click on a component. It can be used to interact with buttons,
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.SearchButton.Click();
+ya.HomePage.SearchButton.Click();
 ```
 
 Or with specified `offset`.
 ```csharp
-driver.Ya().HomePage.SearchButton.Click(x: 20, y: 30);
+ya.HomePage.SearchButton.Click(x: 20, y: 30);
 ```
 
 The `Click` method performs a left-click by default. To perform other click actions see [ContextClick](#contextclick), [DoubleClick](#doubleclick), [DragAndDrop](#draganddrop), etc.
@@ -173,7 +173,7 @@ Simulates a mouse double click on a component. It can be used to interact with e
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.Pane.DoubleClick();
+ya.HomePage.Pane.DoubleClick();
 ```
 
 #### ContextClick
@@ -182,7 +182,7 @@ Simulates a mouse right click on a component. It can be used to interact with el
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.Pane.ContextClick();
+ya.HomePage.Pane.ContextClick();
 ```
 
 #### Type
@@ -191,7 +191,7 @@ Sends a sequence of keystrokes to a component. It is useful for entering text, s
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.SearchInput.Type("yapoml");
+ya.HomePage.SearchInput.Type("yapoml");
 ```
 
 #### Clear
@@ -200,7 +200,7 @@ Clears the text from a component. It is useful for deleting the existing text be
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.SearchInput.Clear();
+ya.HomePage.SearchInput.Clear();
 ```
 
 #### Hover
@@ -209,7 +209,7 @@ Simulates a mouse hover over a component. It is useful for triggering events tha
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.SearchButton.Hover();
+ya.HomePage.SearchButton.Hover();
 ```
 
 #### Focus
@@ -218,7 +218,7 @@ Sets the focus on a component. It is useful for activating the component or prep
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.SearchInput.Focus();
+ya.HomePage.SearchInput.Focus();
 ```
 
 #### Blur
@@ -227,7 +227,7 @@ Removes the focus from a component. It is useful for deactivating the component 
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.SearchInput.Blur();
+ya.HomePage.SearchInput.Blur();
 ```
 
 #### DragAndDrop
@@ -236,7 +236,7 @@ Performs a drag and drop action on a component. It is useful for moving a compon
 
 **Usage**
 ```csharp
-var homePage = driver.Ya().HomePage;
+var homePage = ya.HomePage;
 
 homePage.SearchButton.DragAndDrop(homePage.Trash);
 ```
@@ -247,5 +247,5 @@ Scrolls the web page until a component is visible. It is useful for accessing co
 
 **Usage**
 ```csharp
-driver.Ya().HomePage.SearchButton.ScrollIntoView();
+ya.HomePage.SearchButton.ScrollIntoView();
 ```
