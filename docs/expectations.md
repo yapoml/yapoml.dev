@@ -30,6 +30,7 @@ form
   .Expect().IsDisplayed()
   .Expect().IsEnabled()
   .UsernameInput.Expect().IsEnabled();
+
 form.Submit();
 ```
 
