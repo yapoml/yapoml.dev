@@ -95,7 +95,7 @@ page.Expect().IsLoaded();
 ```
 
 ### Url…
-Various conditions for current page `Url`. It can be `page.Expect(its => its.Url.Is("something"))`, or `.EndsWith("something")`, [etc](#textual-conditions).
+Various conditions for current page `Url`. It can be `page.Expect().Url.Is("something")`, or `.EndsWith("something")`, [etc](#textual-conditions).
 
 **Usage**
 ```csharp
@@ -142,10 +142,10 @@ Conditions for checking text content of the component.
 
 **Usage**
 ```csharp
-signInButton.Expect(its => its.Text.Is("Sign In"));
+signInButton.Expect().Text.Is("Sign In");
 
 // ignoring case
-signInButton.Expect(its => its.Text.Is("sign in", StringComparison.OrdinalIgnoreCase));
+signInButton.Expect().Text.Is("sign in", StringComparison.OrdinalIgnoreCase));
 ```
 
 
@@ -154,12 +154,12 @@ Certain conditions for a component's attributes what define characteristics and 
 
 **Usage**
 ```csharp
-usernameInput.Expect(its => its.Attributes["value"].IsEmpty());
+usernameInput.Expect().Attributes["value"].IsEmpty();
 ```
 
 Or use well-known attributes
 ```csharp
-usernameInput.Expect(its => its.Attributes.Value.IsEmpty());
+usernameInput.Expect().Attributes.Value.IsEmpty();
 ```
 
 ### Styles…
@@ -167,12 +167,12 @@ Provides a different conditions to wait some computed style of a component, such
 
 **Usage**
 ```csharp
-signInButton.Expect(its => its.Styles["color"].Contains("255"));
+signInButton.Expect().Styles["color"].Contains("255");
 ```
 
 Or use well-known styles
 ```csharp
-signInButton.Expect(its => its.Styles.Color.Contains("255"));
+signInButton.Expect().Styles.Color.Contains("255");
 ```
 
 
