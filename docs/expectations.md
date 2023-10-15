@@ -148,6 +148,12 @@ signInButton.Expect().Text.Is("Sign In");
 signInButton.Expect().Text.Is("sign in", StringComparison.OrdinalIgnoreCase));
 ```
 
+:::tip
+`Text` subject is special for component's condition, you can use shorter variant
+```csharp
+signInButton.Expect().Is("Sign In");
+``` 
+:::
 
 ### Attributes…
 Certain conditions for a component's attributes what define characteristics and properties of a component. In web this is html attribute for the specified tag. Due to textual nature of the attributes, you can use [many ways](#textual-conditions) to create conditions for attributes.
