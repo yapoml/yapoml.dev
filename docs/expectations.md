@@ -149,7 +149,7 @@ signInButton.Expect().Text.Is("sign in", StringComparison.OrdinalIgnoreCase));
 ```
 
 :::tip
-`Text` subject is special for component's condition, you can use shorter variant
+`Text` subject is a special component's condition, you can use shorter variant
 ```csharp
 signInButton.Expect().Is("Sign In");
 ``` 
