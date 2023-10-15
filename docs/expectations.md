@@ -27,16 +27,6 @@ Conditions are chainable, even with near components.
 
 ```csharp
 form
-  .Expect().IsDisplayed()
-  .Expect().IsEnabled()
-  .UsernameInput.Expect().IsEnabled();
-
-form.Submit();
-```
-
-In this case the `form` object is under our focus, so we can think about `form`:
-```csharp
-form
   .Expect(it => it.IsDisplayed().IsEnabled().UsernameInput.IsEnabled())
   .Submit();
 ```
