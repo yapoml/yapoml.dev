@@ -44,7 +44,7 @@ const FeatureList = [
         Uncompromised customization of your journey with domain specific experience.
       </>
     ),
-    link: './intro'
+    link: '/docs/category/advanced'
   },
 ];
 
