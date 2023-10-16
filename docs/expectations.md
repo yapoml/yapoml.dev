@@ -145,7 +145,7 @@ Conditions for checking text content of the component.
 signInButton.Expect().Text.Is("Sign In");
 
 // ignoring case
-signInButton.Expect().Text.Is("sign in", StringComparison.OrdinalIgnoreCase));
+signInButton.Expect().Text.Is("sign in", StringComparison.OrdinalIgnoreCase);
 ```
 
 :::tip
@@ -181,6 +181,13 @@ Or use well-known styles
 signInButton.Expect().Styles.Color.Contains("255");
 ```
 
+### IsInView
+Conditions for checking the component currently is partially visible within viewport. The opposite version is **IsNotInView**.
+
+**Usage**
+```csharp
+signInButton.Expect().IsInView();
+```
 
 ## Components collection conditions
 
