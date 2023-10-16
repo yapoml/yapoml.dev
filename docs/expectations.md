@@ -130,7 +130,7 @@ modal.Expect().Exists();
 ```
 
 ### IsEnabled
-Waits until a component is enabled and ready for interaction. Useful for checking a component's readiness before clicking on it, or typing a text into input fields. The opposite version is **IsNotEnabled**.
+Waits until a component is enabled and ready for interaction. Useful for checking a component's readiness before clicking on it, or typing a text into input fields. The opposite version is **IsDisabled** or **IsNotEnabled**.
 
 **Usage**
 ```csharp
