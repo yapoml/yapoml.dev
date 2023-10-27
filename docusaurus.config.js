@@ -65,30 +65,6 @@ const config = {
       }),
     ],
   ],
-
-  plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'selenium',
-        path: 'selenium',
-        routeBasePath: 'selenium',
-        editUrl: `${editBaseUrl}`,
-        //sidebarPath: require.resolve('./sidebarsSelenium.js'),
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'playwright',
-        path: 'playwright',
-        routeBasePath: 'playwright',
-        editUrl: `${editBaseUrl}`,
-        //sidebarPath: require.resolve('./sidebarsPlaywright.js'),
-      },
-    ],
-  ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({

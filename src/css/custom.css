@@ -80,3 +80,32 @@
     var(--ifm-color-emphasis-100) 100%
   );
 }
+
+.sidebar-divider {
+  border-top: 1px solid var(--ifm-color-gray-200);
+  display: block;
+  margin: 1rem 0 0rem 0rem;
+}
+
+html[data-theme='dark'] .sidebar-divider {
+  border-top: 1px solid var(--ifm-color-gray-800);
+}
+
+.sidebar-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ifm-color-gray-600);
+  margin-top: 1rem !important;
+}
+
+html[data-theme='dark'] .sidebar-divider {
+  color: var(--ifm-color-gray-200);
+}
+
+@media only screen and (max-width: 998px) {
+  .sidebar-title {
+    margin-left: 0.75rem;
+  }
+}
