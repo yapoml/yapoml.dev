@@ -16,9 +16,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">Yapoml</h1>
         <p className="hero__subtitle">
-          Yet another
-          <span> page object generation </span>
-          in .NET/C#
+        Yet another page object generation in .NET/C# with minimal code and maximum impact
         </p>
         <div className={styles.buttons}>
           <Link
