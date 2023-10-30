@@ -13,9 +13,9 @@ Yapoml supports yaml format to define your pages and components.
 Page objects are defined in `*.page.yaml` files.
 
 ```
-Project/
-├── Pages/
-|   └── Administration/
+Project
+├── Pages
+|   └── Administration
 |       ├── Users.page.yaml
 |       └── Roles.page.yaml
 ├── AnyRoot.page.yaml
