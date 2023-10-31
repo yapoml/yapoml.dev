@@ -51,15 +51,15 @@ const FeatureList = [
 function Feature({Svg, title, description, link}) {
   return (
     <div className='col col--4 padding--md'>
-      <div class="card card--full-height">
-        <div class="card__header text--center padding-vert--lg">
+      <div className="card card--full-height">
+        <div className="card__header text--center padding-vert--lg">
           <h3>{title}</h3>
         </div>
-        <div class="card__body">
+        <div className="card__body">
           <p>{description}</p>
         </div>
-        <div class="card__footer text--center">
-          <a class="button button--link" href={link}>Learn more</a>
+        <div className="card__footer text--center">
+          <a className="button button--link" href={link}>Learn more</a>
         </div>
       </div>
     </div>
