@@ -20,7 +20,7 @@ function HomepageHeader() {
         </p>
         <div className={styles.buttons}>
           <Link
-            className="button button--outline button--primary button--lg margin-vert--md"
+            className="button button--primary button--lg margin-vert--md"
             to="/docs/intro">
             Get started
           </Link>

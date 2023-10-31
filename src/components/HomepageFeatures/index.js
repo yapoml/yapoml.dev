@@ -23,7 +23,7 @@ const FeatureList = [
         and everything else is already available for you in a tick.
       </>
     ),
-    link: '/docs/syntax'
+    link: '/docs/concept/syntax'
   },
   {
     title: 'Express Fluently',
@@ -34,7 +34,7 @@ const FeatureList = [
         using power of intellisense.
       </>
     ),
-    link: '/docs/interactions'
+    link: '/docs/concept/interactions'
   },
   {
     title: 'Personalize',
@@ -59,7 +59,7 @@ function Feature({Svg, title, description, link}) {
           <p>{description}</p>
         </div>
         <div class="card__footer text--right">
-          <a class="button button--link" href={link}>Learn more</a>
+          <a class="button button--sm button--outline button--secondary" href={link}>Learn more</a>
         </div>
       </div>
     </div>
