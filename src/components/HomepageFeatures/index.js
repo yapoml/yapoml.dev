@@ -58,8 +58,8 @@ function Feature({Svg, title, description, link}) {
         <div class="card__body">
           <p>{description}</p>
         </div>
-        <div class="card__footer text--right">
-          <a class="button button--sm button--outline button--secondary" href={link}>Learn more</a>
+        <div class="card__footer text--center">
+          <a class="button button--link" href={link}>Learn more</a>
         </div>
       </div>
     </div>
