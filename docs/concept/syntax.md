@@ -50,6 +50,14 @@ MyComponent: xpath .//div
 # or shorter
 MyComponent: .//div
 ```
+
+Supported search methods:
+- id
+- css
+- xpath
+
+If search method is undefined, Yapoml tries to recognize it. Treat it as `xpath` if it's valid, otherwise as `css`. 
+
 ### Nested
 Component may have relative components
 ```yaml
