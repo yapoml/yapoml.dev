@@ -6,6 +6,8 @@ import Layout from '@theme/Layout';
 import { useColorMode } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import { TypeAnimation } from 'react-type-animation';
+import CodeBlock from '@theme/CodeBlock'
 
 import styles from './index.module.css';
 
@@ -28,6 +30,46 @@ function HomepageHeader() {
       </div>
     </header>
   );
+}
+
+function Highlights() {
+  return (
+    <section>
+      <div className="container">
+      <div className={styles.typing__container}>
+        <CodeBlock language='csharp'>
+          <TypeAnimation
+            sequence={[
+              // Same substring at the start will only be typed once, initially
+              'Ya.',
+              'Ya.LoginPage.Username.Type("John");',
+              5000,
+              'Ya.LoginPage.Username.Type("John").Password.Type("123");',
+              5000,
+              'Ya.LoginPage.Username.Expect().Attributes.Value.Is("John");',
+              5000,
+              'Ya.LoginPage.SignIn.Click();',
+              5000,
+              'Ya.LoginPage.SignIn.Click(when => when.IsEnabled());',
+              5000,
+              'Ya.HomePage.Expect().IsOpened();',
+              5000,
+              'Ya.HomePage.Expect(it => it.IsOpened().Title.Contains("Welcome"));',
+              10000,
+            ]}
+            preRenderFirstString={true}
+            speed={30}
+            deletionSpeed={80}
+            cursor={false}
+            style={{ fontWeight: 'var(--ifm-font-weight-bold)', color: 'var(--ifm-color-gray-600)',  }}
+            repeat={Infinity}
+          />
+        </CodeBlock>
+          
+        </div>
+      </div>
+    </section>
+  )
 }
 
 function HomePromo() {
@@ -81,6 +123,7 @@ export default function Home() {
       description="Yet another page object generation in .NET">
       <HomepageHeader />
       <main>
+        <Highlights />
         <HomePromo />
         <FrameworksSection />
         <HomepageFeatures />
