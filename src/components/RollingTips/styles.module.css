@@ -1,0 +1,10 @@
+.typing__container {
+  margin: 4rem 0 0;
+  user-select: none;
+}
+
+@media screen and (max-width: 996px) {
+  .typing__container {
+    display: none;
+  }
+}

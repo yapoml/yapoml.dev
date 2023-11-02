@@ -6,6 +6,7 @@ import Layout from '@theme/Layout';
 import {useColorMode} from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import RollingTips from '@site/src/components/RollingTips';
 
 import styles from './index.module.css';
 
@@ -60,6 +61,7 @@ export default function Home() {
       description="Yet another page object generation in .NET">
       <HomepageHeader />
       <main>
+        <RollingTips />
         <HomePromo />
         <HomepageFeatures />
       </main>
