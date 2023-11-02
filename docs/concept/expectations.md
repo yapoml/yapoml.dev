@@ -61,7 +61,7 @@ Yapoml.ExpectException : Attribute value of the search input is not 'That is gre
 Any condition accepts optional `timeout` parameter. Default is `30` seconds.
 
 ```csharp
-page.Expect().IsLoaded(timeout: TimeSpan.FromSeconds(50));
+page.Expect().IsOpened(timeout: TimeSpan.FromSeconds(50));
 ```
 
 Or configure it globally.
@@ -80,7 +80,7 @@ page.Expect().Title.Is("Yapoml", TimeSpan.Zero);
 
 ## Page conditions
 
-### IsLoaded
+### IsOpened
 Evaluates document's state to be `complete` which means the page is fully loaded. It doesn't guarantee that some components on the page are present, they might be rendered dynamically.
 
 :::info url
@@ -91,7 +91,7 @@ TBD: Supported only if `url` has no segments and query parameters.
 
 **Usage**
 ```csharp
-page.Expect().IsLoaded();
+page.Expect().IsOpened();
 ```
 
 ### Url…
