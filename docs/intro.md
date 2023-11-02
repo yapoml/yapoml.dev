@@ -4,42 +4,20 @@ description: Define your page objects with ease and start to automate immediatel
 sidebar_position: 0
 ---
 
-Yapoml framework provides an ability to generate page object models for most popular testing tools on fly. It generates all necessary classes ready to use while you type in your IDE. 
+Yapoml framework is a powerful and innovative tool that allows you to create page definitions for various testing tools in real time. With Yapoml, you can use a simple and intuitive syntax to define the UI components. Framework will then generate the corresponding boilerplate code on fly, while you are defining your pages and components, which can be easily extended as needed. Yapoml makes test automation faster, easier, and more reliable.
 
-Define UI components in `*.page.yaml` files:
+## Basic example
+
+Let's see how we can define `Login` page. There is `username` field on the page, which can be located by `.user` CSS selector.
+
 ```yaml title="Login.page.yaml"
 username: .user
 ```
 
-That's it! Now you can interact with UI components immediately.
-
-```csharp
-driver.Ya().LoginPage.Username.Type("user01");
-```
-
-:::info Explanation
-Our application has login page, which is defined in `Login.page.yaml` file. Login page has `username` input field which is located by `.user` css locator. Once it is defined, we can interact with it, like typing some text.
-
-- `driver.Ya()` - main entry point for all consumers, your journey always starts here,
-- `.LoginPage` - accessing to login page object,
-- `.Username` - accessing to username input field,
-- `.Type("user01")` - send keyboard events into username input field requires no explicit waiting
-:::
-
-Or define more complex relative components.
-```yaml title="Login.page.yaml"
-form:
-  by: .//form
-
-  username: .username
-  password: .password
-  
-  sign in: .//button
-```
+Now you can interact with UI components on the page immediately.
 
 ```csharp title="Program.cs"
-driver.Ya().LoginPage.Form
-  .Username.Type("user01")
-  .Password.Type("pass01")
-  .SignIn.Click();
+driver.Ya().LoginPage.Username.Type("John");
 ```
+
+This basic example demonstrates how to use Yapoml to create [interactable](concept/interactions) simple page with minimal [declaration](concept/syntax). Keep reading.
