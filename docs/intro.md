@@ -20,4 +20,4 @@ Now you can interact with the UI components on the page immediately.
 driver.Ya().LoginPage.Username.Type("John");
 ```
 
-This basic example demonstrates how to use Yapoml to create an [interactable](concept/interactions) simple page with minimal [declaration](concept/syntax). Keep reading.
+This basic example demonstrates how to use Yapoml to create an [interactable](concepts/interactions) simple page with minimal [declaration](concepts/syntax). Keep reading.

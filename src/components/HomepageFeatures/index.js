@@ -23,7 +23,7 @@ const FeatureList = [
         and everything else is already available for you in a tick.
       </>
     ),
-    link: '/docs/concept/syntax'
+    link: '/docs/concepts/syntax'
   },
   {
     title: 'Express Fluently',
@@ -34,7 +34,7 @@ const FeatureList = [
         using power of intellisense.
       </>
     ),
-    link: '/docs/concept/interactions'
+    link: '/docs/concepts/interactions'
   },
   {
     title: 'Personalize',
