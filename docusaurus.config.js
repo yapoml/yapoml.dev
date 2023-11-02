@@ -10,7 +10,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 const config = {
   title: 'Yet another page object generation',
   titleDelimiter: '·',
-  tagline: 'Yet another page object generation in .NET',
+  tagline: 'Yet another page object generation in .NET/C# with minimal code and maximum impact',
   favicon: 'img/logo.svg',
 
   // Set the production url of your site here
