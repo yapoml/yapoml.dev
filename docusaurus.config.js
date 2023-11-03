@@ -75,6 +75,7 @@ const config = {
       metadata: [{name: 'keywords', content: 'automation, testing, page object, pom, generation, selenium webdriver, playwright'}],
       navbar: {
         title: 'Yapoml',
+        hideOnScroll: true,
         logo: {
           alt: 'Yapoml Logo',
           src: 'img/logo_light.svg',
