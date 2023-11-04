@@ -162,13 +162,7 @@ MyOtherComponent:
 
 Now, when we have learnt how to declare pages and components, let's create real test which verifies that on https://www.nuget.org/packages?q=yapoml page we see at least 1 package, and all packages have a description and tags.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-<Tabs>
-<TabItem value="page" label="Packages.page.yaml" default>
-
-```yaml
+```yaml title="Packages.page.yaml"
 url:
   path: https://www.nuget.org/packages
   query:
@@ -181,24 +175,15 @@ packages:
   tags: .package-tags a
 ```
 
-</TabItem>
-<TabItem value="program" label="Program.cs">
-
-```csharp
+```csharp title="Program.cs"
 driver.Ya().PackagesPage.Open(q: "yapoml")
-    .Packages.Expect(it => it.IsNotEmpty().Each(package =>
-        {
-            package.Description.IsNotEmpty();
-            package.Tags.IsNotEmpty();
-        })
-    );
-
-
-
+  .Packages.Expect(it => it.IsNotEmpty().Each(package =>
+    {
+      package.Description.IsNotEmpty();
+      package.Tags.IsNotEmpty();
+    })
+  );
 ```
-
-</TabItem> 
-</Tabs>
 
 import Details from '@theme/MDXComponents/Details';
 
