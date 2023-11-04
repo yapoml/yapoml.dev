@@ -13,7 +13,7 @@ Pages and components are declared in `*.page.yaml` and `*.component.yaml` files 
 To define `Login` page create new `Login.page.yaml` file.
 
 ```
-🖿 Project
+📁 Project
 ├── Login.page.yaml
 └── Project.csproj
 ```
