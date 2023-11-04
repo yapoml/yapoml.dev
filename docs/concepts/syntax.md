@@ -6,26 +6,83 @@ sidebar_position: 1
 
 # Syntax
 
-Yapoml supports yaml format to define your pages and components.
+Pages and components are declared in `*.page.yaml` and `*.component.yaml` files respectively. This format is user-friendly and allows us to describe the structure of pages and components clearly. Just add new files in your project and start defining pages.
 
 ## Page
 
-Page objects are defined in `*.page.yaml` files.
+To define `Login` page create new `Login.page.yaml` file.
 
 ```
-Project
-├── Pages
-|   └── Administration
-|       ├── Users.page.yaml
-|       └── Roles.page.yaml
-├── AnyRoot.page.yaml
+🖿 Project
+├── Login.page.yaml
 └── Project.csproj
 ```
 
-```csharp
-var usersPage = driver.Ya().Pages.Administration.UsersPage;
-var rootPage =  driver.Ya().AnyRootPage;
+Login page now can be accessed.
+
+```csharp title="Program.cs"
+var loginPage = driver.Ya().LoginPage;
 ```
+
+It is recommended to group pages by folders.
+
+```
+🖿 Project
+├── 🖿 Pages
+|   ├── 🖿 Administration
+|   |   ├── Users.page.yaml
+|   |   └── Roles.page.yaml
+|   └── Login.page.yaml
+└── Project.csproj
+```
+
+Yapoml follows your folders structure and separates pages by spaces.
+
+```csharp title="Program.cs"
+var loginPage = driver.Ya().Pages.LoginPage;
+var usersPage = driver.Ya().Pages.Administration.UsersPage;
+```
+
+
+### Url
+
+For better identification of the page we can declare its `url`.
+
+```yaml title="Login.page.yaml"
+url: https://example.com/login
+```
+
+Or relative `url`.
+
+```yaml title="Login.page.yaml"
+url: /login
+```
+
+It makes [navigation](./interactions.md#open) to this page easier, or verification whether this page is [opened](./expectations.md#isopened).
+
+```csharp title="Program.cs"
+loginPage.Open();
+
+loginPage.Expect().IsOpened();
+```
+
+`url` might have segments and query parameters.
+```yaml title="User.page.yaml"
+url:
+  path: /users/{userId}
+  query:
+    - param1
+    - param2
+```
+
+It is even easier to navigate to `UserPage`.
+
+```csharp title="Program.cs"
+userPage.Open(userId: "123", param2: "some value");
+// navigates to /users/123?param2=any%20value
+```
+
+### Components
 
 Page object consists of components:
 ```yaml
