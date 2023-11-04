@@ -200,13 +200,12 @@ driver.Ya().PackagesPage.Open(q: "yapoml")
 </TabItem> 
 </Tabs>
 
-import CodeBlock from '@theme/CodeBlock';
+import Details from '@theme/MDXComponents/Details';
 
-<details>
-  <summary>Console output</summary>
-  <div>
-<CodeBlock>
+<Details>
+<summary mdxType="summary">Console output</summary>
 
+```
 16:26:55.296 TRC • Opening Packages page by https://www.nuget.org/packages?q=yapoml
 16:26:59.416 TRC • 4.1s
 16:26:59.419 TRC • Expect packages satisfy conditions
@@ -244,6 +243,5 @@ import CodeBlock from '@theme/CodeBlock';
 16:26:59.571 TRC ╎ ╎ • Expect the count of tags is greater than 0
 16:26:59.571 TRC ╎ ╎ ╎ Finding tags by css selector .package-tags a
 16:26:59.578 TRC ╎ ╎ ╎ Found 4 tags
-</CodeBlock>
-  </div>
-</details>
+```
+</Details>
