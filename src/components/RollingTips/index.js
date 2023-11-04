@@ -8,7 +8,6 @@ export default function RollingTips() {
     <section>
       <div className="container">
         <div className={styles.typing__container}>
-          <CodeBlock language='csharp'>
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed once, initially
@@ -35,10 +34,9 @@ export default function RollingTips() {
               speed={30}
               deletionSpeed={80}
               cursor={false}
-              style={{ fontWeight: 'var(--ifm-font-weight-bold)', color: 'var(--ifm-color-gray-600)',  }}
+              style={{  }}
               repeat={Infinity}
             />
-          </CodeBlock>
         </div>
       </div>
     </section>
