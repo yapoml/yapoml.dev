@@ -160,7 +160,7 @@ MyOtherComponent:
 
 ## Showcase
 
-Now, when we have learnt how to declare pages and components, let's create real test which verifies that on https://www.nuget.org/packages?q=yapoml page we see at least 1 package, and all packages have a description and tags.
+Now that we have learned how to declare pages and components, let's create a real test which verifies that on the https://www.nuget.org/packages?q=yapoml page there is at least 1 package, and that all packages have a description and tags.
 
 ```yaml title="Packages.page.yaml"
 url:
