@@ -21,7 +21,7 @@ const sidebars = {
     'intro',
     {
       type: 'html',
-      value: 'Concepts',
+      value: 'Core Concepts',
       className: 'sidebar-title',
       defaultStyle: true,
     },
