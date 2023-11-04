@@ -27,9 +27,9 @@ var loginPage = driver.Ya().LoginPage;
 It is recommended to group pages by folders.
 
 ```
-🖿 Project
-├── 🖿 Pages
-|   ├── 🖿 Administration
+📁 Project
+├── 📁 Pages
+|   ├── 📁 Administration
 |   |   ├── Users.page.yaml
 |   |   └── Roles.page.yaml
 |   └── Login.page.yaml
