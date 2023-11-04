@@ -1,6 +1,6 @@
 .typing__container {
   font-family: var(--ifm-font-family-monospace);
-  font-size: 1.2em;
+  font-size: 1.2rem;
   margin: 4rem 0 0;
   color: var(--ifm-color-gray-600);
   user-select: none;
@@ -8,6 +8,7 @@
 
 @media screen and (max-width: 996px) {
   .typing__container {
-    display: none;
+    font-size: 0.7rem;
+    margin: 2rem 0 0;
   }
 }
