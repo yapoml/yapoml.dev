@@ -13,7 +13,7 @@ Pages and components are declared in `*.page.yaml` and `*.component.yaml` files 
 To define `Login` page create new `Login.page.yaml` file.
 
 ```
-📁 Project
+Project
 ├── Login.page.yaml
 └── Project.csproj
 ```
@@ -27,9 +27,9 @@ var loginPage = driver.Ya().LoginPage;
 It is recommended to group pages by folders.
 
 ```
-📁 Project
-├── 📁 Pages
-|   ├── 📁 Administration
+Project
+├── Pages
+|   ├── Administration
 |   |   ├── Users.page.yaml
 |   |   └── Roles.page.yaml
 |   └── Login.page.yaml
