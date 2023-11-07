@@ -57,7 +57,7 @@ Indicates whether a component is visible on the page or not. Returns `true` if t
 
 Useful for verifying the visibility of components that may change dynamically based on user actions or page conditions. For example, you can use it to check if a dropdown menu is expanded or collapsed, or if a modal dialog is open or closed. It does not check if the component is within the viewport or not. It only checks if the element is rendered on the page, regardless of its position or size. Look at [IsInView](#isinview) property if you need to check whether the component is within the viewport.
 
-**Usage**
+_Usage_
 ```csharp
 bool visible = ya.HomePage.SearchButton.IsDisplayed;
 ```
@@ -72,7 +72,7 @@ Used to indicate whether a component can respond to user interactions or not. It
 
 For example, you can use it to check if a checkbox is checked or unchecked, or if a text field is editable or read-only.
 
-**Usage**
+_Usage_
 ```csharp
 bool enabled = ya.HomePage.SearchButton.IsEnabled;
 ```
@@ -81,7 +81,7 @@ bool enabled = ya.HomePage.SearchButton.IsEnabled;
 
 Gets the visible text of a component. It returns a string value that represents the inner text of the element. For example, you can use it to check if a label displays the correct message, or if a paragraph contains the expected text.
 
-**Usage**
+_Usage_
 ```csharp
 string text = ya.HomePage.SearchButton.Text;
 ```
@@ -96,7 +96,7 @@ Gets the value of an attribute of a component as a string. It can also retrieve 
 
 For example, you can use it to check if an input element has a value attribute that matches the expected input, or if an image element has an alt attribute that describes the image.
 
-**Usage**
+_Usage_
 ```csharp
 string value = ya.HomePage.SearchInput.Attributes["value"];
 ```
@@ -117,7 +117,7 @@ Gets the value of a CSS property of a component as a string. It can be used to r
 
 For example, you can use it to check if an element has a certain background color, or if an element is visible or hidden by its display property.
 
-**Usage**
+_Usage_
 ```csharp
 string color = ya.HomePage.SearchButton.Styles["color"];
 ```
@@ -135,7 +135,7 @@ float opacity = ya.HomePage.SearchButton.Styles.Opacity;
 
 Indicates whether a component currently has logical focus or not. It returns a boolean value: `true` if the component has focus, and `false` if the component does not have focus.
 
-**Usage**
+_Usage_
 ```csharp
 bool hasFocus = ya.HomePage.SearchInput.IsFocused;
 ```
@@ -144,7 +144,7 @@ bool hasFocus = ya.HomePage.SearchInput.IsFocused;
 
 Indicates whether a component currently is partially visible within viewport or not. It returns a boolean value: `true` if the component is in viewport, and `false` if the component is not.
 
-**Usage**
+_Usage_
 ```csharp
 bool isInViewport = ya.HomePage.SearchInput.IsInView;
 ```
@@ -155,7 +155,7 @@ bool isInViewport = ya.HomePage.SearchInput.IsInView;
 
 Simulates a mouse click on a component. It can be used to interact with buttons, links, checkboxes, radio buttons, and other clickable components on a page.
 
-**Usage**
+_Usage_
 ```csharp
 ya.HomePage.SearchButton.Click();
 ```
@@ -171,7 +171,7 @@ The `Click` method performs a left-click by default. To perform other click acti
 
 Simulates a mouse double click on a component. It can be used to interact with elements that require a double click to launch specific functions, such as opening a file, selecting a word of text, etc.
 
-**Usage**
+_Usage_
 ```csharp
 ya.HomePage.Pane.DoubleClick();
 ```
@@ -180,7 +180,7 @@ ya.HomePage.Pane.DoubleClick();
 
 Simulates a mouse right click on a component. It can be used to interact with elements that show a context menu when right clicked, such as opening a link in a new tab, copying text.
 
-**Usage**
+_Usage_
 ```csharp
 ya.HomePage.Pane.ContextClick();
 ```
@@ -189,7 +189,7 @@ ya.HomePage.Pane.ContextClick();
 
 Sends a sequence of keystrokes to a component. It is useful for entering text, selecting options, or performing keyboard shortcuts. For example, you can use it to type a query in a search box, choose a value from a dropdown menu, or press the enter key.
 
-**Usage**
+_Usage_
 ```csharp
 ya.HomePage.SearchInput.Type("yapoml");
 ```
@@ -198,7 +198,7 @@ ya.HomePage.SearchInput.Type("yapoml");
 
 Clears the text from a component. It is useful for deleting the existing text before entering new text. For example, you can use it to erase a query in a search box, or clear a password field.
 
-**Usage**
+_Usage_
 ```csharp
 ya.HomePage.SearchInput.Clear();
 ```
@@ -207,7 +207,7 @@ ya.HomePage.SearchInput.Clear();
 
 Simulates a mouse hover over a component. It is useful for triggering events that depend on the mouse cursor position, such as displaying tooltips, menus, or pop-ups. For example, you can use it to hover over a link to see its URL, or hover over a button to see its description.
 
-**Usage**
+_Usage_
 ```csharp
 ya.HomePage.SearchButton.Hover();
 ```
@@ -216,7 +216,7 @@ ya.HomePage.SearchButton.Hover();
 
 Sets the focus on a component. It is useful for activating the component or preparing it for user input. For example, you can use it to focus on a text field before typing, or focus on a checkbox before clicking.
 
-**Usage**
+_Usage_
 ```csharp
 ya.HomePage.SearchInput.Focus();
 ```
@@ -225,7 +225,7 @@ ya.HomePage.SearchInput.Focus();
 
 Removes the focus from a component. It is useful for deactivating the component or triggering events that depend on the focus state, such as validation or formatting. For example, you can use it to blur a text field after typing, or blur a dropdown menu after selecting an option.
 
-**Usage**
+_Usage_
 ```csharp
 ya.HomePage.SearchInput.Blur();
 ```
@@ -234,7 +234,7 @@ ya.HomePage.SearchInput.Blur();
 
 Performs a drag and drop action on a component. It is useful for moving a component from one location to another, such as rearranging items, sorting lists, or uploading files. For example, you can use it to drag an image from a gallery and drop it into a trash bin, or drag a file from a folder and drop it into an upload box.
 
-**Usage**
+_Usage_
 ```csharp
 var homePage = ya.HomePage;
 
@@ -245,7 +245,7 @@ homePage.SearchButton.DragAndDrop(homePage.Trash);
 
 Scrolls the web page until a component is visible. It is useful for accessing components that are not in the current viewport, such as hidden or lazy-loaded components. For example, you can use it to scroll to the bottom of a page to see the footer, or scroll to a specific section of a page to see its content.
 
-**Usage**
+_Usage_
 ```csharp
 ya.HomePage.SearchButton.ScrollIntoView();
 ```
