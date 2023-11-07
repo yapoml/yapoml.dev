@@ -89,7 +89,7 @@ If `url` is defined for the page, then it also evaluates current url.
 TBD: Supported only if `url` has no segments and query parameters.
 :::
 
-**Usage**
+_Usage_
 ```csharp
 page.Expect().IsOpened();
 ```
@@ -97,7 +97,7 @@ page.Expect().IsOpened();
 ### Url…
 Various conditions for current page `Url`. It can be `page.Expect().Url.Is("something")`, or `.EndsWith("something")`, [etc](#textual-conditions).
 
-**Usage**
+_Usage_
 ```csharp
 page.Expect().Url.Contains("/user?name=john");
 ```
@@ -105,7 +105,7 @@ page.Expect().Url.Contains("/user?name=john");
 ### Title…
 Various conditions for current title of the page. There are a lot of verifications due to textual nature of the title, e.g. `.Is("something")` or `Contains("something")`, [etc](#textual-conditions).
 
-**Usage**
+_Usage_
 ```csharp
 page.Expect().Title.StartsWith("Administration");
 ```
@@ -116,7 +116,7 @@ page.Expect().Title.StartsWith("Administration");
 ### IsDisplayed
 Waits until a certain component is present and displayed. This method avoids the problem of having to parse an element's style attribute. You can use it for verifying the presence of a component. The opposite version is **IsNotDisplayed**.
 
-**Usage**
+_Usage_
 ```csharp
 signInButton.Click(when => when.IsDisplayed());
 ```
@@ -124,7 +124,7 @@ signInButton.Click(when => when.IsDisplayed());
 ### Exists
 This method protects your program from ridiculous exceptions when a component is not attached to the DOM yet. Usually it happens with dynamic components. When a component is attached to the DOM, it means that it is present in the HTML code of the page. It doesn't mean the component is visible. If you get an error message something like _Element is no longer attached to the DOM_ while running your program, it means that the component you are trying to interact with has been removed from the DOM. The opposite version is **DoesNotExist**.
 
-**Usage**
+_Usage_
 ```csharp
 modal.Expect().Exists();
 ```
@@ -132,7 +132,7 @@ modal.Expect().Exists();
 ### IsEnabled
 Waits until a component is enabled and ready for interaction. Useful for checking a component's readiness before clicking on it, or typing a text into input fields. The opposite version is **IsDisabled** or **IsNotEnabled**.
 
-**Usage**
+_Usage_
 ```csharp
 signInButton.Click(when => when.IsEnabled());
 ```
@@ -140,7 +140,7 @@ signInButton.Click(when => when.IsEnabled());
 ### Text
 Conditions for checking text content of the component.
 
-**Usage**
+_Usage_
 ```csharp
 signInButton.Expect().Text.Is("Sign In");
 
@@ -158,7 +158,7 @@ signInButton.Expect().Is("Sign In");
 ### Attributes…
 Certain conditions for a component's attributes what define characteristics and properties of a component. In web this is html attribute for the specified tag. Due to textual nature of the attributes, you can use [many ways](#textual-conditions) to create conditions for attributes.
 
-**Usage**
+_Usage_
 ```csharp
 usernameInput.Expect().Attributes["value"].IsEmpty();
 ```
@@ -171,7 +171,7 @@ usernameInput.Expect().Attributes.Value.IsEmpty();
 ### Styles…
 Provides a different conditions to wait some computed style of a component, such as color, font, size, and more.
 
-**Usage**
+_Usage_
 ```csharp
 signInButton.Expect().Styles["color"].Contains("255");
 ```
@@ -184,7 +184,7 @@ signInButton.Expect().Styles.Color.Contains("255");
 ### IsInView
 Conditions for checking the component currently is partially visible within viewport. The opposite version is **IsNotInView**.
 
-**Usage**
+_Usage_
 ```csharp
 signInButton.Expect().IsInView();
 ```
@@ -194,7 +194,7 @@ signInButton.Expect().IsInView();
 ### Count…
 [Condition](#numeric-conditions) for collection of components to verify its count of components.
 
-**Usage**
+_Usage_
 ```csharp
 ya.SearchResultsPage.Results.Expect().Count.Is(20);
 ```
@@ -202,7 +202,7 @@ ya.SearchResultsPage.Results.Expect().Count.Is(20);
 ### Each
 Condition to be satisfied by each component in the list.
 
-**Usage**
+_Usage_
 ```csharp
 ya.SearchResultsPage.Results.Expect().Each(r => r.Attributes.Href.StartsWith("https://"));
 ```
@@ -210,7 +210,7 @@ ya.SearchResultsPage.Results.Expect().Each(r => r.Attributes.Href.StartsWith("ht
 ### Contains
 Expect at least one component in the list satisfies expected condition. The opposite version is **DoesNotContain**.
 
-**Usage**
+_Usage_
 ```csharp
 ya.SearchResultsPage.Results.Expect(it => it.Contains(r => r.Attributes.Href.StartsWith("ftp://")));
 ```
@@ -218,7 +218,7 @@ ya.SearchResultsPage.Results.Expect(it => it.Contains(r => r.Attributes.Href.Sta
 ### IsEmpty
 Expect the count of components is `0`. The opposite version is **IsNotEmpty**.
 
-**Usage**
+_Usage_
 ```csharp
 ya.SearchResultsPage.Results.Expect().IsEmpty();
 ```
