@@ -82,80 +82,127 @@ userPage.Open(userId: "123", param2: "some value");
 // navigates to /users/123?param2=any%20value
 ```
 
-### Components
-
-Page object consists of components:
-```yaml
-MyComponent: .//div
-```
 
 ## Component
 
-Component is identified by search method (following are different representation of the same component)
-```yaml
-MyComponent:
-  by:
-    xpath: .//div
+A component is a part of a web page that has its own functionality, layout, and style. It can be reused on different pages or in different parts of the same page. For example, a component can be a navigation menu, a search box, a footer, a carousel, or a custom element that you create yourself. A component can also contain other components inside it, creating a hierarchical structure of the web page.
 
-# or shorter
-MyComponent:
-  by: xpath .//div
-
-# or shorter
-MyComponent: xpath .//div
-
-# or shorter
-MyComponent: .//div
+```yaml title="Login.page.yaml"
+username: .user
+password: .pass
 ```
 
-Supported search methods:
-- id
-- css
-- xpath
+In this example `Login` page has `Username` and `Password` input fields.
 
-If search method is undefined, Yapoml tries to recognize it. Treat it as `xpath` if it's valid, otherwise as `css`. 
+### Locator
+
+Each component is identified by its locator, which tells how to locate a component on the page.
+
+Supported locator methods (case insensitive):
+- `ID`
+- `CSS`
+- `XPath`
+
+:::tip
+If locator method is not declared explicitly, Yapoml tries to recognize it automatically. By default it treats it as `xpath` if it's valid, otherwise as `css`.
+:::
+
+The following example shows different variants how to declare `username` component with its css `.user` selector.
+
+```yaml title="Login.page.yaml"
+username:
+  by:
+    css: .user
+
+# or shorter
+username:
+  by: css .user
+
+# or shorter
+username: css .user
+
+# or shorter
+username: .user
+```
+
+
+### List of components
+
+TODO
+
 
 ### Nested
-Component may have relative components
-```yaml
-MyComponent:
-  by: xpath .//div
 
-  MyOtherComponent: .//button
+A nested component is a component that is contained inside another component, forming a parent-child relationship.
+
+```yaml title="Home.page.yaml"
+logo: //img
+
+header:
+  by: .header
+
+  menu:
+    by: .//ul
+
+    items: ./li
 ```
 
-### Parametrized
-Locator may have parameters.
-```yaml
-MyButton: ./button[text()='{text}']
+In this example `menu` component is located in scope of `header` component.
+
+
+### Parametrized locator
+
+Usually all components locators can be declared deterministically. But sometimes it is beneficial to determine component's locator at runtime. Locator can be parametrized, where each parameter is provided in runtime.
+
+```yaml title="Home.page.yaml"
+section: .//section[text()='{name}']
 ```
 
-`{text}` is treated as a parameter, and then you use it
+`{name}` is treated as a parameter, and then you use it:
+
 ```csharp
-myPage.MyButton(text: "Sign in") // finds ./button[text()='Sign in']
+homePage.Section(name: "Upcoming"); // locates single section with "Upcoming" text
 ```
 
-Or even find multiple components
-```yaml
-GetMyButtons: ./button[text()='{text}']
+It also works with a list of components:
+
+```yaml title="Home.page.yaml"
+sections: .//section[starts-with(text(), '{name}')]
 ```
+
 ```csharp
-myPage.GetMyButtons(text: "Sign in") // finds many ./button[text()='Sign in']
+homePage.Sections(text: "A") // locates many sections which start with "A" text
 ```
 
-### Reusable
-It's possible to define a component once in `*.component.yaml` file and reuse it.
 
-```yaml title="My.component.yaml"
-by: ./div
+### Reusable components
 
-MyButton: ./button
+It's possible to declare a component once in `*.component.yaml` file and reuse it across pages or components.
+
+```yaml title="Select.component.yaml"
+options: ./option
 ```
 
-```yaml title="My.page.yaml"
-MyOtherComponent:
-  ref: My # or 'base: My'
+```yaml title="Home.page.yaml"
+sort:
+  by: id sort
+  ref: select
 ```
+
+And now use it:
+
+```csharp
+homePage.Sort.Options.First(o => o.Text.Equals(["Relevance"])).Click();
+
+// or shorter
+homePage.Sort.Options["Relevance"].Click();
+
+```
+
+:::note
+Aliases for `ref` keyword:
+- `base`
+:::
 
 
 ## Showcase
