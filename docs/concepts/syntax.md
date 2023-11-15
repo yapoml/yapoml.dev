@@ -161,7 +161,8 @@ section: .//section[text()='{name}']
 `{name}` is treated as a parameter, and then you use it:
 
 ```csharp
-homePage.Section(name: "Upcoming"); // locates single section with "Upcoming" text
+// locates single section with "Upcoming" text
+homePage.Section(name: "Upcoming");
 ```
 
 It also works with a list of components:
@@ -171,7 +172,8 @@ sections: .//section[starts-with(text(), '{name}')]
 ```
 
 ```csharp
-homePage.Sections(text: "A") // locates many sections which start with "A" text
+// locates many sections which start with "A" text
+homePage.Sections(text: "A");
 ```
 
 
