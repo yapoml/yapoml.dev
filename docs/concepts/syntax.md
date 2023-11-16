@@ -131,13 +131,13 @@ username: .user
 
 Yapoml framework is smart enough to understand whether you define one single component located by locator, or many components located by this locator. Plural components are identified in the same way as your natural language.
 
-If you want to find all buttons on the page by specific locator, just declare it.
+If you want to find all buttons on the page by specific locator, just declare it:
 
 ```yaml title="Home.page.yaml"
 buttons: //button
 ```
 
-`buttons` here is plural word, which is treated by Yapoml it should find many elements.
+`buttons` here is a plural word, which is treated by Yapoml as it should find many elements.
 
 Then you can use it:
 
