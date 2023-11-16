@@ -129,8 +129,24 @@ username: .user
 
 ### List of components
 
-TODO
+Yapoml framework is smart enough to understand whether you define one single component located by locator, or many components located by this locator. Plural components are identified in the same way as your natural language.
 
+If you want to find all buttons on the page by specific locator, just declare it.
+
+```yaml title="Home.page.yaml"
+buttons: //button
+```
+
+`buttons` here is plural word, which is treated by Yapoml it should find many elements.
+
+Then you can use it:
+
+```csharp title="Program.cs"
+foreach (var button in homePage.Buttons)
+{
+  Console.WriteLine(button.Text);
+}
+```
 
 ### Nested
 
