@@ -79,7 +79,7 @@ It is even easier to navigate to `UserPage`.
 
 ```csharp title="Program.cs"
 userPage.Open(userId: "123", param2: "some value");
-// navigates to /users/123?param2=any%20value
+// navigates to /users/123?param2=some%20value
 ```
 
 
@@ -87,12 +87,13 @@ userPage.Open(userId: "123", param2: "some value");
 
 A component is a part of a web page that has its own functionality, layout, and style. It can be reused on different pages or in different parts of the same page. For example, a component can be a navigation menu, a search box, a footer, a carousel, or a custom element that you create yourself. A component can also contain other components inside it, creating a hierarchical structure of the web page.
 
+In this example `Login` page has `Username` and `Password` input fields.
+
 ```yaml title="Login.page.yaml"
 username: .user
 password: .pass
 ```
 
-In this example `Login` page has `Username` and `Password` input fields.
 
 ### Locator
 
@@ -135,6 +136,8 @@ TODO
 
 A nested component is a component that is contained inside another component, forming a parent-child relationship.
 
+In this example `menu` component is located in scope of `header` component, and `menu` component contains many menu `items` inside.
+
 ```yaml title="Home.page.yaml"
 logo: //img
 
@@ -146,8 +149,6 @@ header:
 
     items: ./li
 ```
-
-In this example `menu` component is located in scope of `header` component.
 
 
 ### Parametrized locator
