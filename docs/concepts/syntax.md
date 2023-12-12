@@ -100,9 +100,9 @@ password: .pass
 Each component is identified by its locator, which tells how to locate a component on the page.
 
 Supported locator methods (case insensitive):
-- `ID`
-- `CSS`
-- `XPath`
+- `id`
+- `css`
+- `xpath`
 
 :::tip
 If locator method is not declared explicitly, Yapoml tries to recognize it automatically. By default it treats it as `xpath` if it's valid, otherwise as `css`.
