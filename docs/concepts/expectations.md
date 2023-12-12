@@ -9,17 +9,17 @@ There are many ways how to expect some conditions on the page before making any 
 ```csharp
 ya.LoginPage.UsernameInput
     .Expect().IsEnabled()
-    .Type("john");
+    .Type("John");
 ```
 
 Or slightly reversed expression allowing you think about action first, and then about condition(s) when an action should be performed.
 
 ```csharp
 ya.LoginPage.UsernameInput
-    .Type("john", when => when.IsEnabled());
+    .Type("John", when => when.IsEnabled());
 ```
 
-Above examples wait until `UsernameInput` component is enabled, and then type `john` text.
+Above examples wait until `UsernameInput` component is enabled, and then type `John` text.
 
 
 ## Chain multiple conditions
@@ -99,7 +99,7 @@ Various conditions for current page `Url`. It can be `page.Expect().Url.Is("some
 
 _Usage_
 ```csharp
-page.Expect().Url.Contains("/user?name=john");
+page.Expect().Url.Contains("/user?name=John");
 ```
 
 ### Title…
