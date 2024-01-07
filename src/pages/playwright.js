@@ -47,7 +47,7 @@ function HomePromo() {
         <div>
         <Player src={colorMode == 'dark' ? useBaseUrl("/img/promo_dark.mp4") : useBaseUrl("/img/promo_light.mp4")} className={styles.promo + ' shadow--md'}>
             <BigPlayButton position="center" className={styles.promoPlayButton} />
-            <ControlBar disableDefaultControls={true}>
+            <ControlBar autoHide={false} disableDefaultControls={true}>
               <PlayToggle />
               <ProgressControl />
               <FullscreenToggle />
