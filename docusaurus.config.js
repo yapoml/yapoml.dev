@@ -3,8 +3,7 @@
 
 const editBaseUrl = 'https://github.com/yapoml/yapoml.github.io/tree/main/';
 
-const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
-const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+const prismRenderer = require('prism-react-renderer/dist');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -159,8 +158,8 @@ const config = {
         indexName: 'yapoml',
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismRenderer.themes.vsLight,
+        darkTheme: prismRenderer.themes.vsDark,
         additionalLanguages: ['csharp']
       },
     }),
