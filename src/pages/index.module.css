@@ -26,6 +26,9 @@
 .promo {
   width: 100%;
   border-radius: 7px;
+  background-color: transparent !important;
+  color: var(--ifm-color-primary) !important;
+  overflow: hidden;
 }
 
 .frameworksList {

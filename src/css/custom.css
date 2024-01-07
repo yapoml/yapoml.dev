@@ -100,6 +100,26 @@ html[data-theme='dark'] .sidebar-divider {
   margin-top: 1rem !important;
 }
 
+
+.video-react .video-react-control-bar {
+  background-color: transparent !important;
+}
+
+.video-react-big-play-button {
+  background-color: var(--ifm-color-primary) !important;
+  border: var(--ifm-button-border-width) solid var(--ifm-button-border-color) !important;
+  border-radius: var(--ifm-button-border-radius) !important;
+  color: var(--ifm-button-color) !important;
+}
+
+.video-react-big-play-button:hover {
+  background-color: var(--ifm-color-primary-dark) !important;
+}
+
+.video-react .video-react-play-progress {
+  background-color: var(--ifm-color-primary) !important;
+}
+
 html[data-theme='dark'] .sidebar-divider {
   color: var(--ifm-color-gray-200);
 }
