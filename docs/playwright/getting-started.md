@@ -1,27 +1,45 @@
 ---
 title: Getting Started
 description: Generates page object classes for Microsoft Playwright with ease
+sidebar_position: 0
 ---
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 Generates page object classes for [Microsoft Playwright](https://playwright.dev) with ease.
 
-:::caution Experimental
-Selenium support is first, then everything will be migrated to Playwright.
-:::
+# Installation
+Install [Yapoml.Playwright](https://www.nuget.org/packages/Yapoml.Playwright) nuget package.
 
-Given that you have the following `LoginPage.po.yaml` file
+<Tabs>
+<TabItem value="cli" label=".NET CLI" default>
+
+```
+dotnet add package Yapoml.Playwright
+```
+
+</TabItem>
+<TabItem value="manager" label="Package Manager" default>
+
+```
+NuGet\Install-Package Yapoml.Playwright
+```
+
+</TabItem> 
+</Tabs>
+
+You can now start creating your `*.page.yaml` files.
+
+# Usage
+Given that you have the following `Login.page.yaml` file
 
 ```yaml
-UsernameInput: "#username"
+username input: id username
 ```
 
 Then you are able to immediately interact with web elements
 
 ```csharp
-using Yapoml.Playwright;
-
-page.Ya().LoginPage.UsernameInput.Type("user01");
+driver.Ya().LoginPage.UsernameInput.Type("user01");
 ```
-
-# Installation
-Install [Yapoml.Playwright](https://www.nuget.org/packages/Yapoml.Playwright) nuget package and create your `*.po.yaml` files.
