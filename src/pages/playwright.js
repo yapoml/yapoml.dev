@@ -27,6 +27,11 @@ function HomepageHeader() {
               Get started
           </Link>
           <Link
+            className="button button--outline button--primary button--lg margin--md"
+            to="vscode://vscode.git/clone?url=https%3A%2F%2Fgithub.com%2Fyapoml%2Fyapoml.playwright.sandbox.git">
+              Try it now
+          </Link>
+          <Link
             className="button button--link button--lg margin--md"
             to="/docs/intro">
               What is Yapoml?
