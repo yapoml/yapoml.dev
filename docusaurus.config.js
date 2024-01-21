@@ -71,7 +71,7 @@ const config = {
         defaultMode: 'dark',
       },
       image: 'img/social_card.png',
-      metadata: [{name: 'keywords', content: 'automation, testing, page object, pom, generation, selenium webdriver, playwright'}],
+      metadata: [{name: 'keywords', content: 'automation, test, framework, page object, pom, generation, selenium, webdriver, playwright'}],
       navbar: {
         title: 'Yapoml',
         hideOnScroll: true,
