@@ -8,7 +8,7 @@ sidebar_position: 2
 Explore here available methods how you can interact with your pages and components. All methods are fluent in mind, allowing you to continue interaction with the subject under focus.
 
 ```csharp
-ya.SearchPage.Open().SearchInput.Clear().Type("yapoml");
+ya.SearchPage.Open().SearchInput.Fill("yapoml");
 ```
 
 All components are automatically awaited to be presented on the page before any interaction, providing a possibility to specify [expectations](expectations.md) explicitly.
