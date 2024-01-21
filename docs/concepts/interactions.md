@@ -258,3 +258,12 @@ _Usage_
 ```csharp
 ya.HomePage.SearchButton.ScrollIntoView();
 ```
+
+#### GetScreenshot
+
+Gets a screenshot of the current state of the component in PNG format.
+
+_Usage_
+```csharp
+ya.HomePage.SearchButton.GetScreenshot();
+```
