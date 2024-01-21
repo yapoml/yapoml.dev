@@ -203,6 +203,15 @@ _Usage_
 ya.HomePage.SearchInput.Clear();
 ```
 
+#### Fill
+
+Clears and types the new text into a component. It is useful when you need to make sure that a component is cleared before typing new text.
+
+_Usage_
+```csharp
+ya.HomePage.SearchInput.Fill("yapoml");
+```
+
 #### Hover
 
 Simulates a mouse hover over a component. It is useful for triggering events that depend on the mouse cursor position, such as displaying tooltips, menus, or pop-ups. For example, you can use it to hover over a link to see its URL, or hover over a button to see its description.
