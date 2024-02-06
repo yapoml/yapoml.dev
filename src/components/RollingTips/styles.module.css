@@ -6,9 +6,18 @@
   user-select: none;
 }
 
+.player {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
 @media screen and (max-width: 996px) {
-  .typing__container {
-    font-size: 0.7rem;
-    margin: 2rem 0 0;
+  .player {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }

@@ -39,7 +39,6 @@ function HomePromo() {
   return (
     <section>
       <div className="container">
-        <h2 className={styles.sectionHeader}>Watch it out in action</h2>
         <div>
           <Player src={colorMode == 'dark' ? useBaseUrl("/img/promo_dark.mp4") : useBaseUrl("/img/promo_light.mp4")} className={styles.promo + ' shadow--md'}>
             <BigPlayButton position="center" className={styles.promoPlayButton} />
