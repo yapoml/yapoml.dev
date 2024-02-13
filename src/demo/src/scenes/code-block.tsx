@@ -21,11 +21,11 @@ export default makeScene2D(function* (view) {
   yield* codeRef().edit(2.4)`Ya.LoginPage.${insert('Username.Type("John")')};`;
   yield* waitFor(2.6);
 
-  yield* codeRef().edit(2.4)`Ya.LoginPage.Username.Type("John").${insert('Password.Type("123")')};`;
+  yield* codeRef().edit(2.4)`Ya.LoginPage.Username.Type("John").${insert('Password.Type("***")')};`;
 
   yield* waitFor(2.6);
 
-  yield* codeRef().edit(2.4)`Ya.LoginPage.Username.${edit('Type("John").Password.Type("123")', 'Expect().Attributes.Value.Is("John")')};`;
+  yield* codeRef().edit(2.4)`Ya.LoginPage.Username.${edit('Type("John").Password.Type("***")', 'Expect().Attributes.Value.Is("John")')};`;
 
   yield* waitFor(2.6);
   
