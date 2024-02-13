@@ -49,5 +49,9 @@ export default makeScene2D(function* (view) {
 
   yield* waitFor(2.6);
 
-  yield* codeRef().edit(2.4)`Ya${remove('.HomePage.Expect(it => it.IsOpened().Title.Contains("Welcome"));')}`;
+  yield* codeRef().edit(2.4)`Ya.HomePage.${edit('Expect(it => it.IsOpened().Title.Contains("Welcome"))', 'Logout()')};`;
+
+  yield* waitFor(2.6);
+
+  yield* codeRef().edit(2.4)`Ya${remove('.HomePage.Logout();')}`;
 });
