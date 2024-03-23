@@ -6,9 +6,16 @@
   user-select: none;
 }
 
+.section {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+[data-theme='light'] .section {
+  background-color: #242526;
+}
+
 .player {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,5 +34,10 @@
   .player {
     margin-top: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
   }
 }

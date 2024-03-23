@@ -8,7 +8,7 @@ if (ExecutionEnvironment.canUseDOM) {
 
 export default function RollingTips() {
   return (
-    <section>
+    <section className={styles.section}>
       <div className="container">
         <motion-canvas-player
             class={styles.player}

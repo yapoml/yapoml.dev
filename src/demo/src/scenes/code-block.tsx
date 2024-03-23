@@ -1,57 +1,126 @@
-import {makeScene2D} from '@motion-canvas/2d';
-import {
-  CodeBlock,
-  edit,
-  insert,
-  lines,
-  remove,
-} from '@motion-canvas/2d/lib/components/CodeBlock';
-import {all, createRef, waitFor} from '@motion-canvas/core';
+
+import { Code, LezerHighlighter, makeScene2D, word } from '@motion-canvas/2d';
+import { DEFAULT, all, createRef, waitFor } from '@motion-canvas/core';
+import {HighlightStyle} from '@codemirror/language';
+import {tags} from '@lezer/highlight';
+import {parser} from '@lezer/java';
 
 export default makeScene2D(function* (view) {
-  const codeRef = createRef<CodeBlock>();
 
-  yield view.add(<CodeBlock language="js" ref={codeRef} code={`Ya`} />);
+  // @ddietr/codemirror-themes/material-dark
+  const materialDarkHighlightStyle = HighlightStyle.define([
+    { tag: tags.keyword, color: '#89DDFF'},
+    { tag: [tags.name, tags.deleted, tags.character, tags.macroName], color: '#EEFFFF' },
+    { tag: [tags.propertyName], color: '#82AAFF' },
+    { tag: [tags.processingInstruction, tags.string, tags.inserted, tags.special(tags.string)], color: '#D69D85' }, // "abc" - modified
+    { tag: [tags.function(tags.variableName), tags.labelName], color: '#DCDCAA' }, // func() - modified
+    { tag: [tags.color, tags.constant(tags.name), tags.standard(tags.name)], color: '#89DDFF' },
+    { tag: [tags.definition(tags.name), tags.separator], color: '#EEFFFF' }, // ;
+    { tag: [tags.className], color: '#FFCB6B' },
+    { tag: [tags.number, tags.changed, tags.annotation, tags.modifier, tags.self, tags.namespace], color: '#B5CEA8' }, // 10 - modified
+    { tag: [tags.typeName], color: '#FFCB6B', fontStyle: '#FFCB6B' },
+    //{ tag: [tags.operator, tags.operatorKeyword], color: '#FF0000' }, // . - modified
+    { tag: [tags.url, tags.escape, tags.regexp, tags.link], color: '#C3E88D' },
+    { tag: [tags.meta, tags.comment], color: '#546E7A' },
+    { tag: tags.strong, fontWeight: 'bold' },
+    { tag: tags.emphasis, fontStyle: 'italic' },
+    { tag: tags.link, textDecoration: 'underline' },
+    { tag: tags.heading, fontWeight: 'bold', color: '#89DDFF' },
+    { tag: [tags.atom, tags.bool, tags.special(tags.variableName)], color: '#EEFFFF' },
+    { tag: tags.invalid, color: '#f0717870' },
+    { tag: tags.strikethrough, textDecoration: 'line-through' },
+]);
 
-  yield* waitFor(1.6);
 
-  yield* codeRef().edit(2.4, false)`Ya.${insert('LoginPage')};`;
-  yield* waitFor(2.6);
-
-  yield* codeRef().edit(2.4)`Ya.LoginPage.${insert('Username.Type("John")')};`;
-  yield* waitFor(2.6);
-
-  yield* codeRef().edit(2.4)`Ya.LoginPage.Username.Type("John").${insert('Password.Type("***")')};`;
-
-  yield* waitFor(2.6);
-
-  yield* codeRef().edit(2.4)`Ya.LoginPage.Username.${edit('Type("John").Password.Type("***")', 'Expect().Attributes.Value.Is("John")')};`;
-
-  yield* waitFor(2.6);
+  Code.defaultHighlighter = new LezerHighlighter(parser, materialDarkHighlightStyle);
   
-  yield* codeRef().edit(2.4)`Ya.LoginPage.Username.Expect().${edit('Attributes.Value.Is("John")', 'Styles.Opacity.IsGreaterThan(0.6)')};`;
+  const code = createRef<Code>();
 
-  yield* waitFor(2.6);
+  view.add(
+    <Code
+      antialiased={true}
+      ref={code}
+      fill={'#888888'}
+      code={`Ya;`}
+    />,
+  );
 
-  yield* codeRef().edit(2.4)`Ya.LoginPage.${edit('Username.Expect().Styles.Opacity.IsGreaterThan(0.6)', 'SignIn.Click()')};`;
+  const transitionDelay = 1.2;
 
-  yield* waitFor(2.6);
+  yield* waitFor(2.4);
 
-  yield* codeRef().edit(2.4)`Ya.LoginPage.SignIn.Click(${insert('when => when.IsEnabled()')});`;
+  yield* all(
+    code().code.insert([0, 2], `.LoginPage`, transitionDelay),
+    code().selection(word(0, 3, 9), transitionDelay)
+  )
 
-  yield* waitFor(2.6);
+  yield* waitFor(2.4);
 
-  yield* codeRef().edit(2.4)`Ya.${edit('LoginPage.SignIn.Click(when => when.IsEnabled())', 'HomePage.Expect().IsOpened()')};`;
+  yield* all(
+    code().code.insert([0, 12], `.Username.Type("John")`, transitionDelay),
+    code().selection(word(0, 13, 21), transitionDelay)
+  )
 
-  yield* waitFor(2.6);
+  yield* waitFor(2.4);
 
-  yield* codeRef().edit(2.4)`Ya.HomePage.Expect(${edit(').IsOpened(', 'it => it.IsOpened().Title.Contains("Welcome")')});`;
+  yield* all(
+    code().code.insert([0, 34], `.Password.Type("***")`, transitionDelay),
+    code().selection(word(0, 35, 20), transitionDelay)
+  )
 
-  yield* waitFor(2.6);
+  yield* waitFor(2.4);
 
-  yield* codeRef().edit(2.4)`Ya.HomePage.${edit('Expect(it => it.IsOpened().Title.Contains("Welcome"))', 'Logout()')};`;
+  yield* all(
+    code().code.replace(word(0, 13, 42), `Expect().Attributes.Value.Is("John")`, transitionDelay),
+    code().selection(word(0, 13, 36), transitionDelay)
+  )
 
-  yield* waitFor(2.6);
+  yield* waitFor(2.4);
 
-  yield* codeRef().edit(2.4)`Ya${remove('.HomePage.Logout();')}`;
+  yield* all(
+    code().code.replace(word(0, 22, 27), `Styles.Opacity.IsGreaterThan(0.6)`, transitionDelay),
+    code().selection(word(0, 22, 33), transitionDelay)
+  )
+
+  yield* waitFor(2.4);
+
+  yield* all(
+    code().code.replace(word(0, 13, 42), `SignIn.Click()`, transitionDelay),
+    code().selection(word(0, 13, 14), transitionDelay)
+  )
+
+  yield* waitFor(2.4);
+
+  yield* all(
+    code().code.insert([0, 26], `when => when.IsEnabled()`, transitionDelay),
+    code().selection(word(0, 20, 31), transitionDelay)
+  )
+
+  yield* waitFor(2.4);
+
+  yield* all(
+    code().code.replace(word(0, 3, 48), `HomePage.Expect().IsOpened()`, transitionDelay),
+    code().selection(word(0, 3, 28), transitionDelay)
+  )
+
+  yield* waitFor(2.4);
+
+  yield* all(
+    code().code.replace(word(0, 19, 11), `it => it.IsOpened().Title.Contains("Welcome")`, transitionDelay),
+    code().selection(word(0, 12, 53), transitionDelay)
+  )
+
+  yield* waitFor(2.4);
+
+  yield* all(
+    code().code.replace(word(0, 12, 53), `Logout()`, transitionDelay),
+    code().selection(word(0, 3, 17), transitionDelay)
+  )
+
+  yield* waitFor(2.4);
+
+  yield* all(
+    code().code.remove(word(0, 2, 18), transitionDelay),
+    code().selection(DEFAULT, transitionDelay)
+  )
 });
