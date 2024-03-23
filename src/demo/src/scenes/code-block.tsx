@@ -71,21 +71,21 @@ export default makeScene2D(function* (view) {
   yield* waitFor(2.4);
 
   yield* all(
-    code().code.replace(word(0, 13, 42), `Expect().Attributes.Value.Is("John")`, transitionDelay),
-    code().selection(word(0, 13, 36), transitionDelay)
+    code().code.replace(word(0, 22, 33), `Expect().Attributes.Value.Is("John")`, transitionDelay),
+    code().selection(word(0, 13, 45), transitionDelay)
   )
 
   yield* waitFor(2.4);
 
   yield* all(
-    code().code.replace(word(0, 22, 27), `Styles.Opacity.IsGreaterThan(0.6)`, transitionDelay),
-    code().selection(word(0, 22, 33), transitionDelay)
+    code().code.replace(word(0, 31, 27), `Styles.Opacity.IsGreaterThan(0.6)`, transitionDelay),
+    code().selection(word(0, 22, 42), transitionDelay)
   )
 
   yield* waitFor(2.4);
 
   yield* all(
-    code().code.replace(word(0, 13, 42), `SignIn.Click()`, transitionDelay),
+    code().code.replace(word(0, 13, 51), `SignIn.Click()`, transitionDelay),
     code().selection(word(0, 13, 14), transitionDelay)
   )
 
