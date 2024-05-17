@@ -105,7 +105,7 @@ Supported locator methods (case insensitive):
 - `id`
 - `testid`
 
-:::tip
+:::tip implicit locator method
 If locator method is not declared explicitly, Yapoml tries to recognize it automatically. By default it treats it as `xpath` if it's valid, otherwise as `css`.
 :::
 
@@ -125,6 +125,15 @@ username: css .user
 
 # or shorter
 username: .user
+```
+
+It's possible to define a scope where the locator should be found from.
+
+```yaml title="Login.page.yaml"
+username:
+  by:
+    css: .user
+    from: page # parent by default
 ```
 
 
