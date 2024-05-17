@@ -145,7 +145,7 @@ _Usage_
 checkbox.Expect().IsChecked();
 ```
 
-### Text
+### Text…
 Conditions for checking text content of the component.
 
 _Usage_
