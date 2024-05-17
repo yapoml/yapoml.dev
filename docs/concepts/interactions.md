@@ -74,7 +74,7 @@ For example, you can use it to check if a text field is editable or read-only.
 
 _Usage_
 ```csharp
-bool enabled = ya.HomePage.SearchButton.IsEnabled;
+bool isEnabled = ya.HomePage.SearchButton.IsEnabled;
 ```
 
 #### IsChecked
@@ -85,7 +85,7 @@ For example, you can use it to check if a checkbox or radiobutton is checked.
 
 _Usage_
 ```csharp
-bool checked = ya.HomePage.RememberMeCheckbox.IsChecked;
+bool isChecked = ya.HomePage.RememberMeCheckbox.IsChecked;
 ```
 
 #### Text
