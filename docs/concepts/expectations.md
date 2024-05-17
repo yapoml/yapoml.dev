@@ -137,6 +137,14 @@ _Usage_
 signInButton.Click(when => when.IsEnabled());
 ```
 
+### IsChecked
+Waits until a component is checked. Useful for checkboxes and radiobuttons. The opposite version is **IsNotChecked** or **IsUnchecked**.
+
+_Usage_
+```csharp
+checkbox.Expect().IsChecked();
+```
+
 ### Text
 Conditions for checking text content of the component.
 

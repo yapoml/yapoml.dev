@@ -70,11 +70,22 @@ It doesn't expect a component exists in DOM. It only returns `true` if a compone
 
 Used to indicate whether a component can respond to user interactions or not. It returns a boolean value: `true` if the element is enabled, and `false` if the element is disabled.
 
-For example, you can use it to check if a checkbox is checked or unchecked, or if a text field is editable or read-only.
+For example, you can use it to check if a text field is editable or read-only.
 
 _Usage_
 ```csharp
 bool enabled = ya.HomePage.SearchButton.IsEnabled;
+```
+
+#### IsChecked
+
+Used to indicate whether a component is checked or unchecked. It returns a boolean value: `true` if the element is checked, and `false` if the element is unchecked.
+
+For example, you can use it to check if a checkbox or radiobutton is checked.
+
+_Usage_
+```csharp
+bool checked = ya.HomePage.RememberMeCheckbox.IsChecked;
 ```
 
 #### Text
