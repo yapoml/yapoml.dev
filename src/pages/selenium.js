@@ -70,8 +70,8 @@ export default function Home() {
     <Layout title='Selenium' description="Yet another page object generation in .NET/C# for Selenium WebDriver">
       <HomepageHeader />
       <main>
-        <RollingTips />
         <HomePromo />
+        <RollingTips />
         <HomepageFeatures />
       </main>
     </Layout>

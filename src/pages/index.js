@@ -88,8 +88,8 @@ export default function Home() {
       description="Yet another page object generation in .NET">
       <HomepageHeader />
       <main>
-        <RollingTips />
         <HomePromo />
+        <RollingTips />
         <FrameworksSection />
         <HomepageFeatures />
       </main>
