@@ -58,7 +58,7 @@ function FrameworksSection() {
   return (
     <section>
       <div className="container">
-        <h2 className={styles.sectionHeader}>Supported frameworks</h2>
+        <h2 className={styles.sectionHeader}>Built on top of popular frameworks</h2>
         <div className='row'>
           <div className='col'>
             <ul className={styles.frameworksList}>
