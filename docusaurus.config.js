@@ -90,11 +90,11 @@ const config = {
           {label: 'Playwright', to: '/playwright', position: 'right' },
           // {to: '/blog', label: 'Blog', position: 'left'},
           {
-            label: "GitHub",
             href: 'https://github.com/yapoml',
-            "aria-label": "Open GitHub Repository",
+            "aria-label": "GitHub Repository",
             "title": "GitHub",
             position: 'right',
+            className: 'header-github-link',
           },
         ],
       },
