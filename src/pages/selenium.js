@@ -23,7 +23,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--primary button--lg margin--md"
-            to="/docs/selenium/getting-started">
+            to="/docs/intro?framework=selenium">
             Get started
           </Link>
           <Link
