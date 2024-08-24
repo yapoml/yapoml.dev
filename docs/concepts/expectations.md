@@ -163,6 +163,14 @@ signInButton.Expect().Is("Sign In");
 ``` 
 :::
 
+### Value…
+Conditions for checking input value of the component. 
+
+_Usage_
+```csharp
+usernameInput.Expect().Value.Is("John");
+```
+
 ### Attributes…
 Certain conditions for a component's attributes what define characteristics and properties of a component. In web this is html attribute for the specified tag. Due to textual nature of the attributes, you can use [many ways](#textual-conditions) to create conditions for attributes.
 

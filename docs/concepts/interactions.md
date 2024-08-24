@@ -101,6 +101,15 @@ string text = ya.HomePage.SearchButton.Text;
 This property may not work as expected for some components that do not have any visible text content. For example, input elements (`<input>`) do not have any inner text, so they will return an empty string for this property. To get the value of an input element, you may need to use the [Attributes.Value](#attributes) property.
 :::
 
+#### Value
+
+Gets the value of an input component.
+
+_Usage_
+```csharp
+string value = ya.HomePage.SearchInput.Value;
+```
+
 #### Attributes…
 
 Gets the value of an attribute of a component as a string. It can also retrieve component properties, such as an anchor tag’s `href` attribute.
