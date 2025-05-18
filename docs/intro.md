@@ -11,7 +11,7 @@ Yapoml framework is a powerful and innovative tool that allows you to create pag
 
 3 easy steps to get started right now. Let's create a real test which verifies that on the `https://www.nuget.org/packages?q=yapoml` page there is at least 1 package, and that all packages have a description and tags.
 
-### Install NuGet package
+### ❶ Install NuGet package
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -38,7 +38,7 @@ dotnet add package Yapoml.Playwright
 </Tabs>
 
 
-### Define page
+### ❷ Define page
 
 Add new `Packages.page.yaml` file which defines the layout of the page. [Read more](concepts/syntax.md) about how to define pages and components.
 
@@ -56,7 +56,7 @@ packages:
 ```
 
 
-### Interact with it
+### ❸ Interact with it
 
 The page is automatically transformed to C# types available for interactions immediately. Explore what [interactions](concepts/interactions.md) and [expectations](concepts/expectations.md) you can use on the page.
 
