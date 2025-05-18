@@ -21,18 +21,10 @@ import TabItem from '@theme/TabItem';
 
 Install [Yapoml.Selenium](https://www.nuget.org/packages/Yapoml.Selenium) NuGet package.
 
-```
-dotnet add package Yapoml.Selenium
-```
-
 </TabItem>
 <TabItem value="playwright" label="Playwright">
 
 Install [Yapoml.Playwright](https://www.nuget.org/packages/Yapoml.Playwright) NuGet package.
-
-```
-dotnet add package Yapoml.Playwright
-```
 
 </TabItem>
 </Tabs>
@@ -42,7 +34,7 @@ dotnet add package Yapoml.Playwright
 
 Add new `Packages.page.yaml` file which defines the layout of the page. [Read more](concepts/syntax.md) about how to define pages and components.
 
-```yaml
+```yaml title="Packages.page.yaml"
 url:
   path: https://www.nuget.org/packages
   query:
