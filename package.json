@@ -15,20 +15,24 @@
   },
   "dependencies": {
     "@docusaurus/core": "^3.7.0",
+    "@docusaurus/plugin-pwa": "^3.7.0",
     "@docusaurus/preset-classic": "^3.7.0",
+    "@fontsource-variable/inter": "^5.0.18",
     "@mdx-js/react": "^3.0.0",
     "@motion-canvas/core": "^3.15.1",
     "@motion-canvas/player": "^3.15.1",
-    "clsx": "^1.2.1",
-    "prism-react-renderer": "^2.1.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.2.10",
+    "lucide-react": "^0.395.0",
+    "prism-react-renderer": "^2.3.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-type-animation": "^3.2.0",
-    "video-react": "^0.16.0",
-    "yarn": "^1.22.19"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.7.0"
+  },
+  "overrides": {
+    "webpack": "5.93.0"
   },
   "browserslist": {
     "production": [

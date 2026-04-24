@@ -1,0 +1,18 @@
+{
+  "name": "Yapoml",
+  "short_name": "Yapoml",
+  "description": "Yet another page object generation in .NET/C# with minimal code and maximum impact.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b1f1d",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "/img/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

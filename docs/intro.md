@@ -4,8 +4,13 @@ description: Define your page objects with ease and start to automate immediatel
 sidebar_position: 0
 ---
 
-Yapoml framework is a powerful and innovative tool that allows you to create page definitions for various testing tools in real time. With Yapoml, you can use a simple and intuitive syntax to define the UI components. The framework will then generate the corresponding boilerplate code on the fly, while you are defining your pages and components, which can be easily extended as needed. Yapoml makes test automation faster, easier, and more reliable.
+**Yapoml** generates page objects for your UI tests on the fly. Describe pages and components with a concise YAML syntax — Yapoml produces fluent, type-safe C# code as you save the file. The result: less boilerplate, more readable tests, and a tighter feedback loop for both Selenium and Playwright.
 
+**At a glance**
+
+- ✍️  Describe pages in a few lines of YAML — no class scaffolding, no glue code.
+- ⚡  Get strongly-typed C# page objects automatically, ready to use via `.Ya()`.
+- 🧪  Express expectations and interactions fluently, with full IntelliSense support.
 
 ## Quick Start
 

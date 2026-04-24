@@ -1,9 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const editBaseUrl = 'https://github.com/yapoml/yapoml.github.io/tree/main/';
+const { themes: prismThemes } = require('prism-react-renderer');
 
-const prismRenderer = require('prism-react-renderer/dist');
+const editBaseUrl = 'https://github.com/yapoml/yapoml.github.io/tree/main/';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -12,28 +12,28 @@ const config = {
   tagline: 'Yet another page object generation in .NET/C# with minimal code and maximum impact',
   favicon: 'img/logo.svg',
 
-  // Set the production url of your site here
   url: 'https://yapoml.dev',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
   trailingSlash: false,
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'yapoml', // Usually your GitHub org/user name.
-  projectName: 'yapoml', // Usually your repo name.
+  organizationName: 'yapoml',
+  projectName: 'yapoml',
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'throw',
+    },
+  },
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
+
+  clientModules: [
+    require.resolve('@fontsource-variable/inter/index.css'),
+  ],
 
   presets: [
     [
@@ -42,36 +42,59 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            `${editBaseUrl}`,
+          editUrl: editBaseUrl,
         },
         blog: false,
-        //blog: {
-        //  showReadingTime: true,
-        //  // Please change this to your repo.
-        //  // Remove this to remove the "edit this page" links.
-        //  editUrl:
-        //    'https://github.com/yapoml/yapoml.github.io/tree/main/',
-        //},
         gtag: {
-          trackingID: 'G-3DWDWDXYGT'
+          trackingID: 'G-3DWDWDXYGT',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        sitemap: {
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
       }),
     ],
   ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: false,
+        offlineModeActivationStrategies: [
+          'appInstalled',
+          'standalone',
+          'queryString',
+        ],
+        pwaHead: [
+          { tagName: 'link', rel: 'icon', href: '/img/logo.svg' },
+          { tagName: 'link', rel: 'manifest', href: '/manifest.json' },
+          { tagName: 'meta', name: 'theme-color', content: '#0f766e' },
+          { tagName: 'meta', name: 'apple-mobile-web-app-capable', content: 'yes' },
+          { tagName: 'meta', name: 'apple-mobile-web-app-status-bar-style', content: '#0f766e' },
+        ],
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       colorMode: {
         defaultMode: 'dark',
+        respectPrefersColorScheme: true,
+        disableSwitch: false,
       },
       image: 'img/social_card.png',
-      metadata: [{name: 'keywords', content: 'automation, test, framework, page object, pom, generation, selenium, webdriver, playwright'}],
+      metadata: [
+        { name: 'keywords', content: 'automation, test, framework, page object, pom, generation, selenium, webdriver, playwright, dotnet, csharp' },
+        { name: 'theme-color', content: '#0f766e' },
+      ],
       navbar: {
         title: 'Yapoml',
         hideOnScroll: true,
@@ -86,71 +109,48 @@ const config = {
             sidebarId: 'tutorialSidebar',
             label: 'Docs',
           },
-          {label: 'Selenium', to: '/selenium', position: 'right' },
-          {label: 'Playwright', to: '/playwright', position: 'right' },
-          // {to: '/blog', label: 'Blog', position: 'left'},
+          { label: 'Selenium', to: '/selenium', position: 'right' },
+          { label: 'Playwright', to: '/playwright', position: 'right' },
           {
             href: 'https://github.com/yapoml',
-            "aria-label": "GitHub Repository",
-            "title": "GitHub",
+            'aria-label': 'GitHub Repository',
+            title: 'GitHub',
             position: 'right',
             className: 'header-github-link',
           },
         ],
       },
       footer: {
-        // style: 'dark',
         links: [
           {
             title: 'Learn',
             items: [
-              {
-                label: 'Documentation',
-                to: '/docs/intro',
-              },
+              { label: 'Documentation', to: '/docs/intro' },
+              { label: 'Core Concepts', to: '/docs/concepts/syntax' },
             ],
           },
           {
             title: 'Frameworks',
             items: [
-              {
-                label: 'Selenium',
-                to: '/selenium',
-              },
-              {
-                label: 'Playwright',
-                to: '/playwright',
-              },
-            ]
+              { label: 'Selenium', to: '/selenium' },
+              { label: 'Playwright', to: '/playwright' },
+            ],
           },
           {
             title: 'Community',
             items: [
-              {
-                label: 'Discord',
-                href: 'https://discord.gg/FBWVpMjnJx',
-              },
-              {
-                label: 'GitHub Discussions',
-                href: 'https://github.com/orgs/yapoml/discussions',
-              },
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/yapoml',
-              },
+              { label: 'Discord', href: 'https://discord.gg/FBWVpMjnJx' },
+              { label: 'GitHub Discussions', href: 'https://github.com/orgs/yapoml/discussions' },
+              { label: 'Stack Overflow', href: 'https://stackoverflow.com/questions/tagged/yapoml' },
             ],
           },
           {
             title: 'More',
             items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/yapoml',
-              },
+              { label: 'GitHub', href: 'https://github.com/yapoml' },
             ],
           },
         ],
-        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       algolia: {
         appId: 'BVKM0WY7UJ',
@@ -158,9 +158,9 @@ const config = {
         indexName: 'yapoml',
       },
       prism: {
-        theme: prismRenderer.themes.vsLight,
-        darkTheme: prismRenderer.themes.vsDark,
-        additionalLanguages: ['csharp']
+        theme: prismThemes.vsLight,
+        darkTheme: prismThemes.vsDark,
+        additionalLanguages: ['csharp', 'yaml', 'bash'],
       },
     }),
 };

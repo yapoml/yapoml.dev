@@ -1,0 +1,111 @@
+.hero {
+  position: relative;
+  padding: 5rem 0 4rem;
+  background: var(--ya-gradient-hero);
+  overflow: hidden;
+}
+
+.darkBand {
+  position: relative;
+  background: var(--ya-gradient-cta);
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.darkBand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 320px at 50% 0%, rgba(45, 212, 191, 0.28), transparent 60%),
+    radial-gradient(700px 260px at 90% 100%, rgba(110, 231, 183, 0.18), transparent 60%);
+  z-index: -1;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.heroCopy { max-width: 36rem; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-700);
+  background: var(--ya-surface-2);
+  border: 1px solid var(--ya-border-subtle);
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  margin: 0 0 1.25rem;
+}
+
+.eyebrow a {
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.eyebrowLogo {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: clamp(2.25rem, 4.5vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+}
+
+.titleAccent {
+  background: var(--ya-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.55;
+  margin: 0 0 2rem;
+  max-width: 32rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btnPrimary,
+.btnGhost,
+.btnLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.btnPrimary { font-weight: 600; }
+
+.heroVisual { width: 100%; }
+
+@media screen and (max-width: 996px) {
+  .hero { padding: 3rem 0 2.5rem; }
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .heroCopy { text-align: center; max-width: none; }
+  .subtitle { margin-left: auto; margin-right: auto; }
+  .actions { justify-content: center; }
+}

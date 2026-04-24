@@ -4,8 +4,9 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
+/* ---------- Design tokens ---------- */
 :root {
+  /* Brand: teal */
   --ifm-color-primary: #0f766e;
   --ifm-color-primary-dark: #0d6a63;
   --ifm-color-primary-darker: #0d645e;
@@ -13,11 +14,32 @@
   --ifm-color-primary-light: #108279;
   --ifm-color-primary-lighter: #11887f;
   --ifm-color-primary-lightest: #13998f;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  /* Typography */
+  --ifm-font-family-base: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-heading-line-height: 1.15;
+  --ifm-h1-font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  --ifm-h2-font-size: clamp(1.75rem, 3vw, 2.25rem);
+  --ifm-code-font-size: 92%;
+
+  /* Surfaces */
+  --ya-surface-1: #ffffff;
+  --ya-surface-2: #f6faf9;
+  --ya-surface-3: #eef4f3;
+  --ya-border-subtle: rgba(15, 118, 110, 0.14);
+  --ya-shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
+  --ya-shadow-card-hover: 0 2px 6px rgba(15, 118, 110, 0.10), 0 18px 40px rgba(15, 118, 110, 0.18);
+
+  /* Brand gradients */
+  --ya-gradient-hero: radial-gradient(1200px 600px at 50% -10%, rgba(45, 212, 191, 0.18), transparent 60%),
+                      radial-gradient(800px 400px at 80% 10%, rgba(15, 118, 110, 0.12), transparent 60%);
+  --ya-gradient-cta: linear-gradient(135deg, #0f766e 0%, #0a534d 100%);
+  --ya-gradient-text: linear-gradient(135deg, #0f766e 0%, #2dd4bf 100%);
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary: #2dd4bf;
   --ifm-color-primary-dark: #27c0ad;
@@ -26,9 +48,23 @@
   --ifm-color-primary-light: #42d8c6;
   --ifm-color-primary-lighter: #4ddbc9;
   --ifm-color-primary-lightest: #6de1d3;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ya-surface-1: #0e1a1d;
+  --ya-surface-2: #11272a;
+  --ya-surface-3: #143033;
+  --ya-border-subtle: rgba(45, 212, 191, 0.16);
+  --ya-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --ya-shadow-card-hover: 0 2px 6px rgba(45, 212, 191, 0.18), 0 18px 40px rgba(45, 212, 191, 0.18);
+
+  --ya-gradient-hero: radial-gradient(1200px 600px at 50% -10%, rgba(45, 212, 191, 0.22), transparent 60%),
+                      radial-gradient(800px 400px at 80% 10%, rgba(15, 118, 110, 0.30), transparent 60%);
+  --ya-gradient-cta: linear-gradient(135deg, #0a534d 0%, #134e4a 60%, #0f766e 100%);
+  --ya-gradient-text: linear-gradient(135deg, #2dd4bf 0%, #6de1d3 100%);
+
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.06);
 }
 
+/* ---------- Navbar GitHub icon ---------- */
 .header-github-link::before {
   content: '';
   width: 24px;
@@ -44,29 +80,18 @@
   background-color: var(--ifm-navbar-link-hover-color);
 }
 
-.DocSearch-Button-Keys {
-  display: none !important;
-}
-
-.DocSearch-Footer {
-  display: none !important;
-}
-
+/* ---------- Algolia DocSearch ---------- */
 [data-theme='light'] .DocSearch {
   --docsearch-primary-color: var(--ifm-color-primary);
   --docsearch-text-color: var(--ifm-font-color-base);
   --docsearch-muted-color: var(--ifm-color-secondary-darkest);
   --docsearch-container-background: rgba(94, 100, 112, 0.7);
-  /* Modal */
   --docsearch-modal-background: var(--ifm-color-secondary-lighter);
-  /* Search box */
   --docsearch-searchbox-background: var(--ifm-color-secondary);
   --docsearch-searchbox-focus-background: var(--ifm-color-white);
-  /* Hit */
   --docsearch-hit-color: var(--ifm-font-color-base);
   --docsearch-hit-active-color: var(--ifm-color-white);
   --docsearch-hit-background: var(--ifm-color-white);
-  /* Footer */
   --docsearch-footer-background: var(--ifm-color-white);
 }
 
@@ -74,16 +99,12 @@
   --docsearch-text-color: var(--ifm-font-color-base);
   --docsearch-muted-color: var(--ifm-color-secondary-darkest);
   --docsearch-container-background: rgba(47, 55, 69, 0.7);
-  /* Modal */
   --docsearch-modal-background: var(--ifm-background-color);
-  /* Search box */
   --docsearch-searchbox-background: var(--ifm-background-color);
   --docsearch-searchbox-focus-background: var(--ifm-color-black);
-  /* Hit */
   --docsearch-hit-color: var(--ifm-font-color-base);
   --docsearch-hit-active-color: var(--ifm-color-white);
   --docsearch-hit-background: var(--ifm-color-emphasis-100);
-  /* Footer */
   --docsearch-footer-background: var(--ifm-background-surface-color);
   --docsearch-key-gradient: linear-gradient(
     -26.5deg,
@@ -92,6 +113,7 @@
   );
 }
 
+/* ---------- Sidebar section headers ---------- */
 .sidebar-divider {
   border-top: 1px solid var(--ifm-color-gray-200);
   display: block;
@@ -103,40 +125,28 @@ html[data-theme='dark'] .sidebar-divider {
 }
 
 .sidebar-title {
-  font-size: 0.8rem;
-  letter-spacing: 0.05rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08rem;
   text-transform: uppercase;
-  font-weight: 600;
-  color: var(--ifm-color-gray-600);
-  margin-top: 1rem !important;
-}
-
-
-.video-react .video-react-control-bar {
-  background-color: transparent !important;
-}
-
-.video-react-big-play-button {
-  background-color: var(--ifm-color-primary) !important;
-  border: var(--ifm-button-border-width) solid var(--ifm-button-border-color) !important;
-  border-radius: var(--ifm-button-border-radius) !important;
-  color: var(--ifm-button-color) !important;
-}
-
-.video-react-big-play-button:hover {
-  background-color: var(--ifm-color-primary-dark) !important;
-}
-
-.video-react .video-react-play-progress {
-  background-color: var(--ifm-color-primary) !important;
-}
-
-html[data-theme='dark'] .sidebar-divider {
-  color: var(--ifm-color-gray-200);
+  font-weight: 700;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 1.25rem !important;
 }
 
 @media only screen and (max-width: 998px) {
   .sidebar-title {
     margin-left: 0.75rem;
+  }
+}
+
+/* ---------- Reduced motion safety ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
 }

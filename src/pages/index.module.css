@@ -3,89 +3,254 @@
  * and scoped locally.
  */
 
-.heroBanner {
-  padding-top: 8rem;
-  padding-bottom: 16rem;
-  text-align: center;
+/* ---------- Shared dark gradient band (RollingTips + CTA) ---------- */
+.darkBand {
   position: relative;
+  background: var(--ya-gradient-cta);
+  isolation: isolate;
   overflow: hidden;
 }
 
-html[data-theme='light'] .sectionDark
-{
-  background-color: #242526;
+.darkBand::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 320px at 50% 0%, rgba(45, 212, 191, 0.28), transparent 60%),
+    radial-gradient(700px 260px at 90% 100%, rgba(110, 231, 183, 0.18), transparent 60%);
+  z-index: -1;
 }
 
-.buttons {
-  display: flex;
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  padding: 5rem 0 4rem;
+  background: var(--ya-gradient-hero);
+  overflow: hidden;
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 3rem;
   align-items: center;
-  justify-content: center;
+}
+
+.heroCopy { max-width: 36rem; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ifm-color-primary);
+  background: rgba(15, 118, 110, 0.10);
+  border: 1px solid var(--ya-border-subtle);
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  margin: 0 0 1.25rem;
+}
+
+[data-theme='dark'] .eyebrow {
+  background: rgba(45, 212, 191, 0.10);
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 1.25rem;
+}
+
+.titleAccent {
+  background: var(--ya-gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.55;
+  margin: 0 0 2rem;
+  max-width: 32rem;
+}
+
+.actions {
+  display: flex;
   flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
 }
 
-.sectionHeader {
+.btnPrimary,
+.btnSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+}
+
+.heroVisual { width: 100%; }
+
+/* ---------- Section primitives ---------- */
+.sectionEyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  margin: 0 0 0.65rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+  margin: 0 0 1rem;
+  font-weight: 700;
+}
+
+.sectionLead {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin: 0 0 1.25rem;
+  max-width: 36rem;
+}
+
+.sectionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ifm-color-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.25s ease;
+}
+
+.sectionLink:hover {
+  text-decoration: none;
+  gap: 0.65rem;
+}
+
+/* ---------- Code preview ---------- */
+.codePreview {
+  padding: 5rem 0 3rem;
+}
+
+.codePreviewGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.codePreviewCopy code {
+  background: var(--ya-surface-3);
+  border-radius: 4px;
+  padding: 0.05rem 0.4rem;
+}
+
+.codePreviewCode :global(.theme-code-block) {
+  margin: 0;
+  box-shadow: var(--ya-shadow-card);
+}
+
+/* ---------- Frameworks ---------- */
+.frameworks {
+  padding: 4rem 0 2rem;
+}
+
+.frameworks .sectionEyebrow,
+.frameworks .sectionTitle {
   text-align: center;
-  padding-top: 4rem;
-  padding-bottom: 2rem;
 }
 
-.promoSection {
-  padding-bottom: 6rem;
+.frameworks .sectionTitle {
+  margin-bottom: 2.5rem;
 }
 
-.promo {
-  width: 100%;
-  border-radius: 7px;
-  background-color: transparent !important;
-  color: var(--ifm-color-primary) !important;
-  overflow: hidden;
-  margin-top: -8rem;
+.frameworksGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
 }
 
-.frameworksList {
-  list-style: none;
-  text-align: center;
-  padding: 0;
+.frameworkCard {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+  padding: 1.5rem 1.75rem;
+  background: var(--ya-surface-2);
+  border: 1px solid var(--ya-border-subtle);
+  border-radius: 16px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.frameworksList li {
-  display: inline;
-  margin: 1rem;
+.frameworkCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--ya-shadow-card-hover);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+  color: inherit;
 }
 
-.frameworksList li img {
-  max-width: 6rem;
-  max-height: 6rem;
-  opacity: 0.8;
-  filter: grayscale(90%);
-  transition: all 0.5s ease;
+.frameworkLogo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  filter: grayscale(40%);
+  transition: filter 0.3s ease;
 }
 
-.frameworksList li img:hover {
+.frameworkCard:hover .frameworkLogo {
   filter: none;
 }
 
+.frameworkName {
+  font-size: 1.15rem;
+  margin: 0 0 0.25rem;
+  font-weight: 600;
+}
+
+.frameworkPitch {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.frameworkArrow {
+  color: var(--ifm-color-primary);
+  display: inline-flex;
+}
+
+/* ---------- Responsive ---------- */
 @media screen and (max-width: 996px) {
-  .heroBanner {
-    padding-top: 4rem;
-    padding-bottom: 8rem;
+  .hero { padding: 3rem 0 2.5rem; }
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .heroCopy { text-align: center; max-width: none; }
+  .subtitle { margin-left: auto; margin-right: auto; }
+  .actions { justify-content: center; }
+
+  .codePreview { padding: 3rem 0 2rem; }
+  .codePreviewGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
-  .promo {
-    margin-top: -4rem;
+  .frameworksGrid {
+    grid-template-columns: 1fr;
   }
 
-  .promoSection {
-    padding-bottom: 2rem;
-  }
-
-  .sectionHeader {
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-  }
-
-  .frameworksList li img {
-    max-width: 4rem;
-    max-height: 4rem;
+  .frameworkCard {
+    padding: 1.25rem;
   }
 }
+

@@ -1,18 +1,5 @@
-.typing__container {
-  font-family: var(--ifm-font-family-monospace);
-  font-size: 1.2rem;
-  margin: 4rem 0 0;
-  color: var(--ifm-color-gray-600);
-  user-select: none;
-}
-
 .section {
-  padding-top: 2rem;
-  padding-bottom: 8rem;
-}
-
-[data-theme='light'] .section {
-  background-color: #242526;
+  padding: 4rem 0 0;
 }
 
 .player {
@@ -31,13 +18,7 @@
 }
 
 @media screen and (max-width: 996px) {
-  .player {
-    margin-top: 0rem;
-    margin-bottom: 1rem;
-  }
-
   .section {
-    padding-top: 0rem;
-    padding-bottom: 1rem;
+    padding: 2rem 0;
   }
 }
