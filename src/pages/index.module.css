@@ -3,10 +3,13 @@
  * and scoped locally.
  */
 
-/* ---------- Shared dark gradient band (RollingTips + CTA) ---------- */
+/* ---------- Shared dark band (RollingTips + CTA) ---------- */
 .darkBand {
   position: relative;
-  background: var(--ya-gradient-cta);
+  background: var(--ya-dark-band-bg);
+  border-top: 1px solid var(--ya-dark-band-border);
+  border-bottom: 1px solid var(--ya-dark-band-border);
+  color: var(--ya-dark-band-text);
   isolation: isolate;
   overflow: hidden;
 }
@@ -15,10 +18,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(900px 320px at 50% 0%, rgba(45, 212, 191, 0.28), transparent 60%),
-    radial-gradient(700px 260px at 90% 100%, rgba(110, 231, 183, 0.18), transparent 60%);
+  background: var(--ya-dark-band-overlay);
   z-index: -1;
+  pointer-events: none;
 }
 
 /* ---------- Hero ---------- */
@@ -26,6 +28,7 @@
   position: relative;
   padding: 5rem 0 4rem;
   background: var(--ya-gradient-hero);
+  border-bottom: 1px solid var(--ya-border-subtle);
   overflow: hidden;
 }
 
@@ -40,27 +43,24 @@
 
 .eyebrow {
   display: inline-block;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--ifm-color-primary);
-  background: rgba(15, 118, 110, 0.10);
-  border: 1px solid var(--ya-border-subtle);
-  border-radius: 999px;
-  padding: 0.3rem 0.85rem;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem;
 }
 
 [data-theme='dark'] .eyebrow {
-  background: rgba(45, 212, 191, 0.10);
+  color: var(--ifm-color-primary);
 }
 
 .title {
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
-  font-weight: 800;
-  line-height: 1.08;
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.1;
   letter-spacing: -0.02em;
   margin: 0 0 1.25rem;
+  color: var(--ifm-heading-color);
 }
 
 .titleAccent {
@@ -98,17 +98,18 @@
 /* ---------- Section primitives ---------- */
 .sectionEyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
-  font-weight: 600;
+  letter-spacing: 0.10em;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--ifm-color-primary);
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.5rem;
 }
 
 .sectionTitle {
-  font-size: clamp(1.65rem, 2.6vw, 2.1rem);
+  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
   margin: 0 0 1rem;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .sectionLead {
@@ -153,7 +154,8 @@
 
 .codePreviewCode :global(.theme-code-block) {
   margin: 0;
-  box-shadow: var(--ya-shadow-card);
+  border: 1px solid var(--ya-border-subtle);
+  box-shadow: none;
 }
 
 /* ---------- Frameworks ---------- */
@@ -181,37 +183,30 @@
   grid-template-columns: auto 1fr auto;
   gap: 1.25rem;
   align-items: center;
-  padding: 1.5rem 1.75rem;
-  background: var(--ya-surface-2);
+  padding: 1.25rem 1.5rem;
+  background: var(--ya-surface-1);
   border: 1px solid var(--ya-border-subtle);
-  border-radius: 16px;
+  border-radius: 10px;
   text-decoration: none;
   color: inherit;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .frameworkCard:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--ya-shadow-card-hover);
-  border-color: var(--ifm-color-primary);
+  border-color: var(--ya-border-strong);
+  background: var(--ya-surface-2);
   text-decoration: none;
   color: inherit;
 }
 
 .frameworkLogo {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-  filter: grayscale(40%);
-  transition: filter 0.3s ease;
-}
-
-.frameworkCard:hover .frameworkLogo {
-  filter: none;
 }
 
 .frameworkName {
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   margin: 0 0 0.25rem;
   font-weight: 600;
 }

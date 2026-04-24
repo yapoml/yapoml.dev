@@ -31,9 +31,9 @@ function HomepageHero() {
       <div className={clsx('container', styles.heroInner)}>
         <motion.div
           className={styles.heroCopy}
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 6 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
+          transition={{ duration: 0.35, ease: 'easeOut' }}
         >
           <p className={styles.eyebrow}>For .NET / C# test automation</p>
           <h1 className={styles.title}>
@@ -61,9 +61,9 @@ function HomepageHero() {
 
         <motion.div
           className={styles.heroVisual}
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+          transition={{ duration: 0.4, delay: 0.05, ease: 'easeOut' }}
         >
           <BrowserFrame label="yapoml.dev">
             <video

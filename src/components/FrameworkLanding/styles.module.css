@@ -2,12 +2,16 @@
   position: relative;
   padding: 5rem 0 4rem;
   background: var(--ya-gradient-hero);
+  border-bottom: 1px solid var(--ya-border-subtle);
   overflow: hidden;
 }
 
 .darkBand {
   position: relative;
-  background: var(--ya-gradient-cta);
+  background: var(--ya-dark-band-bg);
+  border-top: 1px solid var(--ya-dark-band-border);
+  border-bottom: 1px solid var(--ya-dark-band-border);
+  color: var(--ya-dark-band-text);
   isolation: isolate;
   overflow: hidden;
 }
@@ -16,10 +20,9 @@
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(900px 320px at 50% 0%, rgba(45, 212, 191, 0.28), transparent 60%),
-    radial-gradient(700px 260px at 90% 100%, rgba(110, 231, 183, 0.18), transparent 60%);
+  background: var(--ya-dark-band-overlay);
   z-index: -1;
+  pointer-events: none;
 }
 
 .heroInner {
@@ -38,11 +41,7 @@
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--ifm-color-emphasis-700);
-  background: var(--ya-surface-2);
-  border: 1px solid var(--ya-border-subtle);
-  border-radius: 999px;
-  padding: 0.35rem 0.85rem;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1rem;
 }
 
 .eyebrow a {
@@ -58,11 +57,12 @@
 }
 
 .title {
-  font-size: clamp(2.25rem, 4.5vw, 3.4rem);
-  font-weight: 800;
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
-  margin: 0 0 1rem;
+  margin: 0 0 1.25rem;
+  color: var(--ifm-heading-color);
 }
 
 .titleAccent {

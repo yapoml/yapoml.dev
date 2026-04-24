@@ -25,19 +25,30 @@
 
   /* Surfaces */
   --ya-surface-1: #ffffff;
-  --ya-surface-2: #f6faf9;
-  --ya-surface-3: #eef4f3;
-  --ya-border-subtle: rgba(15, 118, 110, 0.14);
-  --ya-shadow-card: 0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px rgba(15, 23, 42, 0.06);
-  --ya-shadow-card-hover: 0 2px 6px rgba(15, 118, 110, 0.10), 0 18px 40px rgba(15, 118, 110, 0.18);
+  --ya-surface-2: #fafafa;
+  --ya-surface-3: #f4f4f5;
+  --ya-border-subtle: rgba(15, 23, 42, 0.08);
+  --ya-border-strong: rgba(15, 23, 42, 0.14);
+  --ya-shadow-card: none;
+  --ya-shadow-card-hover: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.06);
 
-  /* Brand gradients */
-  --ya-gradient-hero: radial-gradient(1200px 600px at 50% -10%, rgba(45, 212, 191, 0.18), transparent 60%),
-                      radial-gradient(800px 400px at 80% 10%, rgba(15, 118, 110, 0.12), transparent 60%);
-  --ya-gradient-cta: linear-gradient(135deg, #0f766e 0%, #0a534d 100%);
-  --ya-gradient-text: linear-gradient(135deg, #0f766e 0%, #2dd4bf 100%);
+  /* Brand accents (used sparingly, no big gradient washes) */
+  --ya-accent-soft: rgba(15, 118, 110, 0.06);
+  --ya-accent-soft-hover: rgba(15, 118, 110, 0.10);
 
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+  /* Gradients (subtle, used only for hero glow + the dark CTA band) */
+  --ya-gradient-hero: radial-gradient(900px 460px at 50% -10%, rgba(45, 212, 191, 0.10), transparent 65%),
+                      radial-gradient(700px 360px at 85% 5%, rgba(15, 118, 110, 0.07), transparent 65%);
+  --ya-gradient-text: linear-gradient(135deg, #0a534d 0%, #0f766e 100%);
+  --ya-dark-band-bg: linear-gradient(135deg, #0f766e 0%, #0a534d 100%);
+  --ya-dark-band-overlay: radial-gradient(900px 320px at 50% 0%, rgba(45, 212, 191, 0.28), transparent 60%),
+                          radial-gradient(700px 260px at 90% 100%, rgba(110, 231, 183, 0.18), transparent 60%);
+  --ya-dark-band-text: #f0fdfa;
+  --ya-dark-band-muted: rgba(240, 253, 250, 0.82);
+  --ya-dark-band-accent: #ccfbf1;
+  --ya-dark-band-border: rgba(45, 212, 191, 0.30);
+
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.06);
 }
 
 [data-theme='dark'] {
@@ -49,39 +60,40 @@
   --ifm-color-primary-lighter: #4ddbc9;
   --ifm-color-primary-lightest: #6de1d3;
 
-  --ya-surface-1: #0e1a1d;
-  --ya-surface-2: #11272a;
-  --ya-surface-3: #143033;
-  --ya-border-subtle: rgba(45, 212, 191, 0.16);
-  --ya-shadow-card: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
-  --ya-shadow-card-hover: 0 2px 6px rgba(45, 212, 191, 0.18), 0 18px 40px rgba(45, 212, 191, 0.18);
+  --ya-surface-1: #0b1416;
+  --ya-surface-2: #11191c;
+  --ya-surface-3: #161f23;
+  --ya-border-subtle: rgba(255, 255, 255, 0.08);
+  --ya-border-strong: rgba(255, 255, 255, 0.16);
+  --ya-shadow-card: none;
+  --ya-shadow-card-hover: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.35);
 
-  --ya-gradient-hero: radial-gradient(1200px 600px at 50% -10%, rgba(45, 212, 191, 0.22), transparent 60%),
-                      radial-gradient(800px 400px at 80% 10%, rgba(15, 118, 110, 0.30), transparent 60%);
-  --ya-gradient-cta: linear-gradient(135deg, #0a534d 0%, #134e4a 60%, #0f766e 100%);
+  --ya-accent-soft: rgba(45, 212, 191, 0.08);
+  --ya-accent-soft-hover: rgba(45, 212, 191, 0.14);
+
+  --ya-gradient-hero: radial-gradient(900px 460px at 50% -10%, rgba(45, 212, 191, 0.14), transparent 65%),
+                      radial-gradient(700px 360px at 85% 5%, rgba(15, 118, 110, 0.18), transparent 65%);
   --ya-gradient-text: linear-gradient(135deg, #2dd4bf 0%, #6de1d3 100%);
+  --ya-dark-band-bg: linear-gradient(135deg, #0a534d 0%, #134e4a 60%, #0f766e 100%);
+  --ya-dark-band-overlay: radial-gradient(900px 320px at 50% 0%, rgba(45, 212, 191, 0.28), transparent 60%),
+                          radial-gradient(700px 260px at 90% 100%, rgba(110, 231, 183, 0.18), transparent 60%);
+  --ya-dark-band-text: #f0fdfa;
+  --ya-dark-band-muted: rgba(240, 253, 250, 0.82);
+  --ya-dark-band-accent: #ccfbf1;
+  --ya-dark-band-border: rgba(45, 212, 191, 0.30);
 
-  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.06);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
 }
 
-/* ---------- Navbar: translucent so it blends with hero gradients ---------- */
+/* ---------- Navbar: simple, with hairline border ---------- */
 .navbar {
-  background-color: rgba(255, 255, 255, 0.72);
-  -webkit-backdrop-filter: saturate(180%) blur(14px);
-  backdrop-filter: saturate(180%) blur(14px);
+  background-color: var(--ya-surface-1);
   box-shadow: none;
   border-bottom: 1px solid var(--ya-border-subtle);
 }
 
 [data-theme='dark'] .navbar {
-  background-color: rgba(14, 26, 29, 0.55);
-}
-
-/* Sidebar overlay on mobile shouldn't be transparent. */
-.navbar-sidebar {
-  background-color: var(--ifm-background-color);
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  background-color: var(--ya-surface-1);
 }
 
 /* ---------- Navbar GitHub icon ---------- */

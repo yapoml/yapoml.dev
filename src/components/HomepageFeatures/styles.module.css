@@ -5,19 +5,21 @@
 
 .eyebrow {
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.78rem;
-  font-weight: 600;
+  letter-spacing: 0.10em;
+  font-size: 0.75rem;
+  font-weight: 500;
   color: var(--ifm-color-primary);
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.5rem;
   text-align: center;
 }
 
 .sectionTitle {
   text-align: center;
-  font-size: clamp(1.65rem, 2.6vw, 2.1rem);
-  margin: 0 auto 3rem;
+  font-size: clamp(1.5rem, 2.4vw, 1.95rem);
+  margin: 0 auto 2.5rem;
   max-width: 36ch;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .grid {
@@ -27,35 +29,34 @@
 }
 
 .card {
-  background: var(--ya-surface-2);
+  background: var(--ya-surface-1);
   border: 1px solid var(--ya-border-subtle);
-  border-radius: 16px;
-  padding: 1.75rem;
+  border-radius: 10px;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  gap: 0.65rem;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
 }
 
 .card:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--ya-shadow-card-hover);
-  border-color: var(--ifm-color-primary);
+  border-color: var(--ya-border-strong);
+  background: var(--ya-surface-2);
 }
 
 .iconWrap {
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: rgba(15, 118, 110, 0.10);
+  background: var(--ya-accent-soft);
   color: var(--ifm-color-primary);
 }
 
 [data-theme='dark'] .iconWrap {
-  background: rgba(45, 212, 191, 0.12);
+  background: var(--ya-accent-soft);
 }
 
 .title {
