@@ -166,7 +166,7 @@ export default function Home() {
           <CTABand
             eyebrow="Get started in minutes"
             title="Spend your time on tests, not boilerplate"
-            description="Install the NuGet package, define a page in YAML, and call .Ya() \u2014 that's it."
+            description="Install the NuGet package, define a page in YAML, and call .Ya() — that's it."
             primary={{ to: '/docs/intro', label: 'Read the docs' }}
             secondary={{ to: 'https://discord.gg/FBWVpMjnJx', label: 'Join the Discord' }}
           />
