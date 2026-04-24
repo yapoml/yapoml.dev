@@ -96,6 +96,12 @@
   background-color: var(--ya-surface-1);
 }
 
+/* ---------- Global: prevent horizontal overflow on small screens ---------- */
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* ---------- Navbar GitHub icon ---------- */
 .header-github-link::before {
   content: '';
