@@ -152,10 +152,19 @@
   padding: 0.05rem 0.4rem;
 }
 
+.codePreviewCode {
+  min-width: 0;
+}
+
 .codePreviewCode :global(.theme-code-block) {
   margin: 0;
   border: 1px solid var(--ya-border-subtle);
   box-shadow: none;
+}
+
+.codePreviewCode :global(.prism-code) {
+  max-width: 100%;
+  overflow-x: auto;
 }
 
 /* ---------- Frameworks ---------- */
@@ -236,7 +245,7 @@
 
   .codePreview { padding: 3rem 0 2rem; }
   .codePreviewGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
   }
 
