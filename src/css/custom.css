@@ -64,6 +64,26 @@
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.06);
 }
 
+/* ---------- Navbar: translucent so it blends with hero gradients ---------- */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+  box-shadow: none;
+  border-bottom: 1px solid var(--ya-border-subtle);
+}
+
+[data-theme='dark'] .navbar {
+  background-color: rgba(14, 26, 29, 0.55);
+}
+
+/* Sidebar overlay on mobile shouldn't be transparent. */
+.navbar-sidebar {
+  background-color: var(--ifm-background-color);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
 /* ---------- Navbar GitHub icon ---------- */
 .header-github-link::before {
   content: '';

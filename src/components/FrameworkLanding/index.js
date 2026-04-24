@@ -85,12 +85,10 @@ export default function FrameworkLanding({
           </div>
         </header>
 
-        <div className={styles.darkBand}>
-          <RollingTips />
-        </div>
         <HomepageFeatures />
 
         <div className={styles.darkBand}>
+          <RollingTips />
           <CTABand
             eyebrow="Ready when you are"
             title={`Start automating with ${framework.name} today`}
